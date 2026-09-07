@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mahadin Trader | Official Website</title>
+    <title>Mahadin Trader</title>
 
-    <meta name="description" content="Official website of Mahadin Trader. Explore my profile, trading journey and social media.">
+    <meta name="description" content="Mahadin Trader - Official Personal Website">
+    <meta name="author" content="Mahadin Trader">
 
     <style>
         * {
@@ -21,9 +22,14 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: #080c14;
+            background: #0b0f19;
             color: #ffffff;
             line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .container {
@@ -32,238 +38,242 @@
             margin: auto;
         }
 
-        /* Navigation */
+        /* NAVBAR */
         nav {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            padding: 18px 0;
-            background: rgba(8, 12, 20, 0.90);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #202a3d;
             z-index: 1000;
+            background: rgba(11, 15, 25, 0.95);
+            border-bottom: 1px solid #20283a;
+            backdrop-filter: blur(10px);
         }
 
         .nav-content {
+            min-height: 65px;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
         }
 
         .logo {
             font-size: 22px;
-            font-weight: 800;
+            font-weight: bold;
+            color: #00d4ff;
         }
 
-        .logo span {
-            color: #4ade80;
-        }
-
-        nav a {
-            color: #cbd5e1;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            color: #4ade80;
-        }
-
-        /* Hero */
-        .hero {
-            min-height: 100vh;
+        .nav-links {
             display: flex;
-            justify-content: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #dce3f0;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 85vh;
+            display: flex;
             align-items: center;
             text-align: center;
-            padding: 100px 0 60px;
-            background:
-                radial-gradient(circle at top, #1b2945, #080c14 60%);
         }
 
         .hero-content {
-            max-width: 800px;
+            width: 100%;
         }
 
         .hero h1 {
-            font-size: clamp(45px, 9vw, 80px);
+            font-size: clamp(42px, 8vw, 80px);
             margin-bottom: 15px;
-            font-weight: 800;
         }
 
         .hero h1 span {
-            color: #4ade80;
+            color: #00d4ff;
         }
 
         .hero p {
-            color: #aab5c8;
-            font-size: 19px;
+            color: #aeb8ca;
+            font-size: 18px;
             margin-bottom: 30px;
         }
 
         .btn {
             display: inline-block;
             padding: 13px 25px;
-            margin: 5px;
+            background: #00d4ff;
+            color: #071018;
             border-radius: 30px;
-            text-decoration: none;
             font-weight: bold;
             transition: 0.3s;
-        }
-
-        .btn-primary {
-            background: #4ade80;
-            color: #07100a;
-        }
-
-        .btn-secondary {
-            border: 1px solid #334155;
-            color: #ffffff;
         }
 
         .btn:hover {
             transform: translateY(-3px);
+            opacity: 0.9;
         }
 
-        /* Sections */
-        section {
-            padding: 85px 0;
+        /* SECTIONS */
+        .section {
+            padding: 90px 0;
         }
 
-        .section-title {
+        .section h2 {
             text-align: center;
-            font-size: 36px;
-            margin-bottom: 10px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #8793a8;
-            margin-bottom: 45px;
-        }
-
-        /* Bio */
-        .bio-card {
-            max-width: 850px;
-            margin: auto;
-            padding: 45px 25px;
-            text-align: center;
-            background: #111827;
-            border: 1px solid #263247;
-            border-radius: 22px;
-        }
-
-        .bio-text {
-            font-size: 28px;
-            font-weight: bold;
-            direction: rtl;
-            margin-bottom: 15px;
-        }
-
-        .bio-card p {
-            color: #8f9bae;
-        }
-
-        /* About */
-        .about-card {
-            max-width: 850px;
-            margin: auto;
-            padding: 35px;
-            background: #111827;
-            border: 1px solid #263247;
-            border-radius: 22px;
-        }
-
-        .about-card p {
-            color: #b4bfd0;
-            font-size: 17px;
-        }
-
-        /* Social Media */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-
-        .social-card {
-            display: block;
-            padding: 30px 20px;
-            text-align: center;
-            text-decoration: none;
-            color: #ffffff;
-            background: #111827;
-            border: 1px solid #263247;
-            border-radius: 20px;
-            transition: 0.3s;
-        }
-
-        .social-card:hover {
-            transform: translateY(-7px);
-            border-color: #4ade80;
-        }
-
-        .social-icon {
             font-size: 34px;
             margin-bottom: 12px;
         }
 
+        .section-subtitle {
+            text-align: center;
+            color: #8e99ad;
+            margin-bottom: 40px;
+        }
+
+        /* BIO */
+        .bio-box {
+            max-width: 800px;
+            margin: auto;
+            padding: 35px;
+            background: #111827;
+            border: 1px solid #20283a;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .bio-arabic {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .bio-box p {
+            color: #aeb8ca;
+        }
+
+        /* ABOUT */
+        .about-box {
+            max-width: 850px;
+            margin: auto;
+            background: #111827;
+            border: 1px solid #20283a;
+            border-radius: 18px;
+            padding: 35px;
+        }
+
+        .about-box p {
+            color: #b9c2d2;
+            margin-bottom: 15px;
+        }
+
+        /* SOCIAL */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .social-card {
+            background: #111827;
+            border: 1px solid #20283a;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d4ff;
+        }
+
+        .social-icon {
+            font-size: 35px;
+            margin-bottom: 10px;
+        }
+
         .social-card h3 {
-            font-size: 20px;
             margin-bottom: 5px;
         }
 
         .social-card p {
-            color: #8f9bae;
+            color: #dce3f0;
+            margin-bottom: 3px;
+        }
+
+        .social-card span {
+            color: #7f8ba3;
             font-size: 14px;
         }
 
-        /* Footer */
+        .visit-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 9px 18px;
+            border: 1px solid #00d4ff;
+            border-radius: 20px;
+            color: #00d4ff;
+            font-size: 13px;
+        }
+
+        /* FOOTER */
         footer {
-            padding: 30px 20px;
+            border-top: 1px solid #20283a;
+            padding: 25px 0;
             text-align: center;
-            background: #05070c;
-            border-top: 1px solid #1c2638;
+            color: #778196;
+            font-size: 13px;
         }
 
-        footer p {
-            color: #707b8e;
-            font-size: 14px;
-        }
-
-        /* Mobile */
+        /* MOBILE */
         @media (max-width: 650px) {
-
-            nav {
-                padding: 15px 0;
-            }
 
             .nav-content {
                 flex-direction: column;
-                gap: 8px;
+                padding: 15px 0;
+                gap: 10px;
             }
 
-            nav a {
-                margin: 0 6px;
+            .nav-links {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links a {
                 font-size: 12px;
             }
 
-            .hero h1 {
-                font-size: 48px;
+            .hero {
+                min-height: 75vh;
             }
 
             .hero p {
                 font-size: 16px;
             }
 
-            .bio-text {
-                font-size: 21px;
+            .section {
+                padding: 65px 0;
             }
 
-            section {
-                padding: 65px 0;
+            .section h2 {
+                font-size: 28px;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bio-box,
+            .about-box {
+                padding: 25px;
             }
         }
     </style>
@@ -271,28 +281,27 @@
 
 <body>
 
-    <!-- Navigation -->
+    <!-- NAVIGATION -->
     <nav>
         <div class="container nav-content">
 
             <div class="logo">
-                Mahadin <span>Trader</span>
+                Mahadin Trader
             </div>
 
-            <div>
-                <a href="#home">Home</a>
-                <a href="#bio">Bio</a>
-                <a href="#about">About</a>
-                <a href="#social">Social</a>
-            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#bio">Bio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#social">Social</a></li>
+            </ul>
 
         </div>
     </nav>
 
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-
+    <!-- HOME -->
+    <section id="home" class="hero">
         <div class="container hero-content">
 
             <h1>
@@ -300,44 +309,36 @@
             </h1>
 
             <p>
-                Welcome to my official personal website.
-                Explore my profile, journey, work and online presence.
+                Official Personal Website
             </p>
 
-            <a href="#about" class="btn btn-primary">
-                About Me
-            </a>
-
-            <a href="#social" class="btn btn-secondary">
-                Social Media
+            <a href="#social" class="btn">
+                Connect With Me
             </a>
 
         </div>
-
     </section>
 
 
-    <!-- Bio Section -->
-    <section id="bio">
+    <!-- BIO -->
+    <section id="bio" class="section">
 
         <div class="container">
 
-            <h2 class="section-title">
-                My Bio
-            </h2>
+            <h2>Bio</h2>
 
             <p class="section-subtitle">
-                My personal website bio
+                Personal Bio
             </p>
 
-            <div class="bio-card">
+            <div class="bio-box">
 
-                <div class="bio-text">
+                <div class="bio-arabic">
                     لا إله إلا الله محمد رسول الله
                 </div>
 
                 <p>
-                    Welcome to my official website.
+                    Mahadin Trader
                 </p>
 
             </div>
@@ -347,25 +348,32 @@
     </section>
 
 
-    <!-- About Section -->
-    <section id="about">
+    <!-- ABOUT -->
+    <section id="about" class="section">
 
         <div class="container">
 
-            <h2 class="section-title">
-                About Me
-            </h2>
+            <h2>About Me</h2>
 
             <p class="section-subtitle">
-                Get to know me
+                Learn more about Mahadin Trader
             </p>
 
-            <div class="about-card">
+            <div class="about-box">
 
                 <p>
-                    I am Mahadin Trader. This is my official personal website
-                    where I will share my profile, trading journey, skills,
-                    projects and online presence.
+                    Welcome to the official website of Mahadin Trader.
+                </p>
+
+                <p>
+                    This website is my personal online presence where
+                    you can find my social media profiles and other
+                    information.
+                </p>
+
+                <p>
+                    I am interested in Forex Trading, technology,
+                    digital content creation and learning new skills.
                 </p>
 
             </div>
@@ -375,14 +383,12 @@
     </section>
 
 
-    <!-- Social Media Section -->
-    <section id="social">
+    <!-- SOCIAL MEDIA -->
+    <section id="social" class="section">
 
         <div class="container">
 
-            <h2 class="section-title">
-                Social Media
-            </h2>
+            <h2>Social Media</h2>
 
             <p class="section-subtitle">
                 Connect with Mahadin Trader
@@ -390,84 +396,141 @@
 
             <div class="social-grid">
 
-                <!-- Facebook -->
-                <a href="#" class="social-card">
-                    <div class="social-icon">f</div>
+
+                <!-- FACEBOOK -->
+                <a
+                    href="https://www.facebook.com/share/1HmRJgMWET/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-card"
+                >
+
+                    <div class="social-icon">
+                        📘
+                    </div>
 
                     <h3>Facebook</h3>
 
-                    <p>
-                        Mahadin Trader
-                    </p>
+                    <p>Mahadin Trader</p>
 
-                    <p>
-                        @mahadintrader
-                    </p>
+                    <span>@mahadintrader</span>
+
+                    <br>
+
+                    <span class="visit-btn">
+                        Visit Profile
+                    </span>
+
                 </a>
 
 
-                <!-- TikTok -->
-                <a href="#" class="social-card">
-                    <div class="social-icon">♪</div>
+                <!-- TIKTOK -->
+                <a
+                    href="https://www.tiktok.com/@mahadintrader"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-card"
+                >
+
+                    <div class="social-icon">
+                        🎵
+                    </div>
 
                     <h3>TikTok</h3>
 
-                    <p>
-                        Mahadin Trader
-                    </p>
+                    <p>Mahadin Trader</p>
 
-                    <p>
-                        @mahadintrader
-                    </p>
+                    <span>@mahadintrader</span>
+
+                    <br>
+
+                    <span class="visit-btn">
+                        Visit Profile
+                    </span>
+
                 </a>
 
 
-                <!-- YouTube -->
-                <a href="#" class="social-card">
-                    <div class="social-icon">▶</div>
+                <!-- YOUTUBE -->
+                <a
+                    href="https://youtube.com/@mahadintrader"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-card"
+                >
+
+                    <div class="social-icon">
+                        ▶️
+                    </div>
 
                     <h3>YouTube</h3>
 
-                    <p>
-                        Mahadin Trader
-                    </p>
+                    <p>Mahadin Trader</p>
 
-                    <p>
-                        @mahadintrader
-                    </p>
+                    <span>@mahadintrader</span>
+
+                    <br>
+
+                    <span class="visit-btn">
+                        Visit Channel
+                    </span>
+
                 </a>
 
 
-                <!-- Instagram -->
-                <a href="#" class="social-card">
-                    <div class="social-icon">◎</div>
+                <!-- INSTAGRAM -->
+                <a
+                    href="https://www.instagram.com/mahadintrader"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-card"
+                >
+
+                    <div class="social-icon">
+                        📷
+                    </div>
 
                     <h3>Instagram</h3>
 
-                    <p>
-                        Mahadin Trader
-                    </p>
+                    <p>Mahadin Trader</p>
 
-                    <p>
-                        @mahadintrader
-                    </p>
+                    <span>@mahadintrader</span>
+
+                    <br>
+
+                    <span class="visit-btn">
+                        Visit Profile
+                    </span>
+
                 </a>
 
 
-                <!-- Messenger -->
-                <a href="#" class="social-card">
-                    <div class="social-icon">✉</div>
+                <!-- MESSENGER -->
+                <a
+                    href="https://m.me/mahadintrader"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="social-card"
+                >
+
+                    <div class="social-icon">
+                        💬
+                    </div>
 
                     <h3>Messenger</h3>
 
-                    <p>
-                        Mahadin Trader
-                    </p>
+                    <p>Mahadin Trader</p>
 
-                    <p>
-                        @mahadintrader
-                    </p>
+                    <span>@mahadintrader</span>
+
+                    <br>
+
+                    <span class="visit-btn">
+                        Message Me
+                    </span>
+
                 </a>
+
 
             </div>
 
@@ -476,14 +539,17 @@
     </section>
 
 
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer>
 
-        <p>
+        <div class="container">
+
             © 2026 Mahadin Trader. All Rights Reserved.
-        </p>
+
+        </div>
 
     </footer>
+
 
 </body>
 </html>
