@@ -1,1251 +1,1019 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Mahadin Trader | Forex Trading & Market Analysis</title>
+<meta name="description"
+content="Mahadin Trader — Forex trading learning journey, market analysis, trading psychology, risk management and educational content.">
 
-<meta name="description" content="Mahadin Trader — Forex trading education, market analysis, Smart Money Concepts, trading psychology, technology and digital content.">
-<meta name="keywords" content="Mahadin Trader, Forex Trading, Forex Analysis, SMC, Smart Money Concepts, Trading Education, Market Analysis">
-<meta name="author" content="Mahmudul Hasan">
-<meta name="robots" content="index, follow">
 <meta name="theme-color" content="#050b14">
 
-<link rel="canonical" href="https://mahadintrader.github.io/">
+<title>Mahadin Trader | Forex Trading</title>
 
-<link rel="icon" type="image/png" href="./logo.png">
-<link rel="apple-touch-icon" href="./logo.png">
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
-<meta property="og:title" content="Mahadin Trader | Official Website">
-<meta property="og:description" content="Forex Trading, Market Analysis, Education and Digital Content.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://mahadintrader.github.io/">
-<meta property="og:image" content="https://mahadintrader.github.io/logo.png">
+<!-- Font Awesome - Brand Logos -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <style>
 
-/* =========================================================
-   GLOBAL
-========================================================= */
+:root{
+    --bg:#050b14;
+    --bg2:#081321;
+    --card:rgba(13,27,43,.78);
+    --line:rgba(255,255,255,.09);
+
+    --text:#f5f8fc;
+    --muted:#9eafc2;
+
+    --green:#20d4a5;
+    --blue:#4ba4ff;
+
+    --radius:22px;
+}
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-:root{
-    --bg:#050a12;
-    --bg2:#08111d;
-    --card:#0a1522;
-    --card2:#0e1d2d;
-    --line:rgba(255,255,255,.08);
-    --text:#f3f7fb;
-    --muted:#8fa1b5;
-    --cyan:#00d9ff;
-    --green:#00e6a0;
-    --red:#ff496d;
-    --gold:#ffc857;
-    --shadow:0 20px 60px rgba(0,0,0,.35);
 }
 
 html{
-    background:var(--bg);
+    scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:
-        radial-gradient(circle at 15% 10%,rgba(0,217,255,.08),transparent 25%),
-        radial-gradient(circle at 85% 25%,rgba(0,230,160,.06),transparent 25%),
-        linear-gradient(180deg,#040912,#07111d 50%,#040912);
+    font-family:Inter,Arial,sans-serif;
     color:var(--text);
-    line-height:1.55;
-    overflow-x:hidden;
-}
 
-body::selection{
-    background:var(--cyan);
-    color:#001018;
+    background:
+    radial-gradient(
+        circle at 15% 10%,
+        rgba(32,212,165,.13),
+        transparent 28%
+    ),
+
+    radial-gradient(
+        circle at 85% 15%,
+        rgba(75,164,255,.14),
+        transparent 30%
+    ),
+
+    linear-gradient(
+        180deg,
+        var(--bg),
+        var(--bg2) 55%,
+        var(--bg)
+    );
+
+    min-height:100vh;
+    line-height:1.6;
 }
 
 a{
-    text-decoration:none;
     color:inherit;
+    text-decoration:none;
 }
 
 button,
-input{
+input,
+textarea{
     font:inherit;
 }
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
 
 .container{
     width:min(1120px,92%);
     margin:auto;
 }
 
-.section{
-    padding:90px 0;
-    position:relative;
-}
 
-.section-title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.section-title span{
-    display:block;
-    color:var(--cyan);
-    font-size:10px;
-    font-weight:800;
-    letter-spacing:3px;
-    margin-bottom:10px;
-}
-
-.section-title h2{
-    font-size:clamp(28px,5vw,44px);
-    line-height:1.1;
-    margin-bottom:10px;
-}
-
-.section-title p{
-    max-width:680px;
-    margin:auto;
-    color:var(--muted);
-    font-size:13px;
-}
-
-
-/* =========================================================
-   MARKET BACKGROUND
-========================================================= */
-
-.market-bg{
-    position:fixed;
-    inset:0;
-    z-index:-5;
-    pointer-events:none;
-    opacity:.22;
-    overflow:hidden;
-}
-
-.grid-lines{
-    position:absolute;
-    inset:0;
-    background-image:
-        linear-gradient(rgba(0,217,255,.055) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(0,217,255,.055) 1px,transparent 1px);
-    background-size:55px 55px;
-}
-
-.chart-line{
-    position:absolute;
-    width:130%;
-    height:300px;
-    left:-10%;
-    top:35%;
-    border-bottom:2px solid rgba(0,230,160,.15);
-    transform:rotate(-4deg);
-}
-
-.candle{
-    position:absolute;
-    width:5px;
-    border-radius:2px;
-    opacity:.45;
-}
-
-.candle::before{
-    content:"";
-    position:absolute;
-    left:1px;
-    top:-12px;
-    width:3px;
-    height:calc(100% + 24px);
-    background:inherit;
-}
-
-.c1{height:50px;left:8%;top:25%;background:var(--green)}
-.c2{height:80px;left:17%;top:20%;background:var(--red)}
-.c3{height:40px;left:27%;top:33%;background:var(--green)}
-.c4{height:100px;left:39%;top:17%;background:var(--green)}
-.c5{height:65px;left:52%;top:30%;background:var(--red)}
-.c6{height:90px;left:64%;top:18%;background:var(--green)}
-.c7{height:45px;left:76%;top:33%;background:var(--red)}
-.c8{height:110px;left:89%;top:15%;background:var(--green)}
-
-
-/* =========================================================
-   LOADER
-========================================================= */
-
-.loader{
-    position:fixed;
-    inset:0;
-    z-index:99999;
-    background:#040912;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:opacity .5s ease,visibility .5s ease;
-}
-
-.loader.hide{
-    opacity:0;
-    visibility:hidden;
-    pointer-events:none;
-}
-
-.loader-box{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:16px;
-}
-
-.loader-logo{
-    width:72px;
-    height:72px;
-    border-radius:50%;
-    object-fit:contain;
-    border:2px solid var(--cyan);
-    box-shadow:0 0 35px rgba(0,217,255,.3);
-    animation:pulse 1.4s infinite;
-}
-
-.loader-text{
-    font-size:11px;
-    color:var(--muted);
-    letter-spacing:2px;
-}
-
-.loader-line{
-    width:150px;
-    height:3px;
-    background:rgba(255,255,255,.08);
-    overflow:hidden;
-    border-radius:20px;
-}
-
-.loader-line span{
-    display:block;
-    width:45%;
-    height:100%;
-    background:var(--cyan);
-    animation:loading 1s infinite;
-}
-
-@keyframes pulse{
-    50%{
-        transform:scale(1.07);
-        box-shadow:0 0 50px rgba(0,217,255,.5);
-    }
-}
-
-@keyframes loading{
-    from{transform:translateX(-130%)}
-    to{transform:translateX(330%)}
-}
-
-
-/* =========================================================
+/* =========================
    NAVBAR
-========================================================= */
+========================= */
 
-.navbar{
+header{
     position:sticky;
     top:0;
-    z-index:5000;
-    background:rgba(4,9,18,.82);
+    z-index:1000;
+
+    background:rgba(5,11,20,.78);
     backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
+
     border-bottom:1px solid var(--line);
 }
 
-.nav-inner{
-    min-height:70px;
+.nav{
+    height:74px;
+
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     gap:20px;
 }
 
-.logo{
+.brand{
     display:flex;
     align-items:center;
-    gap:9px;
-    font-size:17px;
+    gap:12px;
+
     font-weight:800;
-    white-space:nowrap;
 }
 
-.logo-img{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    object-fit:contain;
-    border:1px solid var(--cyan);
-    box-shadow:0 0 18px rgba(0,217,255,.25);
+.brand img{
+    width:44px;
+    height:44px;
+
+    object-fit:cover;
+
+    border-radius:13px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+    0 8px 30px rgba(32,212,165,.16);
 }
 
-.logo span span{
-    color:var(--cyan);
+.brand-name{
+    font-family:"Space Grotesk";
+    font-size:18px;
+}
+
+.brand-name span{
+    color:var(--green);
 }
 
 .nav-links{
     display:flex;
-    list-style:none;
-    gap:18px;
+    align-items:center;
+    gap:22px;
 }
 
 .nav-links a{
-    color:#9bacbf;
-    font-size:11px;
-    position:relative;
+    color:#b9c7d6;
+    font-size:14px;
+    font-weight:600;
+
     transition:.25s;
 }
 
-.nav-links a:hover,
-.nav-links a.active{
-    color:var(--cyan);
-}
-
-.nav-links a::after{
-    content:"";
-    position:absolute;
-    width:0;
-    height:2px;
-    bottom:-8px;
-    left:50%;
-    transform:translateX(-50%);
-    background:var(--cyan);
-    transition:.25s;
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after{
-    width:100%;
+.nav-links a:hover{
+    color:var(--green);
 }
 
 .nav-actions{
     display:flex;
-    align-items:center;
-    gap:7px;
+    gap:8px;
 }
 
-.nav-btn{
-    padding:8px 12px;
+.small-btn{
     border:1px solid var(--line);
-    border-radius:8px;
-    font-size:10px;
-    color:#dce7f2;
-    transition:.25s;
+
+    background:rgba(255,255,255,.04);
+
+    color:#fff;
+
+    padding:9px 13px;
+
+    border-radius:11px;
+
     cursor:pointer;
-    background:transparent;
+
+    transition:.25s;
 }
 
-.nav-btn:hover{
-    border-color:rgba(0,217,255,.4);
-    color:var(--cyan);
-}
-
-.nav-btn.signup{
-    background:var(--cyan);
-    color:#001219;
-    border-color:var(--cyan);
-    font-weight:bold;
+.small-btn:hover{
+    border-color:rgba(32,212,165,.5);
 }
 
 .menu-btn{
     display:none;
+
     border:1px solid var(--line);
-    background:transparent;
+
+    background:rgba(255,255,255,.04);
+
     color:white;
-    width:40px;
-    height:38px;
-    border-radius:8px;
+
+    padding:9px 13px;
+
+    border-radius:11px;
+
     cursor:pointer;
 }
 
 
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-.mobile-menu{
-    display:none;
-    padding:12px 0 18px;
-    border-top:1px solid var(--line);
-}
-
-.mobile-menu.open{
-    display:block;
-}
-
-.mobile-menu a{
-    display:block;
-    padding:11px;
-    color:#a8b8c9;
-    font-size:12px;
-    border-radius:7px;
-}
-
-.mobile-menu a:hover{
-    background:rgba(0,217,255,.06);
-    color:var(--cyan);
-}
-
-
-/* =========================================================
+/* =========================
    HERO
-========================================================= */
+========================= */
 
 .hero{
-    min-height:calc(100vh - 70px);
-    display:flex;
+    padding:90px 0 70px;
+}
+
+.hero-grid{
+    display:grid;
+
+    grid-template-columns:1.25fr .75fr;
+
+    gap:50px;
+
     align-items:center;
-    justify-content:center;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
 }
 
-.hero-content{
-    max-width:850px;
-    position:relative;
-    z-index:2;
-    animation:heroIn .8s ease both;
-}
-
-@keyframes heroIn{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.hero-badge{
+.eyebrow{
     display:inline-flex;
-    padding:7px 14px;
-    border:1px solid rgba(0,217,255,.25);
-    background:rgba(0,217,255,.05);
-    border-radius:30px;
-    color:var(--cyan);
-    font-size:9px;
-    letter-spacing:2px;
-    font-weight:bold;
-    margin-bottom:20px;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:8px 12px;
+
+    border-radius:999px;
+
+    border:1px solid rgba(32,212,165,.22);
+
+    background:rgba(32,212,165,.07);
+
+    color:#b8ffed;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
 }
 
-.hero h1{
-    font-size:clamp(45px,9vw,82px);
-    letter-spacing:-4px;
-    line-height:.95;
-    margin-bottom:17px;
+.dot{
+    width:7px;
+    height:7px;
+
+    background:var(--green);
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 14px var(--green);
 }
 
-.hero h1 span{
-    color:var(--cyan);
+h1{
+    font-family:"Space Grotesk";
+
+    font-size:clamp(43px,7vw,78px);
+
+    line-height:1.02;
+
+    letter-spacing:-.055em;
+
+    margin:22px 0;
 }
 
-.hero h2{
-    color:#dce7f1;
-    font-size:21px;
-    margin-bottom:12px;
+h1 span{
+    background:
+    linear-gradient(
+        90deg,
+        var(--green),
+        #65b8ff
+    );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    color:transparent;
 }
 
 .hero p{
-    max-width:720px;
-    margin:auto;
+    max-width:690px;
+
     color:var(--muted);
-    font-size:13px;
+
+    font-size:17px;
+}
+
+.arabic{
+    margin-top:25px;
+
+    font-family:serif;
+
+    font-size:27px;
+
+    color:#fff;
+
+    direction:rtl;
+
+    border-left:2px solid var(--green);
+
+    padding-left:16px;
+
+    display:inline-block;
 }
 
 .hero-buttons{
     display:flex;
-    justify-content:center;
+
     flex-wrap:wrap;
-    gap:10px;
-    margin-top:27px;
+
+    gap:12px;
+
+    margin-top:30px;
 }
 
 .btn{
     display:inline-flex;
-    justify-content:center;
-    align-items:center;
-    padding:12px 20px;
-    border-radius:9px;
-    border:1px solid var(--line);
-    font-size:11px;
-    font-weight:bold;
-    transition:.25s;
-    cursor:pointer;
-    background:transparent;
-    color:white;
-}
 
-.btn:hover{
-    transform:translateY(-3px);
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:13px 18px;
+
+    border-radius:13px;
+
+    font-weight:800;
+
+    font-size:14px;
+
+    border:1px solid var(--line);
+
+    cursor:pointer;
+
+    transition:.25s;
 }
 
 .btn-primary{
-    background:linear-gradient(135deg,var(--cyan),#00b6df);
-    color:#00131b;
-    border-color:transparent;
-    box-shadow:0 10px 35px rgba(0,217,255,.12);
-}
+    background:var(--green);
 
-.btn-green{
-    background:linear-gradient(135deg,var(--green),#00bd83);
-    color:#00160f;
+    color:#03110d;
+
     border-color:transparent;
 }
 
+.btn-primary:hover{
+    transform:translateY(-2px);
 
-/* =========================================================
-   MARKET TICKER
-========================================================= */
-
-.ticker{
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    background:rgba(0,0,0,.22);
-    overflow:hidden;
+    box-shadow:
+    0 12px 30px rgba(32,212,165,.2);
 }
 
-.ticker-track{
-    display:flex;
-    gap:35px;
-    min-width:max-content;
-    padding:12px 0;
-    animation:ticker 30s linear infinite;
+.btn-ghost{
+    background:rgba(255,255,255,.04);
 }
 
-.ticker-item{
-    font-size:10px;
-    color:#a6b6c8;
-}
+.btn-ghost:hover{
+    transform:translateY(-2px);
 
-.ticker-item strong{
-    color:#fff;
-    margin-right:7px;
-}
-
-.up{
-    color:var(--green);
-}
-
-.down{
-    color:var(--red);
-}
-
-@keyframes ticker{
-    from{transform:translateX(0)}
-    to{transform:translateX(-50%)}
+    border-color:rgba(75,164,255,.5);
 }
 
 
-/* =========================================================
-   STATS
-========================================================= */
+/* =========================
+   PROFILE CARD
+========================= */
 
-.stats{
-    padding:35px 0;
-}
+.hero-card{
+    padding:18px;
 
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-}
-
-.stat{
-    padding:20px 12px;
     border:1px solid var(--line);
-    border-radius:13px;
-    background:linear-gradient(145deg,var(--card),#07101b);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(18,38,58,.9),
+        rgba(8,18,30,.78)
+    );
+
+    border-radius:30px;
+
+    box-shadow:
+    0 24px 80px rgba(0,0,0,.35);
 }
 
-.stat strong{
-    display:block;
-    color:var(--cyan);
-    font-size:19px;
+.profile{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:25px 15px 20px;
 }
 
-.stat span{
+.profile img{
+    width:180px;
+    height:180px;
+
+    object-fit:cover;
+
+    border-radius:35px;
+
+    border:2px solid rgba(255,255,255,.12);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.4);
+}
+
+.profile h2{
+    font-family:"Space Grotesk";
+
+    margin-top:18px;
+
+    font-size:25px;
+}
+
+.role{
+    color:var(--green);
+
+    font-size:13px;
+
+    font-weight:800;
+
+    margin-top:3px;
+}
+
+.note{
     color:var(--muted);
-    font-size:10px;
+
+    font-size:13px;
+
+    margin-top:12px;
 }
 
 
-/* =========================================================
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    padding:82px 0;
+}
+
+.section-head{
+    margin-bottom:30px;
+}
+
+.section-kicker{
+    color:var(--green);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+.section-head h2{
+    font-family:"Space Grotesk";
+
+    font-size:clamp(30px,4vw,46px);
+
+    letter-spacing:-.04em;
+
+    margin-top:8px;
+}
+
+.section-head p{
+    color:var(--muted);
+
+    max-width:700px;
+
+    margin-top:8px;
+}
+
+
+/* =========================
    CARDS
-========================================================= */
+========================= */
 
-.grid-2{
+.cards{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:16px;
-}
 
-.grid-3{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:16px;
 }
 
 .card{
-    position:relative;
-    overflow:hidden;
-    padding:28px 21px;
+    padding:24px;
+
     border:1px solid var(--line);
-    border-radius:17px;
-    background:linear-gradient(145deg,var(--card),#07111c);
-    transition:.3s;
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    transition:.25s;
 }
 
 .card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(0,217,255,.22);
-    background:linear-gradient(145deg,var(--card2),#081522);
-    box-shadow:var(--shadow);
+    transform:translateY(-4px);
+
+    border-color:
+    rgba(32,212,165,.3);
 }
 
-.card::after{
-    content:"";
-    position:absolute;
-    width:120px;
-    height:120px;
-    right:-70px;
-    top:-70px;
-    border-radius:50%;
-    background:rgba(0,217,255,.05);
-    filter:blur(20px);
-}
-
-.card-icon{
+.icon{
     width:46px;
     height:46px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 14px;
-    border-radius:12px;
-    color:var(--cyan);
-    background:rgba(0,217,255,.07);
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:14px;
+
+    background:
+    rgba(32,212,165,.09);
+
+    color:var(--green);
+
     font-size:20px;
+
+    margin-bottom:18px;
 }
 
 .card h3{
-    font-size:16px;
+    font-size:17px;
+
     margin-bottom:7px;
 }
 
 .card p{
     color:var(--muted);
-    font-size:11.5px;
-}
 
-
-/* =========================================================
-   TRADING DASHBOARD
-========================================================= */
-
-.dashboard{
-    display:grid;
-    grid-template-columns:1.5fr .8fr;
-    gap:16px;
-}
-
-.chart-card,
-.market-card{
-    border:1px solid var(--line);
-    border-radius:17px;
-    background:linear-gradient(145deg,var(--card),#07111c);
-    overflow:hidden;
-}
-
-.chart-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 17px;
-    border-bottom:1px solid var(--line);
-}
-
-.chart-title{
-    text-align:left;
-}
-
-.chart-title strong{
-    display:block;
     font-size:14px;
 }
 
-.chart-title span{
-    font-size:9px;
-    color:var(--muted);
-}
 
-.price{
-    color:var(--green);
-    font-size:15px;
-    font-weight:bold;
-}
+/* =========================
+   PROGRESS
+========================= */
 
-.chart-area{
-    height:310px;
-    position:relative;
-    overflow:hidden;
-    background:
-        linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
-    background-size:45px 45px;
-}
-
-.chart-area svg{
-    width:100%;
-    height:100%;
-}
-
-.market-card{
-    padding-bottom:12px;
-}
-
-.market-header{
-    padding:16px;
-    border-bottom:1px solid var(--line);
-    text-align:left;
-}
-
-.market-header strong{
-    font-size:14px;
-}
-
-.market-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:13px 16px;
-    border-bottom:1px solid rgba(255,255,255,.045);
-    font-size:11px;
-}
-
-.market-row:last-child{
-    border-bottom:0;
-}
-
-.pair{
-    text-align:left;
-}
-
-.pair strong{
-    display:block;
-    color:#fff;
-}
-
-.pair span{
-    color:var(--muted);
-    font-size:9px;
-}
-
-
-/* =========================================================
-   PROFILE
-========================================================= */
-
-.profile{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-    padding:38px 25px;
-    border:1px solid var(--line);
-    border-radius:20px;
-    background:
-        linear-gradient(145deg,rgba(0,217,255,.045),rgba(0,230,160,.025)),
-        var(--card);
-    box-shadow:var(--shadow);
-}
-
-.profile-logo{
-    width:92px;
-    height:92px;
-    border-radius:50%;
-    object-fit:contain;
-    border:2px solid var(--cyan);
-    box-shadow:0 0 30px rgba(0,217,255,.2);
-    margin-bottom:15px;
-}
-
-.profile h2{
-    font-size:30px;
-}
-
-.profile-role{
-    color:var(--cyan);
-    font-size:11px;
-    margin:5px 0 18px;
-}
-
-.profile-bio{
-    max-width:680px;
-    margin:auto;
-    color:var(--muted);
-    font-size:12px;
-}
-
-.identity-grid{
+.progress{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    margin-top:25px;
-    border-top:1px solid var(--line);
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
 }
 
-.identity{
-    padding:17px 8px;
-    border-right:1px solid var(--line);
-}
+.progress-card{
+    padding:24px;
 
-.identity:last-child{
-    border-right:0;
-}
+    border:1px solid var(--line);
 
-.identity small{
-    display:block;
-    color:var(--cyan);
-    font-size:8px;
-    letter-spacing:1.5px;
-    margin-bottom:4px;
-}
+    border-radius:var(--radius);
 
-.identity strong{
-    font-size:11px;
-}
-
-
-/* =========================================================
-   QUOTE
-========================================================= */
-
-.quote{
-    max-width:850px;
-    margin:auto;
-    text-align:center;
-    padding:35px 25px;
-    border:1px solid rgba(0,217,255,.14);
-    border-radius:18px;
-    background:linear-gradient(145deg,var(--card),#07111c);
-}
-
-.quote-mark{
-    font-size:35px;
-    color:var(--cyan);
-}
-
-.quote p{
-    color:#dbe6f1;
-    font-size:17px;
-    font-weight:600;
-}
-
-
-/* =========================================================
-   JOURNAL
-========================================================= */
-
-.table-wrap{
-    overflow-x:auto;
-    border-radius:14px;
-    box-shadow:var(--shadow);
-}
-
-table{
-    width:100%;
-    min-width:720px;
-    border-collapse:collapse;
     background:var(--card);
-    border:1px solid var(--line);
 }
 
-th,td{
-    padding:13px;
-    border-bottom:1px solid var(--line);
-    font-size:10px;
-    text-align:center;
+.progress-item{
+    margin:18px 0;
 }
 
-th{
-    color:var(--cyan);
-    background:rgba(0,217,255,.035);
+.progress-top{
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:13px;
+
+    margin-bottom:8px;
 }
 
-td{
+.progress-top span:last-child{
     color:var(--muted);
 }
 
+.bar{
+    height:8px;
 
-/* =========================================================
-   SOCIAL
-========================================================= */
+    border-radius:99px;
+
+    background:
+    rgba(255,255,255,.07);
+
+    overflow:hidden;
+}
+
+.fill{
+    height:100%;
+
+    border-radius:99px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--green),
+        var(--blue)
+    );
+}
+
+
+/* =========================
+   JOURNAL
+========================= */
+
+.journal{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:20px;
+}
+
+.tag{
+    display:inline-block;
+
+    padding:5px 9px;
+
+    border-radius:99px;
+
+    background:
+    rgba(75,164,255,.08);
+
+    color:#9dccff;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    margin-bottom:13px;
+}
+
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
 
 .social-grid{
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+    repeat(5,1fr);
+
     gap:12px;
-    max-width:900px;
-    margin:auto;
 }
 
 .social{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:17px;
+    min-height:110px;
+
+    padding:18px 12px;
+
     border:1px solid var(--line);
-    border-radius:13px;
-    background:var(--card);
-    transition:.3s;
+
+    border-radius:18px;
+
+    background:
+    rgba(255,255,255,.035);
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    text-align:center;
+
+    transition:.25s;
 }
 
 .social:hover{
-    transform:translateY(-4px);
-    background:var(--card2);
+    transform:translateY(-5px);
+
+    background:
+    rgba(255,255,255,.06);
+
+    border-color:
+    rgba(255,255,255,.2);
 }
 
-.social-icon{
-    width:43px;
-    height:43px;
-    border-radius:11px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:rgba(255,255,255,.05);
-    font-size:19px;
+.social i{
+    font-size:29px;
 }
 
-.social-info{
-    text-align:left;
+.social strong{
+    font-size:12px;
 }
 
-.social-info strong{
+
+/* Official brand colors */
+
+.facebook{
+    color:#1877F2;
+}
+
+.tiktok{
+    color:#fff;
+}
+
+.instagram{
+    color:#E1306C;
+}
+
+.youtube{
+    color:#FF0000;
+}
+
+.messenger{
+    color:#0084FF;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+    display:grid;
+
+    grid-template-columns:1fr .85fr;
+
+    gap:20px;
+}
+
+form{
+    display:grid;
+
+    gap:12px;
+}
+
+input,
+textarea{
+    width:100%;
+
+    padding:14px 15px;
+
+    border:1px solid var(--line);
+
+    border-radius:13px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    color:#fff;
+
+    outline:none;
+}
+
+input:focus,
+textarea:focus{
+    border-color:
+    rgba(32,212,165,.55);
+}
+
+textarea{
+    min-height:145px;
+
+    resize:vertical;
+}
+
+.contact-info{
+    display:grid;
+
+    gap:12px;
+}
+
+.info-box{
+    padding:20px;
+
+    border:1px solid var(--line);
+
+    border-radius:18px;
+
+    background:var(--card);
+}
+
+.info-box b{
     display:block;
+
+    margin-bottom:4px;
+}
+
+.info-box span{
+    color:var(--muted);
+
+    font-size:14px;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.disclaimer{
+    border:1px solid rgba(255,193,7,.18);
+
+    background:
+    rgba(255,193,7,.045);
+
+    padding:20px;
+
+    border-radius:18px;
+
+    color:#c8cbd0;
+
     font-size:13px;
 }
 
-.social-info span{
+.disclaimer strong{
+    color:#ffe29a;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:38px 0;
+
+    border-top:1px solid var(--line);
+
     color:var(--muted);
-    font-size:9px;
+
+    font-size:13px;
 }
 
-.social-arrow{
-    margin-left:auto;
-    color:#718399;
+.footer-row{
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
 }
 
+.footer-links{
+    display:flex;
 
-/* =========================================================
-   FAQ
-========================================================= */
+    gap:15px;
 
-.faq{
-    max-width:820px;
-    margin:auto;
+    flex-wrap:wrap;
 }
 
-details{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:12px;
-    margin-bottom:9px;
-    padding:15px 17px;
-    text-align:left;
-}
-
-summary{
-    cursor:pointer;
-    font-weight:bold;
-    font-size:12px;
-}
-
-details p{
-    color:var(--muted);
-    font-size:11px;
-    margin-top:10px;
+.footer-links a:hover{
+    color:#fff;
 }
 
 
-/* =========================================================
-   DISCLAIMER
-========================================================= */
-
-.disclaimer{
-    max-width:850px;
-    margin:auto;
-    padding:25px;
-    border:1px solid rgba(255,200,87,.15);
-    border-radius:15px;
-    background:rgba(255,200,87,.025);
-    text-align:center;
-}
-
-.disclaimer h3{
-    color:var(--gold);
-    font-size:15px;
-    margin-bottom:10px;
-}
-
-.disclaimer p{
-    color:var(--muted);
-    font-size:11px;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact{
-    text-align:center;
-    max-width:700px;
-    margin:auto;
-}
-
-.contact p{
-    color:var(--muted);
-    font-size:12px;
-    margin-bottom:20px;
-}
-
-
-/* =========================================================
+/* =========================
    LOGIN MODAL
-========================================================= */
+========================= */
 
 .modal{
     position:fixed;
+
     inset:0;
-    z-index:10000;
-    display:none;
-    align-items:center;
-    justify-content:center;
-    padding:20px;
-    background:rgba(0,0,0,.72);
+
+    background:
+    rgba(0,0,0,.7);
+
     backdrop-filter:blur(8px);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    z-index:2000;
+
+    padding:20px;
 }
 
-.modal.show{
+.modal.active{
     display:flex;
 }
 
 .modal-box{
     width:min(420px,100%);
-    background:linear-gradient(145deg,#0b1827,#07111c);
-    border:1px solid rgba(0,217,255,.2);
-    border-radius:18px;
-    padding:28px;
-    box-shadow:0 30px 100px rgba(0,0,0,.5);
-    position:relative;
-    animation:modalIn .25s ease;
+
+    background:#0a1726;
+
+    border:1px solid var(--line);
+
+    border-radius:24px;
+
+    padding:25px;
+
+    box-shadow:
+    0 24px 80px rgba(0,0,0,.5);
 }
 
-@keyframes modalIn{
-    from{
-        opacity:0;
-        transform:scale(.95) translateY(10px);
-    }
-    to{
-        opacity:1;
-        transform:scale(1) translateY(0);
-    }
-}
+.modal-head{
+    display:flex;
 
-.close-modal{
-    position:absolute;
-    right:14px;
-    top:12px;
-    border:0;
-    background:transparent;
-    color:#8da0b4;
-    font-size:22px;
-    cursor:pointer;
-}
+    justify-content:space-between;
 
-.modal-logo{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    border:1px solid var(--cyan);
-    object-fit:contain;
-    margin-bottom:10px;
-}
+    align-items:center;
 
-.modal-box h2{
-    font-size:23px;
-}
-
-.modal-sub{
-    color:var(--muted);
-    font-size:10px;
-    margin:5px 0 20px;
-}
-
-.auth-tabs{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:5px;
-    padding:4px;
-    border-radius:9px;
-    background:rgba(255,255,255,.04);
     margin-bottom:18px;
 }
 
-.auth-tab{
+.close{
+    background:none;
+
     border:0;
-    background:transparent;
-    color:#8193a7;
-    padding:9px;
-    border-radius:7px;
-    font-size:10px;
+
+    color:#aaa;
+
+    font-size:27px;
+
     cursor:pointer;
 }
 
-.auth-tab.active{
-    background:rgba(0,217,255,.1);
-    color:var(--cyan);
+.tabs{
+    display:flex;
+
+    gap:7px;
+
+    margin-bottom:15px;
+}
+
+.tab{
+    flex:1;
+
+    padding:10px;
+
+    border:1px solid var(--line);
+
+    border-radius:10px;
+
+    background:transparent;
+
+    color:#aaa;
+
+    cursor:pointer;
+}
+
+.tab.active{
+    color:#03110d;
+
+    background:var(--green);
+
+    border-color:var(--green);
 }
 
 .auth-form{
-    display:none;
+    display:grid;
+
+    gap:11px;
 }
 
-.auth-form.active{
-    display:block;
-}
+.auth-form p{
+    font-size:12px;
 
-.input-group{
-    text-align:left;
-    margin-bottom:12px;
-}
+    color:var(--muted);
 
-.input-group label{
-    display:block;
-    color:#9fb0c2;
-    font-size:9px;
-    margin-bottom:5px;
-}
-
-.input-group input{
-    width:100%;
-    padding:11px;
-    color:#fff;
-    background:#06101b;
-    border:1px solid var(--line);
-    border-radius:8px;
-    outline:none;
-    font-size:11px;
-}
-
-.input-group input:focus{
-    border-color:rgba(0,217,255,.5);
-}
-
-.auth-submit{
-    width:100%;
-    margin-top:5px;
-}
-
-.auth-note{
-    color:#687b90;
-    font-size:8px;
-    margin-top:13px;
-    line-height:1.6;
+    text-align:center;
 }
 
 
-/* =========================================================
-   BACK TOP
-========================================================= */
-
-#topBtn{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    width:43px;
-    height:43px;
-    border-radius:50%;
-    border:1px solid rgba(0,217,255,.2);
-    background:rgba(6,15,25,.9);
-    color:var(--cyan);
-    cursor:pointer;
-    opacity:0;
-    visibility:hidden;
-    transform:translateY(12px);
-    transition:.3s;
-    z-index:3000;
-}
-
-#topBtn.show{
-    opacity:1;
-    visibility:visible;
-    transform:translateY(0);
-}
-
-
-/* =========================================================
-   REVEAL
-========================================================= */
+/* =========================
+   ANIMATION
+========================= */
 
 .reveal{
     opacity:0;
-    transform:translateY(25px);
-    transition:opacity .7s ease,transform .7s ease;
+
+    transform:translateY(20px);
+
+    transition:.7s ease;
 }
 
 .reveal.show{
     opacity:1;
-    transform:translateY(0);
+
+    transform:none;
 }
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+/* =========================
+   MOBILE
+========================= */
 
-footer{
-    padding:35px 0;
-    border-top:1px solid var(--line);
-    background:rgba(0,0,0,.16);
-}
-
-footer p{
-    color:#708399;
-    font-size:9px;
-    margin:4px;
-}
-
-footer strong{
-    color:#fff;
-}
-
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:950px){
+@media(max-width:900px){
 
     .nav-links{
         display:none;
@@ -1255,2054 +1023,1565 @@ footer strong{
         display:block;
     }
 
-    .dashboard{
+    .hero-grid,
+    .contact,
+    .progress{
         grid-template-columns:1fr;
     }
 
-    .nav-actions .nav-btn{
+    .cards{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .social-grid{
+        grid-template-columns:
+        repeat(3,1fr);
+    }
+}
+
+
+@media(max-width:600px){
+
+    .hero{
+        padding-top:58px;
+    }
+
+    .cards,
+    .journal{
+        grid-template-columns:1fr;
+    }
+
+    .social-grid{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .nav-actions .small-btn{
         display:none;
     }
 
-    .stats-grid{
-        grid-template-columns:repeat(2,1fr);
+    h1{
+        font-size:48px;
     }
 
-    .identity-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .identity{
-        border-bottom:1px solid var(--line);
-    }
-
-    .identity:nth-child(2){
-        border-right:0;
-    }
-
-}
-
-@media(max-width:650px){
-
-    .section{
-        padding:65px 0;
-    }
-
-    .hero{
-        min-height:80vh;
-    }
-
-    .hero h1{
-        letter-spacing:-2px;
-    }
-
-    .grid-2,
-    .grid-3,
-    .social-grid{
-        grid-template-columns:1fr;
-    }
-
-    .stats-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .identity-grid{
-        grid-template-columns:1fr;
-    }
-
-    .identity{
-        border-right:0;
-    }
-
-    .chart-area{
-        height:240px;
-    }
-
-}
-
-@media(max-width:400px){
-
-    .hero-buttons{
+    .footer-row{
         flex-direction:column;
+
+        align-items:flex-start;
     }
 
-    .btn{
-        width:100%;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-
-}
-
-
-/* =========================================================
-   RIPPLE
-========================================================= */
-
-.ripple{
-    position:fixed;
-    width:10px;
-    height:10px;
-    border-radius:50%;
-    background:rgba(0,217,255,.3);
-    pointer-events:none;
-    transform:translate(-50%,-50%);
-    animation:ripple .55s ease-out forwards;
-    z-index:9998;
-}
-
-@keyframes ripple{
-    to{
-        width:150px;
-        height:150px;
-        opacity:0;
+    .arabic{
+        font-size:22px;
     }
 }
 
 </style>
 </head>
 
+
 <body>
 
 
-<!-- ======================================================
-     BACKGROUND
-====================================================== -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-<div class="market-bg">
+<header>
 
-    <div class="grid-lines"></div>
-    <div class="chart-line"></div>
+<div class="container nav">
 
-    <div class="candle c1"></div>
-    <div class="candle c2"></div>
-    <div class="candle c3"></div>
-    <div class="candle c4"></div>
-    <div class="candle c5"></div>
-    <div class="candle c6"></div>
-    <div class="candle c7"></div>
-    <div class="candle c8"></div>
+<a href="#home" class="brand">
+
+<img
+src="logo.png"
+alt="Mahadin Trader Logo">
+
+<div class="brand-name">
+Mahadin <span>Trader</span>
+</div>
+
+</a>
+
+
+<nav class="nav-links" id="navLinks">
+
+<a href="#about">About</a>
+
+<a href="#learning">Learning</a>
+
+<a href="#analysis">Analysis</a>
+
+<a href="#journal">Journal</a>
+
+<a href="#progress">Progress</a>
+
+<a href="#social">Social</a>
+
+<a href="#contact">Contact</a>
+
+</nav>
+
+
+<div class="nav-actions">
+
+<button
+class="small-btn"
+onclick="openAuth('login')">
+
+Login
+
+</button>
+
+<button
+class="small-btn"
+onclick="openAuth('signup')">
+
+Sign Up
+
+</button>
+
+<button
+class="menu-btn"
+onclick="toggleMenu()">
+
+☰
+
+</button>
 
 </div>
 
-
-<!-- ======================================================
-     LOADER
-====================================================== -->
-
-<div class="loader" id="loader">
-
-    <div class="loader-box">
-
-        <img
-            src="./logo.png"
-            class="loader-logo"
-            alt="Mahadin Trader">
-
-        <div class="loader-text">
-            MAHADIN TRADER
-        </div>
-
-        <div class="loader-line">
-            <span></span>
-        </div>
-
-    </div>
-
 </div>
-
-
-<!-- ======================================================
-     NAVBAR
-====================================================== -->
-
-<header class="navbar">
-
-    <div class="container nav-inner">
-
-        <a href="#home" class="logo">
-
-            <img
-                src="./logo.png"
-                class="logo-img"
-                alt="Mahadin Trader Logo">
-
-            <span>
-                Mahadin <span>Trader</span>
-            </span>
-
-        </a>
-
-
-        <nav>
-
-            <ul class="nav-links">
-
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#markets">Markets</a></li>
-                <li><a href="#analysis">Analysis</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#journal">Journal</a></li>
-                <li><a href="#social">Social</a></li>
-                <li><a href="#contact">Contact</a></li>
-
-            </ul>
-
-        </nav>
-
-
-        <div class="nav-actions">
-
-            <button
-                class="nav-btn"
-                onclick="openAuth('login')">
-                Login
-            </button>
-
-            <button
-                class="nav-btn signup"
-                onclick="openAuth('signup')">
-                Sign Up
-            </button>
-
-            <button
-                class="menu-btn"
-                id="menuBtn">
-                ☰
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <div class="container">
-
-        <div class="mobile-menu" id="mobileMenu">
-
-            <a href="#home">Home</a>
-            <a href="#profile">Profile</a>
-            <a href="#markets">Markets</a>
-            <a href="#analysis">Analysis</a>
-            <a href="#education">Education</a>
-            <a href="#journal">Journal</a>
-            <a href="#social">Social</a>
-            <a href="#contact">Contact</a>
-
-            <div style="display:flex;gap:7px;margin-top:8px;">
-
-                <button
-                    class="nav-btn"
-                    onclick="openAuth('login')"
-                    style="flex:1;">
-                    Login
-                </button>
-
-                <button
-                    class="nav-btn signup"
-                    onclick="openAuth('signup')"
-                    style="flex:1;">
-                    Sign Up
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
 
 </header>
 
 
-<!-- ======================================================
+
+<main>
+
+
+<!-- =========================
      HERO
-====================================================== -->
+========================= -->
 
-<section id="home" class="hero">
+<section
+class="hero"
+id="home">
 
-    <div class="container">
-
-        <div class="hero-content">
-
-            <div class="hero-badge">
-                ✦ OFFICIAL TRADING PLATFORM
-            </div>
-
-            <h1>
-                Mahadin <span>Trader</span>
-            </h1>
-
-            <h2>
-                Forex Trading • Market Analysis • Education
-            </h2>
-
-            <p>
-                A professional digital space dedicated to Forex market
-                learning, technical analysis, Smart Money Concepts,
-                trading psychology, risk management and continuous growth.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#markets"
-                    class="btn btn-primary">
-                    Explore Markets →
-                </a>
-
-                <a
-                    href="#analysis"
-                    class="btn">
-                    View Analysis
-                </a>
-
-                <button
-                    class="btn btn-green"
-                    onclick="openAuth('signup')">
-                    Create Account
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+<div class="container hero-grid">
 
 
-<!-- ======================================================
-     MARKET TICKER
-====================================================== -->
+<div class="reveal">
 
-<div class="ticker">
+<div class="eyebrow">
 
-    <div class="ticker-track">
+<span class="dot"></span>
 
-        <div class="ticker-item">
-            <strong>EUR/USD</strong>
-            <span class="up">+0.24%</span>
-        </div>
-
-        <div class="ticker-item">
-            <strong>GBP/USD</strong>
-            <span class="up">+0.18%</span>
-        </div>
-
-        <div class="ticker-item">
-            <strong>USD/JPY</strong>
-            <span class="down">-0.13%</span>
-        </div>
-
-        <div class="ticker-item">
-            <strong>XAU/USD</strong>
-            <span class="up">+0.42%</span>
-        </div>
-
-        <div class="ticker-item">
-            <strong>BTC/USD</strong>
-            <span class="up">+0.71%</span>
-        </div>
-
-        <div class="ticker-item">
-            <strong>GBP/JPY</strong>
-            <span class="down">-0.08%</span>
-        </div>
-
-        <!-- duplicate for smooth ticker -->
-
-        <div class="ticker-item">
-            <strong>EUR/USD</strong>
-            <span class="up">+0.24%</span>
-        </div>
-
-        <div class="ticker-item">
-            <strong>GBP/USD</strong>
-            <span class="up">+0.18%</span>
-        </div>
-
-        <div class="ticker-item">
-            <strong>USD/JPY</strong>
-            <span class="down">-0.13%</span>
-        </div>
-
-        <div class="ticker-item">
-            <strong>XAU/USD</strong>
-            <span class="up">+0.42%</span>
-        </div>
-
-    </div>
+Forex Trading • Learning Journey
 
 </div>
 
 
-<!-- ======================================================
-     STATS
-====================================================== -->
+<h1>
 
-<section class="stats">
+Learn. Analyze.
 
-    <div class="container">
+<br>
 
-        <div class="stats-grid">
+<span>Build the Edge.</span>
 
-            <div class="stat reveal">
-                <strong>Forex</strong>
-                <span>Primary Market Focus</span>
-            </div>
-
-            <div class="stat reveal">
-                <strong>SMC</strong>
-                <span>Market Concepts</span>
-            </div>
-
-            <div class="stat reveal">
-                <strong>Risk</strong>
-                <span>Discipline & Management</span>
-            </div>
-
-            <div class="stat reveal">
-                <strong>24/7</strong>
-                <span>Learning Mindset</span>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
+</h1>
 
 
-<!-- ======================================================
-     PROFILE
-====================================================== -->
+<p>
 
-<section id="profile" class="section">
+Welcome to Mahadin Trader — a personal digital space
+documenting a learning journey in Forex trading,
+market analysis, risk management and trading psychology.
 
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span>PROFILE</span>
-
-            <h2>Trader Profile</h2>
-
-            <p>
-                The professional digital identity behind Mahadin Trader.
-            </p>
-
-        </div>
+</p>
 
 
-        <div class="profile reveal">
+<div
+class="arabic"
+lang="ar">
 
-            <img
-                src="./logo.png"
-                class="profile-logo"
-                alt="Mahadin Trader">
+لا إله إلا الله محمد رسول الله
 
-            <h2>
-                Mahmudul Hasan
-            </h2>
-
-            <div class="profile-role">
-                PROFESSIONALLY KNOWN AS MAHADIN TRADER
-            </div>
-
-            <p class="profile-bio">
-                Mahmudul Hasan, professionally known as Mahadin Trader,
-                is building a digital presence around Forex market learning,
-                market analysis, trading education, technology and digital
-                content creation.
-            </p>
+</div>
 
 
-            <div class="identity-grid">
+<div class="hero-buttons">
 
-                <div class="identity">
-                    <small>NAME</small>
-                    <strong>Mahmudul Hasan</strong>
-                </div>
+<a
+href="#learning"
+class="btn btn-primary">
 
-                <div class="identity">
-                    <small>BRAND</small>
-                    <strong>Mahadin Trader</strong>
-                </div>
+Explore Learning
 
-                <div class="identity">
-                    <small>FOCUS</small>
-                    <strong>Forex Trading</strong>
-                </div>
+</a>
 
-                <div class="identity">
-                    <small>LOCATION</small>
-                    <strong>Bangladesh</strong>
-                </div>
 
-            </div>
+<a
+href="#contact"
+class="btn btn-ghost">
 
-        </div>
+Contact
 
-    </div>
+</a>
+
+</div>
+
+</div>
+
+
+
+<!-- PROFILE -->
+
+<div class="hero-card reveal">
+
+<div class="profile">
+
+<img
+src="logo.png"
+alt="Mahadin Trader">
+
+<h2>
+
+Mahadin Trader
+
+</h2>
+
+
+<div class="role">
+
+Trader in Progress
+
+</div>
+
+
+<p class="note">
+
+Learning, practicing and documenting
+the journey — one chart at a time.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ======================================================
-     MARKETS
-====================================================== -->
 
-<section id="markets" class="section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span>MARKETS</span>
-
-            <h2>Market Dashboard</h2>
-
-            <p>
-                A visual trading-terminal inspired section for market study.
-            </p>
-
-        </div>
-
-
-        <div class="dashboard">
-
-
-            <!-- CHART -->
-
-            <div class="chart-card reveal">
-
-                <div class="chart-header">
-
-                    <div class="chart-title">
-
-                        <strong>EUR/USD</strong>
-
-                        <span>
-                            Forex • Educational Chart
-                        </span>
-
-                    </div>
-
-                    <div class="price">
-                        1.1650
-                    </div>
-
-                </div>
-
-
-                <div class="chart-area">
-
-                    <svg
-                        viewBox="0 0 800 310"
-                        preserveAspectRatio="none">
-
-                        <polyline
-                            points="
-                            0,235
-                            45,220
-                            85,240
-                            125,190
-                            165,205
-                            205,160
-                            250,175
-                            290,130
-                            330,150
-                            375,110
-                            415,125
-                            460,85
-                            500,105
-                            540,70
-                            585,95
-                            630,60
-                            675,80
-                            720,45
-                            760,65
-                            800,30"
-                            fill="none"
-                            stroke="#00e6a0"
-                            stroke-width="3"/>
-
-                        <polyline
-                            points="
-                            0,255
-                            100,245
-                            200,230
-                            300,215
-                            400,190
-                            500,165
-                            600,125
-                            700,90
-                            800,55"
-                            fill="none"
-                            stroke="#00d9ff"
-                            stroke-width="1"
-                            stroke-dasharray="7 7"
-                            opacity=".45"/>
-
-                    </svg>
-
-                </div>
-
-            </div>
-
-
-            <!-- MARKET WATCH -->
-
-            <div class="market-card reveal">
-
-                <div class="market-header">
-                    <strong>Market Watch</strong>
-                </div>
-
-
-                <div class="market-row">
-
-                    <div class="pair">
-                        <strong>EUR/USD</strong>
-                        <span>Major Pair</span>
-                    </div>
-
-                    <span class="up">+0.24%</span>
-
-                </div>
-
-
-                <div class="market-row">
-
-                    <div class="pair">
-                        <strong>GBP/USD</strong>
-                        <span>Major Pair</span>
-                    </div>
-
-                    <span class="up">+0.18%</span>
-
-                </div>
-
-
-                <div class="market-row">
-
-                    <div class="pair">
-                        <strong>USD/JPY</strong>
-                        <span>Major Pair</span>
-                    </div>
-
-                    <span class="down">-0.13%</span>
-
-                </div>
-
-
-                <div class="market-row">
-
-                    <div class="pair">
-                        <strong>XAU/USD</strong>
-                        <span>Gold</span>
-                    </div>
-
-                    <span class="up">+0.42%</span>
-
-                </div>
-
-
-                <div class="market-row">
-
-                    <div class="pair">
-                        <strong>GBP/JPY</strong>
-                        <span>Cross Pair</span>
-                    </div>
-
-                    <span class="down">-0.08%</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <p style="
-            color:#64788e;
-            font-size:9px;
-            margin-top:12px;
-            text-align:center;">
-            Market values shown above are visual examples for website design,
-            not live financial-market data.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
+<!-- =========================
      ABOUT
-====================================================== -->
+========================= -->
 
-<section id="about" class="section">
+<section id="about">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title reveal">
+<div class="section-head reveal">
 
-            <span>ABOUT</span>
+<div class="section-kicker">
+About
+</div>
 
-            <h2>About Mahadin Trader</h2>
+<h2>
+A transparent trading journey.
+</h2>
 
-            <p>
-                A structured digital identity focused on learning and growth.
-            </p>
+<p>
 
-        </div>
+This website represents a learning journey
+in Forex trading — focused on education,
+practice, discipline and continuous improvement.
 
+</p>
 
-        <div class="grid-2">
-
-            <div class="card reveal">
-
-                <div class="card-icon">
-                    ◉
-                </div>
-
-                <h3>About Me</h3>
-
-                <p>
-                    I am developing my digital identity under the name
-                    Mahadin Trader while continuously studying financial
-                    markets, technology and digital content creation.
-                </p>
-
-            </div>
+</div>
 
 
-            <div class="card reveal">
 
-                <div class="card-icon">
-                    ◈
-                </div>
+<div class="cards">
 
-                <h3>My Mission</h3>
 
-                <p>
-                    To build a professional online platform where market
-                    learning, educational content, responsible trading
-                    principles and continuous improvement can be organized
-                    in one place.
-                </p>
+<article class="card reveal">
 
-            </div>
+<div class="icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
 
-        </div>
+<h3>
+Learning First
+</h3>
 
-    </div>
+<p>
+
+Building knowledge of Forex markets,
+technical concepts, market structure
+and disciplined execution.
+
+</p>
+
+</article>
+
+
+
+<article class="card reveal">
+
+<div class="icon">
+<i class="fa-solid fa-chart-line"></i>
+</div>
+
+<h3>
+Practice & Review
+</h3>
+
+<p>
+
+Using chart study, backtesting and journaling
+to understand what works and what needs improvement.
+
+</p>
+
+</article>
+
+
+
+<article class="card reveal">
+
+<div class="icon">
+<i class="fa-solid fa-shield-halved"></i>
+</div>
+
+<h3>
+Risk Awareness
+</h3>
+
+<p>
+
+Learning why risk management, patience
+and consistency matter more than chasing quick profits.
+
+</p>
+
+</article>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ======================================================
+
+<!-- =========================
+     LEARNING
+========================= -->
+
+<section id="learning">
+
+<div class="container">
+
+<div class="section-head reveal">
+
+<div class="section-kicker">
+Learning
+</div>
+
+<h2>
+Current learning areas.
+</h2>
+
+<p>
+Topics will continue to expand as the trading journey develops.
+</p>
+
+</div>
+
+
+
+<div class="cards">
+
+
+<article class="card reveal">
+
+<div class="icon">
+<i class="fa-solid fa-coins"></i>
+</div>
+
+<h3>
+Forex Fundamentals
+</h3>
+
+<p>
+
+Currency pairs, trading sessions,
+spreads, leverage and the basics
+of how the market works.
+
+</p>
+
+</article>
+
+
+
+<article class="card reveal">
+
+<div class="icon">
+<i class="fa-solid fa-chart-simple"></i>
+</div>
+
+<h3>
+Market Structure
+</h3>
+
+<p>
+
+Higher highs, lower lows,
+breaks of structure and meaningful
+price movement.
+
+</p>
+
+</article>
+
+
+
+<article class="card reveal">
+
+<div class="icon">
+<i class="fa-solid fa-water"></i>
+</div>
+
+<h3>
+Liquidity & SMC
+</h3>
+
+<p>
+
+Studying liquidity concepts,
+price delivery and Smart Money Concepts.
+
+</p>
+
+</article>
+
+
+
+<article class="card reveal">
+
+<div class="icon">
+<i class="fa-solid fa-chart-column"></i>
+</div>
+
+<h3>
+Technical Analysis
+</h3>
+
+<p>
+
+Price action, support and resistance,
+multi-timeframe analysis and chart reading.
+
+</p>
+
+</article>
+
+
+
+<article class="card reveal">
+
+<div class="icon">
+<i class="fa-solid fa-brain"></i>
+</div>
+
+<h3>
+Trading Psychology
+</h3>
+
+<p>
+
+Discipline, patience, FOMO,
+emotional decisions and building a routine.
+
+</p>
+
+</article>
+
+
+
+<article class="card reveal">
+
+<div class="icon">
+<i class="fa-solid fa-percent"></i>
+</div>
+
+<h3>
+Risk Management
+</h3>
+
+<p>
+
+Position sizing, stop-loss planning,
+risk-to-reward and capital protection.
+
+</p>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =========================
      ANALYSIS
-====================================================== -->
+========================= -->
 
-<section id="analysis" class="section">
+<section id="analysis">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title reveal">
+<div class="section-head reveal">
 
-            <span>ANALYSIS</span>
+<div class="section-kicker">
+Analysis
+</div>
 
-            <h2>Market Analysis</h2>
+<h2>
+Market analysis workspace.
+</h2>
 
-            <p>
-                Core concepts studied as part of the trading-learning journey.
-            </p>
+<p>
 
-        </div>
+Educational chart analysis can be published here
+without presenting it as a guaranteed prediction.
 
+</p>
 
-        <div class="grid-3">
-
-            <div class="card reveal">
-
-                <div class="card-icon">↗</div>
-
-                <h3>Market Structure</h3>
-
-                <p>
-                    Understanding highs, lows, trends, structural breaks
-                    and changes in market behaviour.
-                </p>
-
-            </div>
+</div>
 
 
-            <div class="card reveal">
 
-                <div class="card-icon">◇</div>
-
-                <h3>Liquidity</h3>
-
-                <p>
-                    Studying liquidity areas, buy-side liquidity,
-                    sell-side liquidity and liquidity concepts.
-                </p>
-
-            </div>
+<div class="journal">
 
 
-            <div class="card reveal">
+<article class="card reveal">
 
-                <div class="card-icon">▦</div>
+<span class="tag">
+EDUCATIONAL
+</span>
 
-                <h3>Smart Money Concepts</h3>
+<h3>
+Forex Pair Analysis
+</h3>
 
-                <p>
-                    Learning concepts such as order blocks, fair value gaps,
-                    market structure and liquidity.
-                </p>
+<p>
 
-            </div>
+Publish structured analysis for pairs such as
+EUR/USD or GBP/USD including timeframe,
+structure, levels and possible scenarios.
 
+</p>
 
-            <div class="card reveal">
-
-                <div class="card-icon">⌁</div>
-
-                <h3>Price Action</h3>
-
-                <p>
-                    Studying how price moves through support, resistance,
-                    structure and important market areas.
-                </p>
-
-            </div>
+</article>
 
 
-            <div class="card reveal">
 
-                <div class="card-icon">◐</div>
+<article class="card reveal">
 
-                <h3>Risk Management</h3>
+<span class="tag">
+EDUCATIONAL
+</span>
 
-                <p>
-                    Understanding position sizing, stop loss, risk-reward
-                    and disciplined decision making.
-                </p>
+<h3>
+Gold / XAUUSD Analysis
+</h3>
 
-            </div>
+<p>
+
+Document chart observations, key levels
+and possible scenarios while clearly
+separating analysis from certainty.
+
+</p>
+
+</article>
 
 
-            <div class="card reveal">
+</div>
 
-                <div class="card-icon">◎</div>
-
-                <h3>Trading Psychology</h3>
-
-                <p>
-                    Developing patience, discipline, emotional control
-                    and consistency.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ======================================================
-     TRADING FOCUS
-====================================================== -->
 
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span>TRADING</span>
-
-            <h2>Trading Focus</h2>
-
-            <p>
-                A structured approach to studying financial markets.
-            </p>
-
-        </div>
-
-
-        <div class="grid-3">
-
-            <div class="card reveal">
-
-                <h3>Forex Trading</h3>
-
-                <p>
-                    Learning currency pairs, market sessions, price action,
-                    technical concepts and trading terminology.
-                </p>
-
-            </div>
-
-
-            <div class="card reveal">
-
-                <h3>Technical Analysis</h3>
-
-                <p>
-                    Studying charts, market structure, support and resistance,
-                    liquidity and price behaviour.
-                </p>
-
-            </div>
-
-
-            <div class="card reveal">
-
-                <h3>Responsible Trading</h3>
-
-                <p>
-                    Emphasizing risk awareness, patience, discipline,
-                    education and realistic expectations.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
-     PHILOSOPHY
-====================================================== -->
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span>PHILOSOPHY</span>
-
-            <h2>Trading Philosophy</h2>
-
-        </div>
-
-
-        <div class="quote reveal">
-
-            <div class="quote-mark">
-                “
-            </div>
-
-            <p>
-                Focus on the process, understand the market,
-                manage risk and keep improving.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
-     EDUCATION
-====================================================== -->
-
-<section id="education" class="section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <span>EDUCATION</span>
-
-            <h2>Trading Education</h2>
-
-            <p>
-                Educational subjects that can be developed into future resources.
-            </p>
-
-        </div>
-
-
-        <div class="grid-3">
-
-            <div class="card reveal">
-
-                <h3>Forex Basics</h3>
-
-                <p>
-                    Currency pairs, pips, spreads, lots, leverage,
-                    market sessions and basic terminology.
-                </p>
-
-            </div>
-
-
-            <div class="card reveal">
-
-                <h3>Chart Reading</h3>
-
-                <p>
-                    Candlesticks, trends, support, resistance,
-                    market structure and price action.
-                </p>
-
-            </div>
-
-
-            <div class="card reveal">
-
-                <h3>SMC Learning</h3>
-
-                <p>
-                    Liquidity, order blocks, fair value gaps,
-                    structure and institutional-style concepts.
-                </p>
-
-            </div>
-
-
-            <div class="card reveal">
-
-                <h3>Risk Management</h3>
-
-                <p>
-                    Learning why risk control is essential and how
-                    disciplined planning affects trading decisions.
-                </p>
-
-            </div>
-
-
-            <div class="card reveal">
-
-                <h3>Trading Psychology</h3>
-
-                <p>
-                    Patience, discipline, emotional awareness
-                    and maintaining a consistent process.
-                </p>
-
-            </div>
-
-
-            <div class="card reveal">
-
-                <h3>Continuous Learning</h3>
-
-                <p>
-                    Reviewing trades, studying charts and improving
-                    knowledge through structured practice.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ======================================================
+<!-- =========================
      JOURNAL
-====================================================== -->
+========================= -->
 
-<section id="journal" class="section">
+<section id="journal">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title reveal">
+<div class="section-head reveal">
 
-            <span>JOURNAL</span>
+<div class="section-kicker">
+Trading Journal
+</div>
 
-            <h2>Trading Journal</h2>
+<h2>
+Document the process, not just the result.
+</h2>
 
-            <p>
-                A structured place for accurately recorded trading information.
-            </p>
+<p>
 
-        </div>
+A trading journal can become one of the
+most valuable parts of the website.
 
+</p>
 
-        <div class="table-wrap reveal">
-
-            <table>
-
-                <thead>
-
-                    <tr>
-                        <th>Date</th>
-                        <th>Pair</th>
-                        <th>Setup</th>
-                        <th>Direction</th>
-                        <th>Entry</th>
-                        <th>SL / TP</th>
-                        <th>Result</th>
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-                        <td>Example</td>
-                        <td>EUR/USD</td>
-                        <td>Educational Setup</td>
-                        <td>—</td>
-                        <td>—</td>
-                        <td>—</td>
-                        <td>Not Published</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
-
-        </div>
+</div>
 
 
-        <p style="
-            text-align:center;
-            color:#63778c;
-            font-size:9px;
-            margin-top:10px;">
-            Only genuine and accurately recorded results should be published.
-        </p>
 
-    </div>
-
-</section>
+<div class="cards">
 
 
-<!-- ======================================================
-     MEDIA
-====================================================== -->
+<article class="card reveal">
 
-<section class="section">
+<div class="icon">
+01
+</div>
 
-    <div class="container">
+<h3>
+Trade Setup
+</h3>
 
-        <div class="section-title reveal">
+<p>
 
-            <span>MEDIA</span>
+Pair, timeframe, market context,
+setup and the reason behind the idea.
 
-            <h2>Content & Media</h2>
+</p>
 
-            <p>
-                Educational and digital content across online platforms.
-            </p>
-
-        </div>
-
-
-        <div class="grid-3">
-
-            <div class="card reveal">
-
-                <h3>YouTube</h3>
-
-                <p>
-                    Trading videos, educational explanations,
-                    market concepts and Shorts.
-                </p>
-
-            </div>
+</article>
 
 
-            <div class="card reveal">
 
-                <h3>TikTok</h3>
+<article class="card reveal">
 
-                <p>
-                    Short-form educational content and trading-related videos.
-                </p>
+<div class="icon">
+02
+</div>
 
-            </div>
+<h3>
+Risk Plan
+</h3>
+
+<p>
+
+Planned risk, stop-loss logic
+and position sizing before a trade.
+
+</p>
+
+</article>
 
 
-            <div class="card reveal">
 
-                <h3>Facebook & Instagram</h3>
+<article class="card reveal">
 
-                <p>
-                    Updates, Reels, posts and digital content
-                    connected with the Mahadin Trader brand.
-                </p>
+<div class="icon">
+03
+</div>
 
-            </div>
+<h3>
+Review
+</h3>
 
-        </div>
+<p>
 
-    </div>
+What happened, what was learned
+and what can be improved next time.
+
+</p>
+
+</article>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ======================================================
-     SOCIAL
-====================================================== -->
 
-<section id="social" class="section">
+<!-- =========================
+     PROGRESS
+========================= -->
 
-    <div class="container">
+<section id="progress">
 
-        <div class="section-title reveal">
+<div class="container">
 
-            <span>CONNECT</span>
+<div class="section-head reveal">
 
-            <h2>Official Social Media</h2>
+<div class="section-kicker">
+Progress
+</div>
 
-            <p>
-                Follow Mahadin Trader across social platforms.
-            </p>
+<h2>
+Learning progress.
+</h2>
 
-        </div>
+<p>
 
+These are learning milestones,
+not claims of profitability.
 
-        <div class="social-grid">
+</p>
 
-
-            <a
-                class="social reveal"
-                href="https://www.facebook.com/share/1HmRJgMWET/"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                <div class="social-icon">
-                    f
-                </div>
-
-                <div class="social-info">
-                    <strong>Facebook</strong>
-                    <span>Mahadin Trader</span>
-                </div>
-
-                <span class="social-arrow">↗</span>
-
-            </a>
+</div>
 
 
-            <a
-                class="social reveal"
-                href="https://www.tiktok.com/@mahadintrader"
-                target="_blank"
-                rel="noopener noreferrer">
 
-                <div class="social-icon">
-                    ♪
-                </div>
-
-                <div class="social-info">
-                    <strong>TikTok</strong>
-                    <span>@mahadintrader</span>
-                </div>
-
-                <span class="social-arrow">↗</span>
-
-            </a>
+<div class="progress">
 
 
-            <a
-                class="social reveal"
-                href="https://youtube.com/@mahadintrader"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                <div class="social-icon">
-                    ▶
-                </div>
-
-                <div class="social-info">
-                    <strong>YouTube</strong>
-                    <span>Mahadin Trader</span>
-                </div>
-
-                <span class="social-arrow">↗</span>
-
-            </a>
+<div class="progress-card reveal">
 
 
-            <a
-                class="social reveal"
-                href="https://www.instagram.com/mahadintrader"
-                target="_blank"
-                rel="noopener noreferrer">
+<div class="progress-item">
 
-                <div class="social-icon">
-                    ◎
-                </div>
+<div class="progress-top">
 
-                <div class="social-info">
-                    <strong>Instagram</strong>
-                    <span>@mahadintrader</span>
-                </div>
+<span>
+Forex Fundamentals
+</span>
 
-                <span class="social-arrow">↗</span>
+<span>
+Learning
+</span>
 
-            </a>
+</div>
+
+<div class="bar">
+
+<div
+class="fill"
+style="width:55%">
+</div>
+
+</div>
+
+</div>
 
 
-            <a
-                class="social reveal"
-                href="https://m.me/mahadintrader"
-                target="_blank"
-                rel="noopener noreferrer">
 
-                <div class="social-icon">
-                    ✉
-                </div>
+<div class="progress-item">
 
-                <div class="social-info">
-                    <strong>Messenger</strong>
-                    <span>Message Mahadin Trader</span>
-                </div>
+<div class="progress-top">
 
-                <span class="social-arrow">↗</span>
+<span>
+Market Structure
+</span>
 
-            </a>
+<span>
+Learning
+</span>
 
-        </div>
+</div>
 
-    </div>
+<div class="bar">
+
+<div
+class="fill"
+style="width:50%">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="progress-item">
+
+<div class="progress-top">
+
+<span>
+Risk Management
+</span>
+
+<span>
+Learning
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="fill"
+style="width:45%">
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<div class="progress-card reveal">
+
+
+<div class="progress-item">
+
+<div class="progress-top">
+
+<span>
+Trading Psychology
+</span>
+
+<span>
+Learning
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="fill"
+style="width:42%">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="progress-item">
+
+<div class="progress-top">
+
+<span>
+Backtesting
+</span>
+
+<span>
+Learning
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="fill"
+style="width:35%">
+</div>
+
+</div>
+
+</div>
+
+
+
+<div class="progress-item">
+
+<div class="progress-top">
+
+<span>
+Consistency
+</span>
+
+<span>
+Building
+</span>
+
+</div>
+
+<div class="bar">
+
+<div
+class="fill"
+style="width:30%">
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ======================================================
-     FAQ
-====================================================== -->
 
-<section class="section">
+<!-- =========================
+     SOCIAL MEDIA
+========================= -->
 
-    <div class="container">
+<section id="social">
 
-        <div class="section-title reveal">
+<div class="container">
 
-            <span>FAQ</span>
+<div class="section-head reveal">
 
-            <h2>Frequently Asked Questions</h2>
+<div class="section-kicker">
+Social Media
+</div>
 
-        </div>
+<h2>
+Follow Mahadin Trader.
+</h2>
 
+<p>
+Connect through the official social media profiles.
+</p>
 
-        <div class="faq">
-
-
-            <details class="reveal">
-
-                <summary>
-                    What is Mahadin Trader?
-                </summary>
-
-                <p>
-                    Mahadin Trader is the professional digital identity
-                    of Mahmudul Hasan, focused on Forex market learning,
-                    analysis, education and digital content.
-                </p>
-
-            </details>
+</div>
 
 
-            <details class="reveal">
 
-                <summary>
-                    Is this website financial advice?
-                </summary>
-
-                <p>
-                    No. The content is intended for educational and
-                    informational purposes and should not be treated
-                    as personalized financial advice.
-                </p>
-
-            </details>
+<div class="social-grid">
 
 
-            <details class="reveal">
+<!-- FACEBOOK -->
 
-                <summary>
-                    Can trading guarantee profit?
-                </summary>
+<a
+class="social facebook reveal"
+href="https://www.facebook.com/share/1EjmSv1Tke/"
+target="_blank"
+rel="noopener">
 
-                <p>
-                    No. Financial-market trading involves risk and
-                    there are no guaranteed profits or returns.
-                </p>
+<i class="fa-brands fa-facebook"></i>
 
-            </details>
+<strong>
+Facebook
+</strong>
 
-
-            <details class="reveal">
-
-                <summary>
-                    What does SMC mean?
-                </summary>
-
-                <p>
-                    SMC commonly refers to Smart Money Concepts,
-                    a collection of market-analysis concepts involving
-                    structure, liquidity and price behaviour.
-                </p>
-
-            </details>
+</a>
 
 
-            <details class="reveal">
 
-                <summary>
-                    Where can I follow Mahadin Trader?
-                </summary>
+<!-- TIKTOK -->
 
-                <p>
-                    Official social links are available in the
-                    Social Media section of this website.
-                </p>
+<a
+class="social tiktok reveal"
+href="https://www.tiktok.com/@mahadintrader?_r=1&_t=ZS-99XENTMh9Nt"
+target="_blank"
+rel="noopener">
 
-            </details>
+<i class="fa-brands fa-tiktok"></i>
 
-        </div>
+<strong>
+TikTok
+</strong>
 
-    </div>
+</a>
+
+
+
+<!-- INSTAGRAM -->
+
+<a
+class="social instagram reveal"
+href="https://www.instagram.com/mahadintrader?stkn=MXkxaWJmeTNzd3VxYw=="
+target="_blank"
+rel="noopener">
+
+<i class="fa-brands fa-instagram"></i>
+
+<strong>
+Instagram
+</strong>
+
+</a>
+
+
+
+<!-- YOUTUBE -->
+
+<a
+class="social youtube reveal"
+href="https://youtube.com/@mahadintrader?si=rJx87N6uk10hBkGC"
+target="_blank"
+rel="noopener">
+
+<i class="fa-brands fa-youtube"></i>
+
+<strong>
+YouTube
+</strong>
+
+</a>
+
+
+
+<!-- MESSENGER -->
+
+<a
+class="social messenger reveal"
+href="https://m.me/mahadintrader"
+target="_blank"
+rel="noopener">
+
+<i class="fa-brands fa-facebook-messenger"></i>
+
+<strong>
+Messenger
+</strong>
+
+</a>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ======================================================
+
+<!-- =========================
      CONTACT
-====================================================== -->
+========================= -->
 
-<section id="contact" class="section">
+<section id="contact">
 
-    <div class="container">
+<div class="container">
 
-        <div class="contact reveal">
+<div class="section-head reveal">
 
-            <div class="section-title">
+<div class="section-kicker">
+Contact
+</div>
 
-                <span>CONTACT</span>
+<h2>
+Get in touch.
+</h2>
 
-                <h2>Get in Touch</h2>
+<p>
 
-                <p>
-                    Connect with Mahadin Trader through the official channels.
-                </p>
+For general communication and social connections.
 
-            </div>
+</p>
+
+</div>
 
 
-            <a
-                href="https://m.me/mahadintrader"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn btn-primary">
 
-                Message on Messenger →
+<div class="contact">
 
-            </a>
 
-        </div>
+<div class="card reveal">
 
-    </div>
+<form
+onsubmit="sendMessage(event)">
+
+<input
+type="text"
+id="name"
+placeholder="Your name"
+required>
+
+
+<input
+type="email"
+id="email"
+placeholder="Your email"
+required>
+
+
+<textarea
+id="message"
+placeholder="Your message"
+required>
+</textarea>
+
+
+<button
+class="btn btn-primary"
+type="submit">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+
+
+<div class="contact-info">
+
+
+<div class="info-box reveal">
+
+<b>
+Social Media
+</b>
+
+<span>
+Facebook • TikTok • Instagram • YouTube • Messenger
+</span>
+
+</div>
+
+
+
+<div class="info-box reveal">
+
+<b>
+Website Focus
+</b>
+
+<span>
+Forex learning, market analysis,
+trading psychology and journaling
+</span>
+
+</div>
+
+
+
+<div class="info-box reveal">
+
+<b>
+Brand
+</b>
+
+<span>
+Mahadin Trader
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- ======================================================
+
+<!-- =========================
      DISCLAIMER
-====================================================== -->
+========================= -->
 
-<section class="section">
+<section>
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title reveal">
+<div class="disclaimer reveal">
 
-            <span>IMPORTANT</span>
+<strong>
+Risk Disclaimer:
+</strong>
 
-            <h2>Risk Disclaimer</h2>
+The content on this website is for educational
+and informational purposes only.
 
-        </div>
+It is not financial, investment or trading advice.
 
+No profit or performance is guaranteed.
 
-        <div class="disclaimer reveal">
+Forex and leveraged trading involve significant
+risk of loss.
 
-            <h3>
-                Educational & Informational Purpose
-            </h3>
+</div>
 
-            <p>
-                The information provided on this website is for general
-                educational and informational purposes only. It should not
-                be considered financial, investment or trading advice.
-            </p>
-
-            <br>
-
-            <p>
-                Trading financial markets involves substantial risk and
-                may result in losses. No result, return or profit is guaranteed.
-            </p>
-
-            <br>
-
-            <p>
-                Past performance does not guarantee future results.
-                Always conduct your own research and consider your own
-                circumstances before making financial decisions.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ======================================================
+</main>
+
+
+
+<!-- =========================
      FOOTER
-====================================================== -->
+========================= -->
 
 <footer>
 
-    <div class="container">
+<div class="container footer-row">
 
-        <p>
-            © 2026 <strong>Mahadin Trader</strong>. All rights reserved.
-        </p>
 
-        <p>
-            Mahmudul Hasan • Bangladesh
-        </p>
+<div>
 
-        <p>
-            Forex Trading • Market Analysis • Education • Technology
-        </p>
+© <span id="year"></span>
+Mahadin Trader.
+All rights reserved.
 
-    </div>
+</div>
+
+
+<div class="footer-links">
+
+<a href="#home">
+Home
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#learning">
+Learning
+</a>
+
+<a href="#social">
+Social
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+<a href="#home">
+↑ Top
+</a>
+
+</div>
+
+</div>
 
 </footer>
 
 
-<!-- ======================================================
-     BACK TO TOP
-====================================================== -->
 
-<button
-    id="topBtn"
-    aria-label="Back to top">
-    ↑
-</button>
-
-
-<!-- ======================================================
-     AUTH MODAL
-====================================================== -->
+<!-- =========================
+     LOGIN / SIGNUP MODAL
+========================= -->
 
 <div
-    class="modal"
-    id="authModal">
-
-    <div class="modal-box">
-
-        <button
-            class="close-modal"
-            onclick="closeAuth()">
-            ×
-        </button>
+class="modal"
+id="authModal"
+onclick="closeOnBackdrop(event)">
 
 
-        <img
-            src="./logo.png"
-            class="modal-logo"
-            alt="Mahadin Trader">
+<div class="modal-box">
 
 
-        <h2>
-            Welcome
-        </h2>
+<div class="modal-head">
 
-        <p class="modal-sub">
-            Access the Mahadin Trader member area.
-        </p>
+<h3 id="authTitle">
+Login
+</h3>
 
+<button
+class="close"
+onclick="closeAuth()">
 
-        <div class="auth-tabs">
+×
 
-            <button
-                class="auth-tab active"
-                id="loginTab"
-                onclick="switchAuth('login')">
-                Login
-            </button>
-
-            <button
-                class="auth-tab"
-                id="signupTab"
-                onclick="switchAuth('signup')">
-                Sign Up
-            </button>
-
-        </div>
-
-
-        <!-- LOGIN -->
-
-        <form
-            class="auth-form active"
-            id="loginForm"
-            onsubmit="demoAuth(event,'login')">
-
-            <div class="input-group">
-
-                <label>
-                    EMAIL
-                </label>
-
-                <input
-                    type="email"
-                    placeholder="Enter your email"
-                    required>
-
-            </div>
-
-
-            <div class="input-group">
-
-                <label>
-                    PASSWORD
-                </label>
-
-                <input
-                    type="password"
-                    placeholder="Enter your password"
-                    required>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="btn btn-primary auth-submit">
-
-                Login
-
-            </button>
-
-        </form>
-
-
-        <!-- SIGN UP -->
-
-        <form
-            class="auth-form"
-            id="signupForm"
-            onsubmit="demoAuth(event,'signup')">
-
-            <div class="input-group">
-
-                <label>
-                    FULL NAME
-                </label>
-
-                <input
-                    type="text"
-                    placeholder="Your name"
-                    required>
-
-            </div>
-
-
-            <div class="input-group">
-
-                <label>
-                    EMAIL
-                </label>
-
-                <input
-                    type="email"
-                    placeholder="Your email"
-                    required>
-
-            </div>
-
-
-            <div class="input-group">
-
-                <label>
-                    PASSWORD
-                </label>
-
-                <input
-                    type="password"
-                    minlength="6"
-                    placeholder="Create a password"
-                    required>
-
-            </div>
-
-
-            <button
-                type="submit"
-                class="btn btn-green auth-submit">
-
-                Create Account
-
-            </button>
-
-        </form>
-
-
-        <p class="auth-note">
-            Account authentication is currently a front-end interface.
-            A secure authentication backend must be connected before
-            real accounts and passwords are stored.
-        </p>
-
-    </div>
+</button>
 
 </div>
 
 
+
+<div class="tabs">
+
+<button
+class="tab active"
+id="loginTab"
+onclick="switchAuth('login')">
+
+Login
+
+</button>
+
+
+<button
+class="tab"
+id="signupTab"
+onclick="switchAuth('signup')">
+
+Sign Up
+
+</button>
+
+</div>
+
+
+
+<form
+class="auth-form"
+onsubmit="demoAuth(event)">
+
+
+<input
+type="email"
+placeholder="Email address"
+required>
+
+
+<input
+type="password"
+placeholder="Password"
+minlength="6"
+required>
+
+
+<button
+class="btn btn-primary"
+type="submit"
+id="authSubmit">
+
+Login
+
+</button>
+
+
+<p>
+
+Login and Sign Up interface is ready.
+Real authentication requires a secure backend.
+
+</p>
+
+</form>
+
+</div>
+
+</div>
+
+
+
 <script>
 
-/* =========================================================
-   SAFE LOADER
-   IMPORTANT: NEVER BLOCK THE WEBSITE
-========================================================= */
+/* =========================
+   YEAR
+========================= */
 
-(function(){
-
-    function hideLoader(){
-
-        const loader=document.getElementById("loader");
-
-        if(loader){
-            loader.classList.add("hide");
-        }
-
-    }
-
-    window.addEventListener("load",function(){
-
-        setTimeout(hideLoader,450);
-
-    });
-
-    /* Safety fallback:
-       Even if another script/resource has a problem,
-       the loader disappears automatically. */
-
-    setTimeout(hideLoader,2500);
-
-})();
+document.getElementById("year").textContent =
+new Date().getFullYear();
 
 
-/* =========================================================
+
+/* =========================
    MOBILE MENU
-========================================================= */
+========================= */
 
-const menuBtn=document.getElementById("menuBtn");
-const mobileMenu=document.getElementById("mobileMenu");
+function toggleMenu(){
 
-if(menuBtn){
+const nav =
+document.getElementById("navLinks");
 
-    menuBtn.addEventListener("click",function(){
+if(nav.style.display === "flex"){
 
-        mobileMenu.classList.toggle("open");
-
-    });
-
-}
-
-document.querySelectorAll(".mobile-menu a").forEach(function(link){
-
-    link.addEventListener("click",function(){
-
-        mobileMenu.classList.remove("open");
-
-    });
-
-});
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-const revealElements=document.querySelectorAll(".reveal");
-
-if("IntersectionObserver" in window){
-
-    const observer=new IntersectionObserver(function(entries){
-
-        entries.forEach(function(entry){
-
-            if(entry.isIntersecting){
-
-                entry.target.classList.add("show");
-
-                observer.unobserve(entry.target);
-
-            }
-
-        });
-
-    },{
-        threshold:.10
-    });
-
-
-    revealElements.forEach(function(element){
-
-        observer.observe(element);
-
-    });
+nav.style.display = "";
 
 }else{
 
-    revealElements.forEach(function(element){
+nav.style.display = "flex";
 
-        element.classList.add("show");
+nav.style.position = "absolute";
 
-    });
+nav.style.top = "74px";
+
+nav.style.left = "4%";
+
+nav.style.right = "4%";
+
+nav.style.padding = "16px";
+
+nav.style.flexDirection = "column";
+
+nav.style.background = "#081523";
+
+nav.style.border =
+"1px solid rgba(255,255,255,.09)";
+
+nav.style.borderRadius = "16px";
+
+}
 
 }
 
 
-/* =========================================================
-   ACTIVE NAVIGATION
-========================================================= */
 
-const sections=document.querySelectorAll("section[id]");
-const navLinks=document.querySelectorAll(".nav-links a");
+/* =========================
+   AUTH MODAL
+========================= */
 
-window.addEventListener("scroll",function(){
+function openAuth(mode){
 
-    let current="home";
+document
+.getElementById("authModal")
+.classList.add("active");
 
-    sections.forEach(function(section){
-
-        const sectionTop=section.offsetTop-140;
-
-        if(window.scrollY>=sectionTop){
-
-            current=section.id;
-
-        }
-
-    });
-
-
-    navLinks.forEach(function(link){
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href")==="#"+current){
-
-            link.classList.add("active");
-
-        }
-
-    });
-
-});
-
-
-/* =========================================================
-   BACK TO TOP
-========================================================= */
-
-const topBtn=document.getElementById("topBtn");
-
-window.addEventListener("scroll",function(){
-
-    if(window.scrollY>500){
-
-        topBtn.classList.add("show");
-
-    }else{
-
-        topBtn.classList.remove("show");
-
-    }
-
-});
-
-
-topBtn.addEventListener("click",function(){
-
-    window.scrollTo({
-
-        top:0,
-        behavior:"smooth"
-
-    });
-
-});
-
-
-/* =========================================================
-   LOGIN / SIGNUP MODAL
-========================================================= */
-
-const authModal=document.getElementById("authModal");
-const loginTab=document.getElementById("loginTab");
-const signupTab=document.getElementById("signupTab");
-
-const loginForm=document.getElementById("loginForm");
-const signupForm=document.getElementById("signupForm");
-
-
-function openAuth(type){
-
-    authModal.classList.add("show");
-
-    switchAuth(type);
+switchAuth(mode);
 
 }
 
 
 function closeAuth(){
 
-    authModal.classList.remove("show");
+document
+.getElementById("authModal")
+.classList.remove("active");
 
 }
 
 
-function switchAuth(type){
+function closeOnBackdrop(event){
 
-    if(type==="signup"){
+if(event.target.id === "authModal"){
 
-        signupTab.classList.add("active");
-        loginTab.classList.remove("active");
+closeAuth();
 
-        signupForm.classList.add("active");
-        loginForm.classList.remove("active");
-
-    }else{
-
-        loginTab.classList.add("active");
-        signupTab.classList.remove("active");
-
-        loginForm.classList.add("active");
-        signupForm.classList.remove("active");
-
-    }
+}
 
 }
 
 
-/* Close modal when clicking outside */
+function switchAuth(mode){
 
-authModal.addEventListener("click",function(event){
+const login =
+mode === "login";
 
-    if(event.target===authModal){
-
-        closeAuth();
-
-    }
-
-});
+document.getElementById("authTitle")
+.textContent =
+login ? "Login" : "Create your account";
 
 
-/* Escape key */
-
-document.addEventListener("keydown",function(event){
-
-    if(event.key==="Escape"){
-
-        closeAuth();
-
-    }
-
-});
+document.getElementById("authSubmit")
+.textContent =
+login ? "Login" : "Sign Up";
 
 
-/* =========================================================
-   FRONT-END AUTH DEMO
-========================================================= */
+document.getElementById("loginTab")
+.classList.toggle(
+"active",
+login
+);
 
-function demoAuth(event,type){
 
-    event.preventDefault();
-
-    if(type==="login"){
-
-        alert(
-            "Login interface is ready. Connect a secure authentication backend to enable real account login."
-        );
-
-    }else{
-
-        alert(
-            "Sign Up interface is ready. Connect a secure authentication backend to create real user accounts."
-        );
-
-    }
+document.getElementById("signupTab")
+.classList.toggle(
+"active",
+!login
+);
 
 }
 
 
-/* =========================================================
-   CLICK RIPPLE
-========================================================= */
 
-document.addEventListener("click",function(event){
+/* =========================
+   DEMO LOGIN
+========================= */
 
-    const ripple=document.createElement("div");
+function demoAuth(event){
 
-    ripple.className="ripple";
+event.preventDefault();
 
-    ripple.style.left=event.clientX+"px";
-    ripple.style.top=event.clientY+"px";
+alert(
+"Authentication is not connected yet. " +
+"This interface is ready for a secure backend."
+);
 
-    document.body.appendChild(ripple);
+}
 
-    setTimeout(function(){
 
-        ripple.remove();
 
-    },600);
+/* =========================
+   CONTACT
+========================= */
+
+function sendMessage(event){
+
+event.preventDefault();
+
+const name =
+document
+.getElementById("name")
+.value
+.trim();
+
+alert(
+"Thank you, " +
+name +
+"! The contact form interface is ready. " +
+"Connect an email/form backend to receive real messages."
+);
+
+event.target.reset();
+
+}
+
+
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+const observer =
+new IntersectionObserver(
+
+entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
 
 });
 
+},
 
-/* =========================================================
-   BUTTON PRESS EFFECT
-========================================================= */
+{
+threshold:.12
+}
 
-document.querySelectorAll("button,.btn,.social").forEach(function(element){
+);
 
-    element.addEventListener("click",function(){
 
-        this.style.transform="scale(.97)";
+document
+.querySelectorAll(".reveal")
+.forEach(element => {
 
-        setTimeout(function(){
-
-            element.style.transform="";
-
-        },120);
-
-    });
+observer.observe(element);
 
 });
 
 
 </script>
+
 
 </body>
 </html>
