@@ -8,39 +8,41 @@
   <title>Mahadin Trader | Official Website</title>
 
   <meta name="description"
-        content="Official website of Mahadin Trader — Forex Trading, Market Analysis, Education, Technology, Content Creation and Social Media.">
+    content="Official website of Mahadin Trader — Mahmudul Hasan, professionally known as Mahadin Trader. Forex Trading, Market Analysis, Education, Technology and Content Creation.">
 
   <meta name="keywords"
-        content="Mahadin Trader, Forex Trading, Trading, Market Analysis, SMC, Smart Money Concept, Trading Education">
+    content="Mahadin Trader, Mahmudul Hasan, Forex Trading, Market Analysis, SMC, Trading Education, Bangladesh">
 
-  <meta name="author" content="Mahadin Trader">
+  <meta name="author" content="Mahmudul Hasan">
 
   <meta name="robots" content="index, follow">
 
-  <meta name="theme-color" content="#0b0f19">
+  <meta name="theme-color" content="#070b13">
 
   <link rel="canonical" href="https://mahadintrader.github.io/">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Mahadin Trader | Official Website">
-  <meta property="og:description"
-        content="Official website of Mahadin Trader — Forex Trading, Market Analysis, Education, Technology and Content Creation.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mahadintrader.github.io/">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Mahadin Trader | Official Website">
-  <meta name="twitter:description"
-        content="Forex Trading, Market Analysis, Education, Technology and Content Creation.">
+  <!-- Open Graph -->
+
+  <meta property="og:title"
+    content="Mahadin Trader | Official Website">
+
+  <meta property="og:description"
+    content="Official website of Mahadin Trader — Forex Trading, Market Analysis, Education, Technology and Content Creation.">
+
+  <meta property="og:type" content="website">
+
+  <meta property="og:url"
+    content="https://mahadintrader.github.io/">
+
 
   <style>
 
-    /* ==============================
+    /* =========================
        RESET
-    ============================== */
+    ========================= */
 
     * {
       margin: 0;
@@ -59,39 +61,29 @@
       color: #ffffff;
       line-height: 1.7;
       overflow-x: hidden;
+      text-align: center;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
-
-    img,
-    svg {
-      max-width: 100%;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-
-    /* ==============================
-       GLOBAL
-    ============================== */
 
     :root {
       --bg: #070b13;
-      --bg2: #0c1220;
       --card: #101827;
-      --card2: #121d2d;
+      --card2: #131e2e;
       --text: #ffffff;
       --muted: #9ba8bb;
       --line: rgba(255,255,255,0.08);
       --accent: #00d4ff;
-      --accent2: #00ffa3;
+      --green: #00ffa3;
     }
+
+
+    /* =========================
+       GLOBAL
+    ========================= */
 
     .container {
       width: min(1120px, 92%);
@@ -99,8 +91,7 @@
     }
 
     .section {
-      padding: 100px 0;
-      position: relative;
+      padding: 95px 0;
     }
 
     .section-title {
@@ -109,79 +100,49 @@
     }
 
     .section-title span {
-      display: inline-block;
       color: var(--accent);
       font-size: 12px;
       font-weight: bold;
       letter-spacing: 3px;
+      display: block;
       margin-bottom: 10px;
     }
 
     .section-title h2 {
-      font-size: clamp(30px, 5vw, 45px);
+      font-size: clamp(30px, 5vw, 46px);
       margin-bottom: 12px;
     }
 
     .section-title p {
       color: var(--muted);
-      max-width: 650px;
+      max-width: 700px;
       margin: auto;
     }
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 22px;
-      border-radius: 10px;
-      font-weight: bold;
-      border: 1px solid var(--line);
-      transition: 0.3s ease;
-    }
 
-    .btn-primary {
-      background: var(--accent);
-      color: #001018;
-      border-color: var(--accent);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,212,255,0.20);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-
-    /* ==============================
-       NAVIGATION
-    ============================== */
+    /* =========================
+       NAVBAR
+    ========================= */
 
     .navbar {
       position: sticky;
       top: 0;
       z-index: 999;
-      background: rgba(7,11,19,0.88);
-      backdrop-filter: blur(16px);
+      background: rgba(7,11,19,0.92);
+      backdrop-filter: blur(15px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
-      min-height: 72px;
+      min-height: 70px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
     }
 
     .logo {
       font-size: 21px;
       font-weight: 800;
-      letter-spacing: -0.5px;
     }
 
     .logo span {
@@ -190,13 +151,12 @@
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 25px;
+      gap: 24px;
       list-style: none;
     }
 
     .nav-links a {
-      color: #c5cfdd;
+      color: #c6d0de;
       font-size: 14px;
       transition: 0.3s;
     }
@@ -206,14 +166,15 @@
     }
 
 
-    /* ==============================
+    /* =========================
        HERO
-    ============================== */
+    ========================= */
 
     .hero {
       min-height: 88vh;
       display: flex;
       align-items: center;
+      justify-content: center;
       position: relative;
       overflow: hidden;
     }
@@ -226,8 +187,8 @@
       border-radius: 50%;
       background: rgba(0,212,255,0.08);
       filter: blur(100px);
-      top: -150px;
-      left: -150px;
+      top: -180px;
+      left: -180px;
     }
 
     .hero::after {
@@ -238,30 +199,33 @@
       border-radius: 50%;
       background: rgba(0,255,163,0.05);
       filter: blur(100px);
-      right: -150px;
-      bottom: -150px;
+      bottom: -180px;
+      right: -180px;
     }
 
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
     }
 
     .hero-badge {
-      display: inline-flex;
-      padding: 7px 13px;
+      display: inline-block;
+      padding: 7px 15px;
       border-radius: 30px;
       border: 1px solid rgba(0,212,255,0.25);
       background: rgba(0,212,255,0.06);
       color: var(--accent);
       font-size: 12px;
       margin-bottom: 22px;
+      letter-spacing: 1px;
     }
 
     .hero h1 {
-      font-size: clamp(45px, 8vw, 82px);
-      line-height: 1.05;
+      font-size: clamp(48px, 9vw, 85px);
+      line-height: 1;
       letter-spacing: -3px;
       margin-bottom: 22px;
     }
@@ -270,46 +234,80 @@
       color: var(--accent);
     }
 
+    .hero h2 {
+      font-size: clamp(18px, 3vw, 25px);
+      color: #dce5f1;
+      margin-bottom: 15px;
+    }
+
     .hero p {
       color: var(--muted);
-      font-size: 18px;
-      max-width: 700px;
-      margin-bottom: 30px;
+      font-size: 17px;
+      max-width: 720px;
+      margin: auto auto 30px;
     }
 
     .hero-buttons {
       display: flex;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 12px;
     }
 
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 23px;
+      border-radius: 10px;
+      font-weight: bold;
+      border: 1px solid var(--line);
+      transition: 0.3s;
+    }
 
-    /* ==============================
+    .btn-primary {
+      background: var(--accent);
+      color: #001018;
+      border-color: var(--accent);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,212,255,0.2);
+    }
+
+    .btn-outline:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+
+
+    /* =========================
        STATS
-    ============================== */
+    ========================= */
 
     .stats {
-      padding: 25px 0 70px;
+      padding: 20px 0 70px;
     }
 
     .stats-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(4,1fr);
       gap: 15px;
     }
 
     .stat-card {
-      padding: 25px;
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 16px;
+      padding: 25px;
       text-align: center;
     }
 
     .stat-card strong {
       display: block;
-      font-size: 27px;
       color: var(--accent);
+      font-size: 25px;
       margin-bottom: 5px;
     }
 
@@ -319,19 +317,68 @@
     }
 
 
-    /* ==============================
+    /* =========================
+       BIO
+    ========================= */
+
+    .bio-box {
+      max-width: 900px;
+      margin: auto;
+      padding: 50px 25px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(0,212,255,0.08),
+          rgba(0,255,163,0.03)
+        );
+      text-align: center;
+    }
+
+    .bio-name {
+      font-size: clamp(25px,5vw,42px);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .bio-name span {
+      color: var(--accent);
+    }
+
+    .profession {
+      color: #d9e3ef;
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    .religious-bio {
+      font-size: clamp(24px,5vw,40px);
+      font-weight: bold;
+      margin: 25px 0;
+      direction: rtl;
+    }
+
+    .bio-description {
+      max-width: 720px;
+      margin: auto;
+      color: var(--muted);
+    }
+
+
+    /* =========================
        CARDS
-    ============================== */
+    ========================= */
 
     .grid-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(3,1fr);
       gap: 20px;
     }
 
     .grid-2 {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2,1fr);
       gap: 20px;
     }
 
@@ -339,26 +386,27 @@
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 28px;
-      transition: 0.3s ease;
+      padding: 30px;
+      text-align: center;
+      transition: 0.3s;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      border-color: rgba(0,212,255,0.25);
       background: var(--card2);
+      border-color: rgba(0,212,255,0.25);
     }
 
     .card-icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 14px;
+      width: 52px;
+      height: 52px;
+      margin: 0 auto 18px;
       display: flex;
       align-items: center;
       justify-content: center;
+      border-radius: 14px;
       background: rgba(0,212,255,0.08);
       color: var(--accent);
-      margin-bottom: 18px;
     }
 
     .card-icon svg {
@@ -377,75 +425,82 @@
     }
 
 
-    /* ==============================
-       BIO
-    ============================== */
+    /* =========================
+       IDENTITY
+    ========================= */
 
-    .bio-box {
-      text-align: center;
+    .identity-box {
       max-width: 850px;
       margin: auto;
-      padding: 45px 25px;
-      background: linear-gradient(
-        145deg,
-        rgba(0,212,255,0.08),
-        rgba(0,255,163,0.03)
-      );
+      padding: 40px 25px;
+      background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 22px;
+      border-radius: 20px;
     }
 
-    .bio-text {
-      font-size: clamp(25px, 5vw, 42px);
-      font-weight: bold;
-      margin-bottom: 20px;
+    .identity-item {
+      padding: 18px;
+      border-bottom: 1px solid var(--line);
     }
 
-    .bio-description {
-      color: var(--muted);
-      max-width: 650px;
-      margin: auto;
+    .identity-item:last-child {
+      border-bottom: none;
+    }
+
+    .identity-item small {
+      display: block;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
+
+    .identity-item strong {
+      font-size: 20px;
     }
 
 
-    /* ==============================
+    /* =========================
        PHILOSOPHY
-    ============================== */
+    ========================= */
 
     .quote-box {
-      border-left: 3px solid var(--accent);
-      padding: 25px 30px;
-      background: var(--card);
-      border-radius: 0 15px 15px 0;
-      max-width: 900px;
+      max-width: 850px;
       margin: auto;
+      padding: 35px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
     }
 
     .quote-box p {
-      font-size: 21px;
       color: #dbe5f2;
+      font-size: 21px;
     }
 
 
-    /* ==============================
+    /* =========================
        JOURNAL
-    ============================== */
+    ========================= */
+
+    .journal-wrapper {
+      overflow-x: auto;
+    }
 
     .journal-table {
       width: 100%;
       border-collapse: collapse;
       background: var(--card);
       border: 1px solid var(--line);
-      border-radius: 15px;
-      overflow: hidden;
+      min-width: 700px;
     }
 
     .journal-table th,
     .journal-table td {
       padding: 16px;
-      text-align: left;
       border-bottom: 1px solid var(--line);
       font-size: 14px;
+      text-align: center;
     }
 
     .journal-table th {
@@ -458,37 +513,40 @@
     }
 
 
-    /* ==============================
+    /* =========================
        SOCIAL MEDIA
-    ============================== */
+    ========================= */
 
     .social-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2,1fr);
       gap: 18px;
+      max-width: 950px;
+      margin: auto;
     }
 
     .social-card {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 18px;
-      padding: 22px;
+      padding: 23px;
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 18px;
-      transition: 0.3s ease;
+      transition: 0.3s;
+      text-align: center;
     }
 
     .social-card:hover {
       transform: translateY(-5px);
       background: var(--card2);
-      border-color: rgba(255,255,255,0.18);
     }
 
     .social-icon {
-      width: 56px;
-      height: 56px;
-      min-width: 56px;
+      width: 55px;
+      height: 55px;
+      min-width: 55px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -512,8 +570,7 @@
     }
 
     .social-arrow {
-      margin-left: auto;
-      font-size: 21px;
+      font-size: 20px;
       color: var(--muted);
     }
 
@@ -538,9 +595,9 @@
     }
 
 
-    /* ==============================
+    /* =========================
        FAQ
-    ============================== */
+    ========================= */
 
     .faq {
       max-width: 850px;
@@ -553,6 +610,7 @@
       border-radius: 14px;
       padding: 18px 20px;
       margin-bottom: 12px;
+      text-align: center;
     }
 
     summary {
@@ -567,19 +625,22 @@
     }
 
 
-    /* ==============================
+    /* =========================
        DISCLAIMER
-    ============================== */
+    ========================= */
 
     .disclaimer {
-      background: rgba(255,180,0,0.04);
-      border: 1px solid rgba(255,180,0,0.15);
+      max-width: 950px;
+      margin: auto;
+      padding: 30px;
       border-radius: 18px;
-      padding: 28px;
+      border: 1px solid rgba(255,180,0,0.15);
+      background: rgba(255,180,0,0.04);
+      text-align: center;
     }
 
     .disclaimer h3 {
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .disclaimer p {
@@ -588,25 +649,25 @@
     }
 
 
-    /* ==============================
+    /* =========================
        CONTACT
-    ============================== */
+    ========================= */
 
     .contact-box {
-      text-align: center;
       max-width: 750px;
       margin: auto;
+      text-align: center;
     }
 
     .contact-box p {
       color: var(--muted);
-      margin: 15px 0 25px;
+      margin-bottom: 25px;
     }
 
 
-    /* ==============================
+    /* =========================
        FOOTER
-    ============================== */
+    ========================= */
 
     footer {
       border-top: 1px solid var(--line);
@@ -617,43 +678,34 @@
     footer p {
       color: var(--muted);
       font-size: 13px;
+      margin: 5px 0;
     }
 
     footer strong {
-      color: #fff;
+      color: #ffffff;
     }
 
 
-    /* ==============================
-       ACCESSIBILITY
-    ============================== */
-
-    a:focus-visible,
-    summary:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-
-    /* ==============================
+    /* =========================
        MOBILE
-    ============================== */
+    ========================= */
 
     @media (max-width: 900px) {
 
-      .nav-links {
-        gap: 15px;
+      .stats-grid {
+        grid-template-columns: repeat(2,1fr);
       }
 
       .grid-3 {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2,1fr);
       }
 
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
+      .nav-links {
+        gap: 13px;
       }
 
     }
+
 
     @media (max-width: 700px) {
 
@@ -662,7 +714,7 @@
       }
 
       .nav-inner {
-        min-height: 65px;
+        justify-content: center;
       }
 
       .nav-links {
@@ -678,7 +730,7 @@
       }
 
       .hero p {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .grid-2,
@@ -691,17 +743,12 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .journal-table {
-        display: block;
-        overflow-x: auto;
-        white-space: nowrap;
-      }
-
       .social-card {
         padding: 18px;
       }
 
     }
+
 
     @media (max-width: 420px) {
 
@@ -717,18 +764,23 @@
         width: 100%;
       }
 
+      .bio-box {
+        padding: 35px 18px;
+      }
+
     }
 
   </style>
+
 </head>
 
 
 <body>
 
 
-  <!-- ==============================
+  <!-- =========================
        NAVIGATION
-  ============================== -->
+  ========================= -->
 
   <header class="navbar">
 
@@ -739,37 +791,25 @@
       </a>
 
       <nav>
+
         <ul class="nav-links">
 
-          <li>
-            <a href="#home">Home</a>
-          </li>
+          <li><a href="#home">Home</a></li>
 
-          <li>
-            <a href="#bio">Bio</a>
-          </li>
+          <li><a href="#bio">Bio</a></li>
 
-          <li>
-            <a href="#about">About</a>
-          </li>
+          <li><a href="#about">About</a></li>
 
-          <li>
-            <a href="#trading">Trading</a>
-          </li>
+          <li><a href="#trading">Trading</a></li>
 
-          <li>
-            <a href="#education">Education</a>
-          </li>
+          <li><a href="#education">Education</a></li>
 
-          <li>
-            <a href="#social">Social</a>
-          </li>
+          <li><a href="#social">Social</a></li>
 
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          <li><a href="#contact">Contact</a></li>
 
         </ul>
+
       </nav>
 
     </div>
@@ -778,1059 +818,1174 @@
 
 
 
-  <!-- ==============================
+  <!-- =========================
        HOME
-  ============================== -->
+  ========================= -->
 
-  <main>
+  <section id="home" class="hero">
 
-    <section id="home" class="hero">
+    <div class="container">
 
-      <div class="container">
+      <div class="hero-content">
 
-        <div class="hero-content">
+        <div class="hero-badge">
+          OFFICIAL WEBSITE
+        </div>
 
-          <div class="hero-badge">
-            OFFICIAL WEBSITE
-          </div>
+        <h1>
+          Mahadin <span>Trader</span>
+        </h1>
 
-          <h1>
-            Mahadin <span>Trader</span>
-          </h1>
+        <h2>
+          Mahmudul Hasan
+        </h2>
 
-          <p>
-            Exploring financial markets through structured learning,
-            market analysis, trading concepts, discipline and continuous improvement.
-          </p>
+        <p>
+          Professionally known as Mahadin Trader — focused on
+          financial-market learning, Forex trading concepts,
+          market analysis, education, technology and digital content creation.
+        </p>
 
-          <div class="hero-buttons">
+        <div class="hero-buttons">
 
-            <a href="#about" class="btn btn-primary">
-              Explore Website →
-            </a>
+          <a href="#about" class="btn btn-primary">
+            Explore Website →
+          </a>
 
-            <a href="#social" class="btn btn-outline">
-              Social Media
-            </a>
-
-          </div>
+          <a href="#social" class="btn">
+            Social Media
+          </a>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
 
-    <!-- ==============================
-         QUICK STATS
-    ============================== -->
+  <!-- =========================
+       QUICK STATS
+  ========================= -->
 
-    <section class="stats">
+  <section class="stats">
 
-      <div class="container">
+    <div class="container">
 
-        <div class="stats-grid">
+      <div class="stats-grid">
 
-          <div class="stat-card">
-            <strong>Forex</strong>
-            <span>Trading Focus</span>
-          </div>
+        <div class="stat-card">
 
-          <div class="stat-card">
-            <strong>SMC</strong>
-            <span>Market Concepts</span>
-          </div>
+          <strong>Forex</strong>
 
-          <div class="stat-card">
-            <strong>Learning</strong>
-            <span>Continuous Growth</span>
-          </div>
+          <span>Trading Focus</span>
 
-          <div class="stat-card">
-            <strong>Digital</strong>
-            <span>Online Presence</span>
-          </div>
+        </div>
+
+
+        <div class="stat-card">
+
+          <strong>SMC</strong>
+
+          <span>Market Concepts</span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <strong>Learning</strong>
+
+          <span>Continuous Growth</span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <strong>Digital</strong>
+
+          <span>Online Presence</span>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
 
+  </section>
 
 
-    <!-- ==============================
-         BIO
-    ============================== -->
 
-    <section id="bio" class="section">
+  <!-- =========================
+       BIO
+  ========================= -->
 
-      <div class="container">
+  <section id="bio" class="section">
 
-        <div class="section-title">
+    <div class="container">
 
-          <span>BIO</span>
+      <div class="section-title">
 
-          <h2>Personal Bio</h2>
+        <span>BIO</span>
 
-          <p>
-            A simple introduction and personal identity.
-          </p>
+        <h2>Personal Bio</h2>
 
-        </div>
-
-
-        <div class="bio-box">
-
-          <div class="bio-text">
-            لا إله إلا الله محمد رسول الله
-          </div>
-
-          <p class="bio-description">
-            This section represents my personal values and identity.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         ABOUT
-    ============================== -->
-
-    <section id="about" class="section">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <span>ABOUT</span>
-
-          <h2>About Mahadin Trader</h2>
-
-          <p>
-            My digital identity, interests and learning journey.
-          </p>
-
-        </div>
-
-
-        <div class="grid-2">
-
-          <div class="card">
-
-            <div class="card-icon">
-
-              <svg viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor"
-                   stroke-width="2">
-
-                <circle cx="12" cy="8" r="4"></circle>
-
-                <path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"></path>
-
-              </svg>
-
-            </div>
-
-            <h3>About Me</h3>
-
-            <p>
-              Mahadin Trader is my personal digital identity focused
-              on my journey of learning about financial markets,
-              technology and digital content creation.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="card-icon">
-
-              <svg viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor"
-                   stroke-width="2">
-
-                <path d="M3 3v18h18"></path>
-
-                <path d="M7 16l4-5 3 3 5-7"></path>
-
-              </svg>
-
-            </div>
-
-            <h3>My Interests</h3>
-
-            <p>
-              Forex trading, market analysis, Smart Money Concepts,
-              technology, online platforms and content creation.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         TRADING
-    ============================== -->
-
-    <section id="trading" class="section">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <span>TRADING</span>
-
-          <h2>Trading Focus</h2>
-
-          <p>
-            Areas of financial-market learning and study.
-          </p>
-
-        </div>
-
-
-        <div class="grid-3">
-
-          <div class="card">
-
-            <div class="card-icon">
-
-              <svg viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor"
-                   stroke-width="2">
-
-                <path d="M3 3v18h18"></path>
-
-                <path d="M7 15l4-4 3 3 6-7"></path>
-
-              </svg>
-
-            </div>
-
-            <h3>Forex Trading</h3>
-
-            <p>
-              Learning and studying the foreign exchange market,
-              price action and trading concepts.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="card-icon">
-
-              <svg viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor"
-                   stroke-width="2">
-
-                <path d="M4 19V5"></path>
-                <path d="M4 19h16"></path>
-                <path d="M7 15l3-4 3 2 5-7"></path>
-
-              </svg>
-
-            </div>
-
-            <h3>Market Analysis</h3>
-
-            <p>
-              Studying market structure, liquidity, price movement
-              and technical concepts.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <div class="card-icon">
-
-              <svg viewBox="0 0 24 24" fill="none"
-                   stroke="currentColor"
-                   stroke-width="2">
-
-                <circle cx="12" cy="12" r="9"></circle>
-
-                <path d="M12 7v5l3 2"></path>
-
-              </svg>
-
-            </div>
-
-            <h3>Risk & Discipline</h3>
-
-            <p>
-              Learning responsible risk management, discipline,
-              patience and consistency.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         TRADING PHILOSOPHY
-    ============================== -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <span>PHILOSOPHY</span>
-
-          <h2>Trading Philosophy</h2>
-
-          <p>
-            A professional approach starts with learning and discipline.
-          </p>
-
-        </div>
-
-
-        <div class="quote-box">
-
-          <p>
-            “Focus on the process, understand the market,
-            manage risk and keep improving.”
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         MARKET ANALYSIS
-    ============================== -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <span>ANALYSIS</span>
-
-          <h2>Market Analysis</h2>
-
-          <p>
-            Educational market-analysis topics that can be expanded
-            as the website grows.
-          </p>
-
-        </div>
-
-
-        <div class="grid-3">
-
-          <div class="card">
-
-            <h3>Market Structure</h3>
-
-            <p>
-              Understanding trends, highs, lows and structural changes.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <h3>Liquidity</h3>
-
-            <p>
-              Studying liquidity concepts and how price interacts
-              with important market areas.
-            </p>
-
-          </div>
-
-
-          <div class="card">
-
-            <h3>SMC Concepts</h3>
-
-            <p>
-              Exploring Smart Money Concepts as part of trading education.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         TRADING JOURNAL
-    ============================== -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <span>JOURNAL</span>
-
-          <h2>Trading Journal</h2>
-
-          <p>
-            A transparent place for properly recorded trading information.
-          </p>
-
-        </div>
-
-
-        <div style="overflow-x:auto;">
-
-          <table class="journal-table">
-
-            <thead>
-
-              <tr>
-
-                <th>Date</th>
-                <th>Pair</th>
-                <th>Setup</th>
-                <th>Direction</th>
-                <th>Entry</th>
-                <th>SL / TP</th>
-                <th>Result</th>
-
-              </tr>
-
-            </thead>
-
-
-            <tbody>
-
-              <tr>
-
-                <td>Example</td>
-                <td>EUR/USD</td>
-                <td>Educational Example</td>
-                <td>—</td>
-                <td>—</td>
-                <td>—</td>
-                <td>Not Published</td>
-
-              </tr>
-
-            </tbody>
-
-          </table>
-
-        </div>
-
-
-        <p style="
-          color:#7f8da3;
-          font-size:12px;
-          margin-top:15px;
-          text-align:center;
-        ">
-          Only genuine and accurately recorded results should be published here.
-          No performance claims are made from this example.
+        <p>
+          My professional and personal digital identity.
         </p>
 
       </div>
 
-    </section>
+
+      <div class="bio-box">
+
+        <div class="bio-name">
+          Mahmudul Hasan
+        </div>
+
+        <div class="profession">
+          Professionally known as <strong>Mahadin Trader</strong>
+        </div>
+
+
+        <!-- আগের Bio-এর মূল লেখা -->
+
+        <div class="religious-bio">
+          لا إله إلا الله محمد رسول الله
+        </div>
+
+
+        <p class="bio-description">
+          Mahmudul Hasan, professionally known as Mahadin Trader,
+          is a Bangladeshi digital creator focused on learning
+          financial markets, Forex trading concepts, market analysis,
+          trading education, technology and digital content creation.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
 
-    <!-- ==============================
-         EDUCATION
-    ============================== -->
+  <!-- =========================
+       IDENTITY
+  ========================= -->
 
-    <section id="education" class="section">
+  <section class="section">
 
-      <div class="container">
+    <div class="container">
 
-        <div class="section-title">
+      <div class="section-title">
 
-          <span>EDUCATION</span>
+        <span>IDENTITY</span>
 
-          <h2>Trading Education</h2>
+        <h2>Professional Identity</h2>
 
-          <p>
-            Topics that can be developed into detailed educational resources.
-          </p>
+        <p>
+          Clear and simple identification for my international digital presence.
+        </p>
+
+      </div>
+
+
+      <div class="identity-box">
+
+        <div class="identity-item">
+
+          <small>LEGAL NAME</small>
+
+          <strong>
+            Mahmudul Hasan
+          </strong>
 
         </div>
 
 
-        <div class="grid-3">
+        <div class="identity-item">
 
-          <div class="card">
+          <small>PROFESSIONAL NAME</small>
 
-            <h3>Forex Basics</h3>
+          <strong>
+            Mahadin Trader
+          </strong>
 
-            <p>
-              Currency pairs, spreads, lots, leverage and basic market concepts.
-            </p>
-
-          </div>
+        </div>
 
 
-          <div class="card">
+        <div class="identity-item">
 
-            <h3>Technical Analysis</h3>
+          <small>PUBLIC BRAND</small>
 
-            <p>
-              Charts, support and resistance, market structure and price action.
-            </p>
+          <strong>
+            Mahadin Trader
+          </strong>
 
-          </div>
+        </div>
 
 
-          <div class="card">
+        <div class="identity-item">
 
-            <h3>Trading Psychology</h3>
+          <small>FOCUS</small>
 
-            <p>
-              Patience, discipline, emotional control and continuous improvement.
-            </p>
-
-          </div>
+          <strong>
+            Forex Trading • Market Analysis • Education • Technology
+          </strong>
 
         </div>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
 
-    <!-- ==============================
-         CONTENT & MEDIA
-    ============================== -->
+  <!-- =========================
+       ABOUT
+  ========================= -->
 
-    <section class="section">
+  <section id="about" class="section">
 
-      <div class="container">
+    <div class="container">
 
-        <div class="section-title">
+      <div class="section-title">
 
-          <span>MEDIA</span>
+        <span>ABOUT</span>
 
-          <h2>Content & Media</h2>
+        <h2>About Mahadin Trader</h2>
+
+        <p>
+          My digital identity, interests and learning journey.
+        </p>
+
+      </div>
+
+
+      <div class="grid-2">
+
+        <div class="card">
+
+          <div class="card-icon">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2">
+
+              <circle cx="12" cy="8" r="4"></circle>
+
+              <path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"></path>
+
+            </svg>
+
+          </div>
+
+          <h3>About Me</h3>
 
           <p>
-            Follow my educational and digital content across social platforms.
+            I am building my digital identity under the name
+            Mahadin Trader while continuously learning about
+            financial markets, technology and digital content creation.
           </p>
 
         </div>
 
 
-        <div class="grid-3">
+        <div class="card">
 
-          <div class="card">
+          <div class="card-icon">
 
-            <h3>YouTube</h3>
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2">
 
-            <p>
-              Trading-related videos, educational content and Shorts.
-            </p>
+              <path d="M3 3v18h18"></path>
+
+              <path d="M7 16l4-5 3 3 5-7"></path>
+
+            </svg>
 
           </div>
 
+          <h3>My Interests</h3>
 
-          <div class="card">
+          <p>
+            Forex trading, market analysis, Smart Money Concepts,
+            technology, online platforms and content creation.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       TRADING
+  ========================= -->
+
+  <section id="trading" class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>TRADING</span>
+
+        <h2>Trading Focus</h2>
+
+        <p>
+          Areas of financial-market learning and study.
+        </p>
+
+      </div>
+
+
+      <div class="grid-3">
+
+
+        <div class="card">
+
+          <div class="card-icon">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2">
+
+              <path d="M3 3v18h18"></path>
+
+              <path d="M7 15l4-4 3 3 6-7"></path>
+
+            </svg>
+
+          </div>
+
+          <h3>Forex Trading</h3>
+
+          <p>
+            Learning and studying the foreign exchange market,
+            price action and trading concepts.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2">
+
+              <path d="M4 19V5"></path>
+
+              <path d="M4 19h16"></path>
+
+              <path d="M7 15l3-4 3 2 5-7"></path>
+
+            </svg>
+
+          </div>
+
+          <h3>Market Analysis</h3>
+
+          <p>
+            Studying market structure, liquidity,
+            price movement and technical concepts.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <div class="card-icon">
+
+            <svg viewBox="0 0 24 24"
+                 fill="none"
+                 stroke="currentColor"
+                 stroke-width="2">
+
+              <circle cx="12" cy="12" r="9"></circle>
+
+              <path d="M12 7v5l3 2"></path>
+
+            </svg>
+
+          </div>
+
+          <h3>Risk & Discipline</h3>
+
+          <p>
+            Learning responsible risk management,
+            discipline, patience and consistency.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       PHILOSOPHY
+  ========================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>PHILOSOPHY</span>
+
+        <h2>Trading Philosophy</h2>
+
+      </div>
+
+
+      <div class="quote-box">
+
+        <p>
+          “Focus on the process, understand the market,
+          manage risk and keep improving.”
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       MARKET ANALYSIS
+  ========================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>ANALYSIS</span>
+
+        <h2>Market Analysis</h2>
+
+        <p>
+          Educational topics related to financial-market analysis.
+        </p>
+
+      </div>
+
+
+      <div class="grid-3">
+
+        <div class="card">
+
+          <h3>Market Structure</h3>
+
+          <p>
+            Understanding trends, highs, lows
+            and structural changes.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>Liquidity</h3>
+
+          <p>
+            Studying liquidity concepts and important
+            market areas.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>SMC Concepts</h3>
+
+          <p>
+            Exploring Smart Money Concepts
+            as part of trading education.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       TRADING JOURNAL
+  ========================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>JOURNAL</span>
+
+        <h2>Trading Journal</h2>
+
+        <p>
+          A transparent place for properly recorded trading information.
+        </p>
+
+      </div>
+
+
+      <div class="journal-wrapper">
+
+        <table class="journal-table">
+
+          <thead>
+
+            <tr>
+
+              <th>Date</th>
+
+              <th>Pair</th>
+
+              <th>Setup</th>
+
+              <th>Direction</th>
+
+              <th>Entry</th>
+
+              <th>SL / TP</th>
+
+              <th>Result</th>
+
+            </tr>
+
+          </thead>
+
+
+          <tbody>
+
+            <tr>
+
+              <td>Example</td>
+
+              <td>EUR/USD</td>
+
+              <td>Educational Example</td>
+
+              <td>—</td>
+
+              <td>—</td>
+
+              <td>—</td>
+
+              <td>Not Published</td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <p style="
+        color:#7f8da3;
+        font-size:12px;
+        margin-top:15px;
+      ">
+
+        Only genuine and accurately recorded results
+        should be published here.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       EDUCATION
+  ========================= -->
+
+  <section id="education" class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>EDUCATION</span>
+
+        <h2>Trading Education</h2>
+
+        <p>
+          Topics that can be developed into educational resources.
+        </p>
+
+      </div>
+
+
+      <div class="grid-3">
+
+
+        <div class="card">
+
+          <h3>Forex Basics</h3>
+
+          <p>
+            Currency pairs, spreads, lots, leverage
+            and basic market concepts.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>Technical Analysis</h3>
+
+          <p>
+            Charts, support and resistance,
+            market structure and price action.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>Trading Psychology</h3>
+
+          <p>
+            Patience, discipline, emotional control
+            and continuous improvement.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTENT
+  ========================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>MEDIA</span>
+
+        <h2>Content & Media</h2>
+
+        <p>
+          Educational and digital content across social platforms.
+        </p>
+
+      </div>
+
+
+      <div class="grid-3">
+
+
+        <div class="card">
+
+          <h3>YouTube</h3>
+
+          <p>
+            Trading-related videos, educational content
+            and Shorts.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>TikTok</h3>
+
+          <p>
+            Short-form trading and educational content.
+          </p>
+
+        </div>
+
+
+        <div class="card">
+
+          <h3>Facebook & Instagram</h3>
+
+          <p>
+            Social updates, posts, Reels and digital content.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       SOCIAL MEDIA
+  ========================= -->
+
+  <section id="social" class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>CONNECT</span>
+
+        <h2>Social Media</h2>
+
+        <p>
+          Follow Mahadin Trader on official social platforms.
+        </p>
+
+      </div>
+
+
+      <div class="social-grid">
+
+
+        <!-- FACEBOOK -->
+
+        <a
+          class="social-card facebook"
+          href="https://www.facebook.com/share/1HmRJgMWET/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="social-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                fill="currentColor"
+                d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.1H8v3h2.6v8h2.9z"
+              />
+
+            </svg>
+
+          </div>
+
+          <div>
+
+            <h3>Facebook</h3>
+
+            <p>Mahadin Trader</p>
+
+          </div>
+
+          <span class="social-arrow">↗</span>
+
+        </a>
+
+
+
+        <!-- TIKTOK -->
+
+        <a
+          class="social-card tiktok"
+          href="https://www.tiktok.com/@mahadintrader"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="social-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                fill="currentColor"
+                d="M16.6 5.2A4.7 4.7 0 0 1 14.3 3h-3.1v11.1a2.7 2.7 0 1 1-2.7-2.7c.3 0 .6 0 .9.1V8.3a6 6 0 1 0 5 5.8V8.5a8 8 0 0 0 4.7 1.5V6.9a4.7 4.7 0 0 1-2.5-1.7z"
+              />
+
+            </svg>
+
+          </div>
+
+          <div>
 
             <h3>TikTok</h3>
 
-            <p>
-              Short-form trading and educational content.
-            </p>
+            <p>@mahadintrader</p>
 
           </div>
 
+          <span class="social-arrow">↗</span>
 
-          <div class="card">
+        </a>
 
-            <h3>Facebook & Instagram</h3>
 
-            <p>
-              Social updates, posts, Reels and digital content.
-            </p>
+
+        <!-- YOUTUBE -->
+
+        <a
+          class="social-card youtube"
+          href="https://youtube.com/@mahadintrader"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="social-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                fill="currentColor"
+                d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6-6.3z"
+              />
+
+            </svg>
 
           </div>
 
-        </div>
+          <div>
 
-      </div>
+            <h3>YouTube</h3>
 
-    </section>
-
-
-
-    <!-- ==============================
-         SOCIAL MEDIA
-    ============================== -->
-
-    <section id="social" class="section">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <span>CONNECT</span>
-
-          <h2>Social Media</h2>
-
-          <p>
-            Follow Mahadin Trader on social media.
-          </p>
-
-        </div>
-
-
-        <div class="social-grid">
-
-
-          <!-- FACEBOOK -->
-
-          <a
-            class="social-card facebook"
-            href="https://www.facebook.com/share/1HmRJgMWET/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Mahadin Trader on Facebook"
-          >
-
-            <div class="social-icon">
-
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-
-                <path
-                  fill="currentColor"
-                  d="M13.5 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.1H8v3h2.6v8h2.9z"
-                />
-
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>Facebook</h3>
-
-              <p>Mahadin Trader</p>
-
-            </div>
-
-
-            <span class="social-arrow">↗</span>
-
-          </a>
-
-
-
-          <!-- TIKTOK -->
-
-          <a
-            class="social-card tiktok"
-            href="https://www.tiktok.com/@mahadintrader"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Mahadin Trader on TikTok"
-          >
-
-            <div class="social-icon">
-
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-
-                <path
-                  fill="currentColor"
-                  d="M16.6 5.2A4.7 4.7 0 0 1 14.3 3h-3.1v11.1a2.7 2.7 0 1 1-2.7-2.7c.3 0 .6 0 .9.1V8.3a6 6 0 1 0 5 5.8V8.5a8 8 0 0 0 4.7 1.5V6.9a4.7 4.7 0 0 1-2.5-1.7z"
-                />
-
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>TikTok</h3>
-
-              <p>@mahadintrader</p>
-
-            </div>
-
-
-            <span class="social-arrow">↗</span>
-
-          </a>
-
-
-
-          <!-- YOUTUBE -->
-
-          <a
-            class="social-card youtube"
-            href="https://youtube.com/@mahadintrader"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Mahadin Trader on YouTube"
-          >
-
-            <div class="social-icon">
-
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-
-                <path
-                  fill="currentColor"
-                  d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"
-                />
-
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>YouTube</h3>
-
-              <p>Mahadin Trader</p>
-
-            </div>
-
-
-            <span class="social-arrow">↗</span>
-
-          </a>
-
-
-
-          <!-- INSTAGRAM -->
-
-          <a
-            class="social-card instagram"
-            href="https://www.instagram.com/mahadintrader"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Mahadin Trader on Instagram"
-          >
-
-            <div class="social-icon">
-
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-
-                <rect
-                  x="3"
-                  y="3"
-                  width="18"
-                  height="18"
-                  rx="5"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-
-                <circle
-                  cx="12"
-                  cy="12"
-                  r="4"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                />
-
-                <circle
-                  cx="17.5"
-                  cy="6.5"
-                  r="1.2"
-                  fill="currentColor"
-                />
-
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>Instagram</h3>
-
-              <p>@mahadintrader</p>
-
-            </div>
-
-
-            <span class="social-arrow">↗</span>
-
-          </a>
-
-
-
-          <!-- MESSENGER -->
-
-          <a
-            class="social-card messenger"
-            href="https://m.me/mahadintrader"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Message Mahadin Trader on Messenger"
-          >
-
-            <div class="social-icon">
-
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-
-                <path
-                  fill="currentColor"
-                  d="M12 2C6.5 2 2 6.1 2 11.3c0 2.9 1.5 5.5 4 7.2V22l3.3-1.8c.9.3 1.8.4 2.7.4 5.5 0 10-4.1 10-9.3S17.5 2 12 2zm1 12.5-2.7-2.9-5.1 2.9 5.6-6 2.8 2.9 5-2.9-5.6 6z"
-                />
-
-              </svg>
-
-            </div>
-
-
-            <div>
-
-              <h3>Messenger</h3>
-
-              <p>Message Mahadin Trader</p>
-
-            </div>
-
-
-            <span class="social-arrow">↗</span>
-
-          </a>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         FAQ
-    ============================== -->
-
-    <section class="section">
-
-      <div class="container">
-
-        <div class="section-title">
-
-          <span>FAQ</span>
-
-          <h2>Frequently Asked Questions</h2>
-
-          <p>
-            Basic information about this website.
-          </p>
-
-        </div>
-
-
-        <div class="faq">
-
-
-          <details>
-
-            <summary>
-              What is Mahadin Trader?
-            </summary>
-
-            <p>
-              Mahadin Trader is my personal digital identity focused
-              on financial-market learning, trading concepts,
-              technology and content creation.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              Is this website financial advice?
-            </summary>
-
-            <p>
-              No. The information on this website is intended for
-              educational and informational purposes only.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              Can trading guarantee profit?
-            </summary>
-
-            <p>
-              No. Financial-market trading involves risk and there
-              are no guaranteed profits or returns.
-            </p>
-
-          </details>
-
-
-          <details>
-
-            <summary>
-              Where can I follow Mahadin Trader?
-            </summary>
-
-            <p>
-              You can find the official social-media links in the
-              Social Media section of this website.
-            </p>
-
-          </details>
-
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- ==============================
-         CONTACT
-    ============================== -->
-
-    <section id="contact" class="section">
-
-      <div class="container">
-
-        <div class="contact-box">
-
-          <div class="section-title">
-
-            <span>CONTACT</span>
-
-            <h2>Get in Touch</h2>
+            <p>Mahadin Trader</p>
 
           </div>
 
-          <p>
-            For social updates and direct communication,
-            visit my official social-media profiles.
-          </p>
+          <span class="social-arrow">↗</span>
+
+        </a>
 
 
-          <a
-            href="https://m.me/mahadintrader"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-primary"
-          >
-            Message on Messenger →
-          </a>
 
-        </div>
+        <!-- INSTAGRAM -->
+
+        <a
+          class="social-card instagram"
+          href="https://www.instagram.com/mahadintrader"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="social-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              />
+
+              <circle
+                cx="17.5"
+                cy="6.5"
+                r="1.2"
+                fill="currentColor"
+              />
+
+            </svg>
+
+          </div>
+
+          <div>
+
+            <h3>Instagram</h3>
+
+            <p>@mahadintrader</p>
+
+          </div>
+
+          <span class="social-arrow">↗</span>
+
+        </a>
+
+
+
+        <!-- MESSENGER -->
+
+        <a
+          class="social-card messenger"
+          href="https://m.me/mahadintrader"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          <div class="social-icon">
+
+            <svg viewBox="0 0 24 24">
+
+              <path
+                fill="currentColor"
+                d="M12 2C6.5 2 2 6.1 2 11.3c0 2.9 1.5 5.5 4 7.2V22l3.3-1.8c.9.3 1.8.4 2.7.4 5.5 0 10-4.1 10-9.3S17.5 2 12 2zm1 12.5-2.7-2.9-5.1 2.9 5.6-6 2.8 2.9 5-2.9-5.6 6z"
+              />
+
+            </svg>
+
+          </div>
+
+          <div>
+
+            <h3>Messenger</h3>
+
+            <p>Message Mahadin Trader</p>
+
+          </div>
+
+          <span class="social-arrow">↗</span>
+
+        </a>
+
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
 
-    <!-- ==============================
-         RISK DISCLAIMER
-    ============================== -->
+  <!-- =========================
+       FAQ
+  ========================= -->
 
-    <section class="section">
+  <section class="section">
 
-      <div class="container">
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>FAQ</span>
+
+        <h2>Frequently Asked Questions</h2>
+
+      </div>
+
+
+      <div class="faq">
+
+
+        <details>
+
+          <summary>
+            What is Mahadin Trader?
+          </summary>
+
+          <p>
+            Mahadin Trader is the professional digital identity
+            of Mahmudul Hasan, focused on financial-market learning,
+            trading concepts, technology and digital content creation.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Is this website financial advice?
+          </summary>
+
+          <p>
+            No. The information provided on this website is
+            intended for educational and informational purposes only.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Can trading guarantee profit?
+          </summary>
+
+          <p>
+            No. Financial-market trading involves risk and
+            there are no guaranteed profits or returns.
+          </p>
+
+        </details>
+
+
+        <details>
+
+          <summary>
+            Where can I follow Mahadin Trader?
+          </summary>
+
+          <p>
+            Official social-media links are available
+            in the Social Media section.
+          </p>
+
+        </details>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       CONTACT
+  ========================= -->
+
+  <section id="contact" class="section">
+
+    <div class="container">
+
+      <div class="contact-box">
 
         <div class="section-title">
 
-          <span>IMPORTANT</span>
+          <span>CONTACT</span>
 
-          <h2>Risk Disclaimer</h2>
-
-        </div>
-
-
-        <div class="disclaimer">
-
-          <h3>Educational & Informational Purpose</h3>
-
-          <p>
-            The information provided on this website is for general
-            educational and informational purposes only. It should
-            not be considered financial, investment or trading advice.
-          </p>
-
-          <br>
-
-          <p>
-            Trading financial markets involves substantial risk and
-            may result in losses. No result, return or profit is guaranteed.
-          </p>
-
-          <br>
-
-          <p>
-            Past performance does not guarantee future results.
-            Always conduct your own research and consider your own
-            circumstances before making financial decisions.
-          </p>
+          <h2>Get in Touch</h2>
 
         </div>
+
+
+        <p>
+          For direct communication and social updates,
+          connect with Mahadin Trader.
+        </p>
+
+
+        <a
+          href="https://m.me/mahadintrader"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+        >
+
+          Message on Messenger →
+
+        </a>
 
       </div>
 
-    </section>
+    </div>
+
+  </section>
 
 
-  </main>
+
+  <!-- =========================
+       RISK DISCLAIMER
+  ========================= -->
+
+  <section class="section">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <span>IMPORTANT</span>
+
+        <h2>Risk Disclaimer</h2>
+
+      </div>
+
+
+      <div class="disclaimer">
+
+        <h3>
+          Educational & Informational Purpose
+        </h3>
+
+        <p>
+          The information provided on this website is for general
+          educational and informational purposes only. It should
+          not be considered financial, investment or trading advice.
+        </p>
+
+        <br>
+
+        <p>
+          Trading financial markets involves substantial risk
+          and may result in losses. No result, return or profit
+          is guaranteed.
+        </p>
+
+        <br>
+
+        <p>
+          Past performance does not guarantee future results.
+          Always conduct your own research and consider your
+          own circumstances before making financial decisions.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
 
-  <!-- ==============================
+  <!-- =========================
        FOOTER
-  ============================== -->
+  ========================= -->
 
   <footer>
 
@@ -1841,8 +1996,12 @@
         All rights reserved.
       </p>
 
-      <p style="margin-top:8px;">
-        Official Website • Forex Trading • Technology • Content Creation
+      <p>
+        Mahmudul Hasan • Bangladesh
+      </p>
+
+      <p>
+        Forex Trading • Market Analysis • Education • Technology
       </p>
 
     </div>
