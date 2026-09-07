@@ -21,8 +21,8 @@
 
   <link rel="canonical" href="https://mahadintrader.github.io/">
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="29.png">
 
   <!-- Open Graph -->
 
@@ -121,7 +121,7 @@
 
 
     /* =========================
-       NAVBAR
+       NAVBAR & LOGO
     ========================= */
 
     .navbar {
@@ -141,8 +141,21 @@
     }
 
     .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-size: 21px;
       font-weight: 800;
+    }
+
+    /* লোগো ইমেজের সঠিক সাইজ ও রাউন্ড শেপ */
+    .logo-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
     }
 
     .logo span {
@@ -787,7 +800,8 @@
     <div class="container nav-inner">
 
       <a href="#home" class="logo">
-        Mahadin <span>Trader</span>
+        <img src="29.png" alt="Mahadin Trader Logo" class="logo-img">
+        <span>Mahadin <span>Trader</span></span>
       </a>
 
       <nav>
