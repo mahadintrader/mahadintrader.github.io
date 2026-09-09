@@ -1,2587 +1,5337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description"
-content="Mahadin Trader — Forex trading learning journey, market analysis, trading psychology, risk management and educational content.">
-
-<meta name="theme-color" content="#050b14">
-
-<title>Mahadin Trader | Forex Trading</title>
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome - Brand Logos -->
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-<style>
-
-:root{
-    --bg:#050b14;
-    --bg2:#081321;
-    --card:rgba(13,27,43,.78);
-    --line:rgba(255,255,255,.09);
-
-    --text:#f5f8fc;
-    --muted:#9eafc2;
-
-    --green:#20d4a5;
-    --blue:#4ba4ff;
-
-    --radius:22px;
-}
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:Inter,Arial,sans-serif;
-    color:var(--text);
-
-    background:
-    radial-gradient(
-        circle at 15% 10%,
-        rgba(32,212,165,.13),
-        transparent 28%
-    ),
-
-    radial-gradient(
-        circle at 85% 15%,
-        rgba(75,164,255,.14),
-        transparent 30%
-    ),
-
-    linear-gradient(
-        180deg,
-        var(--bg),
-        var(--bg2) 55%,
-        var(--bg)
-    );
-
-    min-height:100vh;
-    line-height:1.6;
-}
-
-a{
-    color:inherit;
-    text-decoration:none;
-}
-
-button,
-input,
-textarea{
-    font:inherit;
-}
-
-.container{
-    width:min(1120px,92%);
-    margin:auto;
-}
-
-
-/* =========================
-   NAVBAR
-========================= */
-
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    background:rgba(5,11,20,.78);
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid var(--line);
-}
-
-.nav{
-    height:74px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:20px;
-}
-
-.brand{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    font-weight:800;
-}
-
-.brand img{
-    width:44px;
-    height:44px;
-
-    object-fit:cover;
-
-    border-radius:13px;
-
-    border:1px solid rgba(255,255,255,.15);
-
-    box-shadow:
-    0 8px 30px rgba(32,212,165,.16);
-}
-
-.brand-name{
-    font-family:"Space Grotesk";
-    font-size:18px;
-}
-
-.brand-name span{
-    color:var(--green);
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:22px;
-}
-
-.nav-links a{
-    color:#b9c7d6;
-    font-size:14px;
-    font-weight:600;
-
-    transition:.25s;
-}
-
-.nav-links a:hover{
-    color:var(--green);
-}
-
-.nav-actions{
-    display:flex;
-    gap:8px;
-}
-
-.small-btn{
-    border:1px solid var(--line);
-
-    background:rgba(255,255,255,.04);
-
-    color:#fff;
-
-    padding:9px 13px;
-
-    border-radius:11px;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.small-btn:hover{
-    border-color:rgba(32,212,165,.5);
-}
-
-.menu-btn{
-    display:none;
-
-    border:1px solid var(--line);
-
-    background:rgba(255,255,255,.04);
-
-    color:white;
-
-    padding:9px 13px;
-
-    border-radius:11px;
-
-    cursor:pointer;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero{
-    padding:90px 0 70px;
-}
-
-.hero-grid{
-    display:grid;
-
-    grid-template-columns:1.25fr .75fr;
-
-    gap:50px;
-
-    align-items:center;
-}
-
-.eyebrow{
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:8px;
-
-    padding:8px 12px;
-
-    border-radius:999px;
-
-    border:1px solid rgba(32,212,165,.22);
-
-    background:rgba(32,212,165,.07);
-
-    color:#b8ffed;
-
-    font-size:12px;
-
-    font-weight:800;
-
-    letter-spacing:.08em;
-
-    text-transform:uppercase;
-}
-
-.dot{
-    width:7px;
-    height:7px;
-
-    background:var(--green);
-
-    border-radius:50%;
-
-    box-shadow:
-    0 0 14px var(--green);
-}
-
-h1{
-    font-family:"Space Grotesk";
-
-    font-size:clamp(43px,7vw,78px);
-
-    line-height:1.02;
-
-    letter-spacing:-.055em;
-
-    margin:22px 0;
-}
-
-h1 span{
-    background:
-    linear-gradient(
-        90deg,
-        var(--green),
-        #65b8ff
-    );
-
-    -webkit-background-clip:text;
-
-    background-clip:text;
-
-    color:transparent;
-}
-
-.hero p{
-    max-width:690px;
-
-    color:var(--muted);
-
-    font-size:17px;
-}
-
-.arabic{
-    margin-top:25px;
-
-    font-family:serif;
-
-    font-size:27px;
-
-    color:#fff;
-
-    direction:rtl;
-
-    border-left:2px solid var(--green);
-
-    padding-left:16px;
-
-    display:inline-block;
-}
-
-.hero-buttons{
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:12px;
-
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:9px;
-
-    padding:13px 18px;
-
-    border-radius:13px;
-
-    font-weight:800;
-
-    font-size:14px;
-
-    border:1px solid var(--line);
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.btn-primary{
-    background:var(--green);
-
-    color:#03110d;
-
-    border-color:transparent;
-}
-
-.btn-primary:hover{
-    transform:translateY(-2px);
-
-    box-shadow:
-    0 12px 30px rgba(32,212,165,.2);
-}
-
-.btn-ghost{
-    background:rgba(255,255,255,.04);
-}
-
-.btn-ghost:hover{
-    transform:translateY(-2px);
-
-    border-color:rgba(75,164,255,.5);
-}
-
-
-/* =========================
-   PROFILE CARD
-========================= */
-
-.hero-card{
-    padding:18px;
-
-    border:1px solid var(--line);
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(18,38,58,.9),
-        rgba(8,18,30,.78)
-    );
-
-    border-radius:30px;
-
-    box-shadow:
-    0 24px 80px rgba(0,0,0,.35);
-}
-
-.profile{
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    text-align:center;
-
-    padding:25px 15px 20px;
-}
-
-.profile img{
-    width:180px;
-    height:180px;
-
-    object-fit:cover;
-
-    border-radius:35px;
-
-    border:2px solid rgba(255,255,255,.12);
-
-    box-shadow:
-    0 20px 60px rgba(0,0,0,.4);
-}
-
-.profile h2{
-    font-family:"Space Grotesk";
-
-    margin-top:18px;
-
-    font-size:25px;
-}
-
-.role{
-    color:var(--green);
-
-    font-size:13px;
-
-    font-weight:800;
-
-    margin-top:3px;
-}
-
-.note{
-    color:var(--muted);
-
-    font-size:13px;
-
-    margin-top:12px;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-section{
-    padding:82px 0;
-}
-
-.section-head{
-    margin-bottom:30px;
-}
-
-.section-kicker{
-    color:var(--green);
-
-    font-size:12px;
-
-    font-weight:800;
-
-    letter-spacing:.12em;
-
-    text-transform:uppercase;
-}
-
-.section-head h2{
-    font-family:"Space Grotesk";
-
-    font-size:clamp(30px,4vw,46px);
-
-    letter-spacing:-.04em;
-
-    margin-top:8px;
-}
-
-.section-head p{
-    color:var(--muted);
-
-    max-width:700px;
-
-    margin-top:8px;
-}
-
-
-/* =========================
-   CARDS
-========================= */
-
-.cards{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:16px;
-}
-
-.card{
-    padding:24px;
-
-    border:1px solid var(--line);
-
-    background:var(--card);
-
-    border-radius:var(--radius);
-
-    transition:.25s;
-}
-
-.card:hover{
-    transform:translateY(-4px);
-
-    border-color:
-    rgba(32,212,165,.3);
-}
-
-.icon{
-    width:46px;
-    height:46px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:14px;
-
-    background:
-    rgba(32,212,165,.09);
-
-    color:var(--green);
-
-    font-size:20px;
-
-    margin-bottom:18px;
-}
-
-.card h3{
-    font-size:17px;
-
-    margin-bottom:7px;
-}
-
-.card p{
-    color:var(--muted);
-
-    font-size:14px;
-}
-
-
-/* =========================
-   PROGRESS
-========================= */
-
-.progress{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
-}
-
-.progress-card{
-    padding:24px;
-
-    border:1px solid var(--line);
-
-    border-radius:var(--radius);
-
-    background:var(--card);
-}
-
-.progress-item{
-    margin:18px 0;
-}
-
-.progress-top{
-    display:flex;
-
-    justify-content:space-between;
-
-    font-size:13px;
-
-    margin-bottom:8px;
-}
-
-.progress-top span:last-child{
-    color:var(--muted);
-}
-
-.bar{
-    height:8px;
-
-    border-radius:99px;
-
-    background:
-    rgba(255,255,255,.07);
-
-    overflow:hidden;
-}
-
-.fill{
-    height:100%;
-
-    border-radius:99px;
-
-    background:
-    linear-gradient(
-        90deg,
-        var(--green),
-        var(--blue)
-    );
-}
-
-
-/* =========================
-   JOURNAL
-========================= */
-
-.journal{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:20px;
-}
-
-.tag{
-    display:inline-block;
-
-    padding:5px 9px;
-
-    border-radius:99px;
-
-    background:
-    rgba(75,164,255,.08);
-
-    color:#9dccff;
-
-    font-size:11px;
-
-    font-weight:800;
-
-    margin-bottom:13px;
-}
-
-
-/* =========================
-   SOCIAL MEDIA
-========================= */
-
-.social-grid{
-    display:grid;
-
-    grid-template-columns:
-    repeat(5,1fr);
-
-    gap:12px;
-}
-
-.social{
-    min-height:110px;
-
-    padding:18px 12px;
-
-    border:1px solid var(--line);
-
-    border-radius:18px;
-
-    background:
-    rgba(255,255,255,.035);
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:10px;
-
-    text-align:center;
-
-    transition:.25s;
-}
-
-.social:hover{
-    transform:translateY(-5px);
-
-    background:
-    rgba(255,255,255,.06);
-
-    border-color:
-    rgba(255,255,255,.2);
-}
-
-.social i{
-    font-size:29px;
-}
-
-.social strong{
-    font-size:12px;
-}
-
-
-/* Official brand colors */
-
-.facebook{
-    color:#1877F2;
-}
-
-.tiktok{
-    color:#fff;
-}
-
-.instagram{
-    color:#E1306C;
-}
-
-.youtube{
-    color:#FF0000;
-}
-
-.messenger{
-    color:#0084FF;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact{
-    display:grid;
-
-    grid-template-columns:1fr .85fr;
-
-    gap:20px;
-}
-
-form{
-    display:grid;
-
-    gap:12px;
-}
-
-input,
-textarea{
-    width:100%;
-
-    padding:14px 15px;
-
-    border:1px solid var(--line);
-
-    border-radius:13px;
-
-    background:
-    rgba(255,255,255,.04);
-
-    color:#fff;
-
-    outline:none;
-}
-
-input:focus,
-textarea:focus{
-    border-color:
-    rgba(32,212,165,.55);
-}
-
-textarea{
-    min-height:145px;
-
-    resize:vertical;
-}
-
-.contact-info{
-    display:grid;
-
-    gap:12px;
-}
-
-.info-box{
-    padding:20px;
-
-    border:1px solid var(--line);
-
-    border-radius:18px;
-
-    background:var(--card);
-}
-
-.info-box b{
-    display:block;
-
-    margin-bottom:4px;
-}
-
-.info-box span{
-    color:var(--muted);
-
-    font-size:14px;
-}
-
-
-/* =========================
-   DISCLAIMER
-========================= */
-
-.disclaimer{
-    border:1px solid rgba(255,193,7,.18);
-
-    background:
-    rgba(255,193,7,.045);
-
-    padding:20px;
-
-    border-radius:18px;
-
-    color:#c8cbd0;
-
-    font-size:13px;
-}
-
-.disclaimer strong{
-    color:#ffe29a;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
-    padding:38px 0;
-
-    border-top:1px solid var(--line);
-
-    color:var(--muted);
-
-    font-size:13px;
-}
-
-.footer-row{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:20px;
-}
-
-.footer-links{
-    display:flex;
-
-    gap:15px;
-
-    flex-wrap:wrap;
-}
-
-.footer-links a:hover{
-    color:#fff;
-}
-
-
-/* =========================
-   LOGIN MODAL
-========================= */
-
-.modal{
-    position:fixed;
-
-    inset:0;
-
-    background:
-    rgba(0,0,0,.7);
-
-    backdrop-filter:blur(8px);
-
-    display:none;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:2000;
-
-    padding:20px;
-}
-
-.modal.active{
-    display:flex;
-}
-
-.modal-box{
-    width:min(420px,100%);
-
-    background:#0a1726;
-
-    border:1px solid var(--line);
-
-    border-radius:24px;
-
-    padding:25px;
-
-    box-shadow:
-    0 24px 80px rgba(0,0,0,.5);
-}
-
-.modal-head{
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    margin-bottom:18px;
-}
-
-.close{
-    background:none;
-
-    border:0;
-
-    color:#aaa;
-
-    font-size:27px;
-
-    cursor:pointer;
-}
-
-.tabs{
-    display:flex;
-
-    gap:7px;
-
-    margin-bottom:15px;
-}
-
-.tab{
-    flex:1;
-
-    padding:10px;
-
-    border:1px solid var(--line);
-
-    border-radius:10px;
-
-    background:transparent;
-
-    color:#aaa;
-
-    cursor:pointer;
-}
-
-.tab.active{
-    color:#03110d;
-
-    background:var(--green);
-
-    border-color:var(--green);
-}
-
-.auth-form{
-    display:grid;
-
-    gap:11px;
-}
-
-.auth-form p{
-    font-size:12px;
-
-    color:var(--muted);
-
-    text-align:center;
-}
-
-
-/* =========================
-   ANIMATION
-========================= */
-
-.reveal{
-    opacity:0;
-
-    transform:translateY(20px);
-
-    transition:.7s ease;
-}
-
-.reveal.show{
-    opacity:1;
-
-    transform:none;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width:900px){
-
-    .nav-links{
-        display:none;
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <meta name="theme-color" content="#070b14">
+
+  <title>Mahadin Trader | Forex Trader & Market Analyst</title>
+
+  <meta name="description"
+        content="Mahadin Trader — Forex Trader & Market Analyst focused on disciplined day trading, risk management, market analysis, trading psychology and continuous improvement.">
+
+  <meta name="keywords"
+        content="Mahadin Trader, Forex Trader, Forex Market Analyst, Forex Trading, Market Analysis, Trading Journal, Risk Management, Day Trading, Price Action, SMC, ICT, Trading Psychology">
+
+  <meta name="author" content="Mahadin Trader">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mahadin Trader | Forex Trader & Market Analyst">
+  <meta property="og:description"
+        content="Trade With Discipline. Learn With Purpose. Grow With Consistency.">
+  <meta property="og:image" content="assets/profile.webp">
+
+  <!-- Twitter/X metadata — no social link is added to the website -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title"
+        content="Mahadin Trader | Forex Trader & Market Analyst">
+  <meta name="twitter:description"
+        content="Discipline. Risk Management. Market Analysis. Continuous Improvement.">
+  <meta name="twitter:image" content="assets/profile.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       MAHADIN TRADER
+       Premium Forex Personal Brand Website
+       Single-file production starter
+       ========================================================= */
+
+    :root {
+      --bg: #05070b;
+      --bg-soft: #090d14;
+      --surface: rgba(255,255,255,.045);
+      --surface-strong: rgba(255,255,255,.07);
+      --border: rgba(255,255,255,.10);
+      --border-light: rgba(255,255,255,.16);
+
+      --text: #f5f7fb;
+      --text-soft: #aab3c2;
+      --text-muted: #737d8e;
+
+      --accent: #00d9ff;
+      --accent-soft: rgba(0,217,255,.12);
+      --accent-glow: rgba(0,217,255,.22);
+
+      --success: #36e6a1;
+      --warning: #ffcc66;
+
+      --max-width: 1240px;
+      --radius: 22px;
+      --radius-small: 14px;
+
+      --header-height: 76px;
+
+      --shadow:
+        0 25px 80px rgba(0,0,0,.35);
+
+      --transition:
+        240ms cubic-bezier(.2,.8,.2,1);
     }
 
-    .menu-btn{
-        display:block;
+    [data-theme="light"] {
+      --bg: #f5f7fa;
+      --bg-soft: #ffffff;
+      --surface: rgba(0,0,0,.035);
+      --surface-strong: rgba(0,0,0,.055);
+      --border: rgba(0,0,0,.09);
+      --border-light: rgba(0,0,0,.14);
+
+      --text: #0b1018;
+      --text-soft: #4c5665;
+      --text-muted: #737c89;
+
+      --accent: #008fb0;
+      --accent-soft: rgba(0,143,176,.10);
+      --accent-glow: rgba(0,143,176,.15);
+
+      --shadow:
+        0 25px 70px rgba(20,30,40,.10);
     }
 
-    .hero-grid,
-    .contact,
-    .progress{
-        grid-template-columns:1fr;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .cards{
-        grid-template-columns:1fr 1fr;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 100px;
     }
 
-    .social-grid{
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(
+          circle at 80% 0%,
+          rgba(0,217,255,.07),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 10% 20%,
+          rgba(65,90,255,.05),
+          transparent 25%
+        ),
+        var(--bg);
+
+      color: var(--text);
+
+      font-family:
+        "Inter",
+        "Noto Sans Bengali",
+        system-ui,
+        sans-serif;
+
+      line-height: 1.65;
+      overflow-x: hidden;
+
+      transition:
+        background .3s ease,
+        color .3s ease;
+    }
+
+    body.bn {
+      font-family:
+        "Noto Sans Bengali",
+        "Inter",
+        system-ui,
+        sans-serif;
+    }
+
+    ::selection {
+      background: var(--accent);
+      color: #001015;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(
+        calc(100% - 40px),
+        var(--max-width)
+      );
+
+      margin-inline: auto;
+    }
+
+    /* =========================================================
+       BACKGROUND GRID
+       ========================================================= */
+
+    .background-grid {
+      position: fixed;
+      inset: 0;
+      z-index: -3;
+      pointer-events: none;
+
+      background-image:
+        linear-gradient(
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 70px 70px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          black,
+          transparent 85%
+        );
+    }
+
+    .ambient-glow {
+      position: fixed;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: -2;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(0,217,255,.07),
+          transparent 70%
+        );
+
+      filter: blur(10px);
+      top: 15%;
+      right: -250px;
+    }
+
+    /* =========================================================
+       HEADER
+       ========================================================= */
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+
+      z-index: 1000;
+
+      background:
+        rgba(5,7,11,.72);
+
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+
+      border-bottom:
+        1px solid var(--border);
+
+      transition: var(--transition);
+    }
+
+    [data-theme="light"] .header {
+      background:
+        rgba(245,247,250,.78);
+    }
+
+    .header.scrolled {
+      box-shadow:
+        0 10px 40px rgba(0,0,0,.15);
+    }
+
+    .nav {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+
+      font-weight: 800;
+      letter-spacing: -.04em;
+
+      white-space: nowrap;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--accent),
+          rgba(0,217,255,.35)
+        );
+
+      color: #001015;
+
+      font-size: 17px;
+      font-weight: 900;
+
+      box-shadow:
+        0 0 30px var(--accent-glow);
+    }
+
+    .brand-text {
+      font-size: 15px;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-links a {
+      position: relative;
+
+      padding: 9px 11px;
+
+      color: var(--text-soft);
+
+      font-size: 13px;
+      font-weight: 600;
+
+      border-radius: 10px;
+
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      background: var(--surface);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+
+      width: 0;
+      height: 2px;
+
+      bottom: 4px;
+      left: 50%;
+
+      background: var(--accent);
+
+      transform: translateX(-50%);
+
+      transition: var(--transition);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 18px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .icon-btn {
+      width: 39px;
+      height: 39px;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--border);
+
+      border-radius: 11px;
+
+      background: var(--surface);
+
+      color: var(--text-soft);
+
+      transition: var(--transition);
+    }
+
+    .icon-btn:hover {
+      color: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .lang-btn {
+      min-width: 52px;
+      padding: 0 10px;
+
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .05em;
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      min-height: 100vh;
+      padding:
+        calc(var(--header-height) + 80px)
+        0
+        80px;
+
+      display: flex;
+      align-items: center;
+
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      top: 10%;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(0,217,255,.09),
+          transparent 70%
+        );
+
+      filter: blur(15px);
+
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns:
+        minmax(0, 1.15fr)
+        minmax(340px, .85fr);
+
+      align-items: center;
+      gap: 80px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      color: var(--accent);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: .16em;
+      text-transform: uppercase;
+
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .hero h1 {
+      max-width: 760px;
+
+      font-family: "Manrope", sans-serif;
+
+      font-size:
+        clamp(42px, 6vw, 78px);
+
+      line-height: 1.02;
+      letter-spacing: -.055em;
+
+      margin-bottom: 25px;
+    }
+
+    .gradient-text {
+      background:
+        linear-gradient(
+          120deg,
+          var(--text) 20%,
+          var(--accent) 85%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-description {
+      max-width: 690px;
+
+      color: var(--text-soft);
+
+      font-size:
+        clamp(15px, 2vw, 18px);
+
+      margin-bottom: 32px;
+    }
+
+    .arabic {
+      display: inline-block;
+
+      margin-bottom: 27px;
+
+      color: var(--text);
+
+      font-size: 18px;
+      font-weight: 600;
+
+      direction: rtl;
+
+      padding:
+        8px 14px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 10px;
+
+      background: var(--surface);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      min-height: 50px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+
+      padding:
+        0 20px;
+
+      border-radius: 13px;
+
+      font-size: 13px;
+      font-weight: 800;
+
+      transition: var(--transition);
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+
+      box-shadow:
+        0 12px 35px rgba(0,0,0,.2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 18px 45px var(--accent-glow);
+    }
+
+    .btn-secondary {
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    /* =========================================================
+       HERO PROFILE
+       ========================================================= */
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .profile-card {
+      position: relative;
+
+      width: min(390px, 100%);
+      aspect-ratio: .86;
+
+      border:
+        1px solid var(--border-light);
+
+      border-radius:
+        30px;
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--surface-strong),
+          rgba(255,255,255,.015)
+        );
+
+      box-shadow:
+        var(--shadow);
+
+      overflow: hidden;
+
+      transform:
+        perspective(1000px)
+        rotateY(-3deg);
+
+      transition: var(--transition);
+    }
+
+    .profile-card:hover {
+      transform:
+        perspective(1000px)
+        rotateY(0)
+        translateY(-6px);
+    }
+
+    .profile-card::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0,217,255,.10),
+          transparent 45%
+        );
+
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      background:
+        linear-gradient(
+          145deg,
+          #111827,
+          #05070b
+        );
+    }
+
+    .profile-overlay {
+      position: absolute;
+
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+
+      padding: 17px;
+
+      border:
+        1px solid rgba(255,255,255,.13);
+
+      border-radius: 17px;
+
+      background:
+        rgba(5,7,11,.70);
+
+      backdrop-filter: blur(16px);
+
+      z-index: 3;
+    }
+
+    .profile-overlay small {
+      display: block;
+
+      color: var(--accent);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      margin-bottom: 3px;
+    }
+
+    .profile-overlay strong {
+      font-size: 16px;
+    }
+
+    .floating-badge {
+      position: absolute;
+
+      padding: 10px 13px;
+
+      border:
+        1px solid var(--border-light);
+
+      border-radius: 13px;
+
+      background:
+        rgba(5,7,11,.76);
+
+      backdrop-filter: blur(16px);
+
+      box-shadow:
+        0 20px 45px rgba(0,0,0,.28);
+
+      z-index: 5;
+
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .badge-one {
+      top: 12%;
+      right: -30px;
+    }
+
+    .badge-two {
+      bottom: 25%;
+      left: -35px;
+    }
+
+    /* =========================================================
+       LIVE CLOCK
+       ========================================================= */
+
+    .status-strip {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+
+      background:
+        rgba(255,255,255,.018);
+    }
+
+    .status-grid {
+      min-height: 80px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      align-items: center;
+    }
+
+    .status-item {
+      padding: 15px 25px;
+
+      border-right:
+        1px solid var(--border);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .status-item:last-child {
+      border-right: 0;
+    }
+
+    .status-icon {
+      width: 34px;
+      height: 34px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      background: var(--accent-soft);
+      color: var(--accent);
+
+      font-size: 15px;
+    }
+
+    .status-label {
+      color: var(--text-muted);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 800;
+    }
+
+    .status-value {
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* =========================================================
+       GENERAL SECTIONS
+       ========================================================= */
+
+    section {
+      padding: 115px 0;
+      position: relative;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+
+      gap: 30px;
+
+      margin-bottom: 50px;
+    }
+
+    .section-number {
+      color: var(--accent);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      letter-spacing: .14em;
+
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: "Manrope", sans-serif;
+
+      font-size:
+        clamp(30px, 4vw, 48px);
+
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    .section-description {
+      max-width: 550px;
+
+      color: var(--text-soft);
+
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       DISCLAIMER
+       ========================================================= */
+
+    .disclaimer {
+      padding: 18px 0;
+    }
+
+    .disclaimer-box {
+      padding: 18px 20px;
+
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      border:
+        1px solid rgba(255,204,102,.18);
+
+      border-radius: 14px;
+
+      background:
+        rgba(255,204,102,.035);
+
+      color: var(--text-soft);
+
+      font-size: 12px;
+    }
+
+    .disclaimer-box strong {
+      color: var(--warning);
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about-grid {
+      display: grid;
+
+      grid-template-columns:
+        .85fr
+        1.15fr;
+
+      gap: 70px;
+    }
+
+    .about-highlight {
+      padding: 35px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--surface-strong),
+          transparent
+        );
+
+      box-shadow: var(--shadow);
+    }
+
+    .about-highlight .big-number {
+      font-family: "Manrope", sans-serif;
+
+      font-size: 70px;
+      line-height: 1;
+
+      color: var(--accent);
+
+      margin-bottom: 10px;
+    }
+
+    .about-highlight p {
+      color: var(--text-soft);
+      font-size: 14px;
+    }
+
+    .about-content h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .about-content p {
+      color: var(--text-soft);
+      font-size: 15px;
+
+      margin-bottom: 18px;
+    }
+
+    .philosophy {
+      margin-top: 28px;
+
+      padding:
+        22px 24px;
+
+      border-left:
+        2px solid var(--accent);
+
+      background: var(--accent-soft);
+
+      border-radius:
+        0 15px 15px 0;
+    }
+
+    .philosophy span {
+      display: block;
+
+      color: var(--accent);
+
+      font-size: 10px;
+      font-weight: 800;
+
+      letter-spacing: .12em;
+      text-transform: uppercase;
+
+      margin-bottom: 5px;
+    }
+
+    .philosophy strong {
+      font-size: 17px;
+    }
+
+    /* =========================================================
+       PROCESS CARDS
+       ========================================================= */
+
+    .process-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 16px;
+    }
+
+    .process-card {
+      min-height: 270px;
+
+      padding: 28px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius);
+
+      background:
+        linear-gradient(
+          145deg,
+          var(--surface),
+          rgba(255,255,255,.012)
+        );
+
+      transition: var(--transition);
+
+      position: relative;
+      overflow: hidden;
+    }
+
+    .process-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 2px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--accent),
+          transparent
+        );
+
+      transform: scaleX(0);
+
+      transition: var(--transition);
+    }
+
+    .process-card:hover {
+      transform: translateY(-6px);
+
+      border-color:
+        rgba(0,217,255,.25);
+
+      box-shadow:
+        0 25px 55px rgba(0,0,0,.20);
+    }
+
+    .process-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .process-number {
+      color: var(--text-muted);
+
+      font-size: 11px;
+      font-weight: 800;
+
+      margin-bottom: 25px;
+    }
+
+    .process-icon {
+      width: 43px;
+      height: 43px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 12px;
+
+      background: var(--accent-soft);
+      color: var(--accent);
+
+      font-size: 17px;
+
+      margin-bottom: 19px;
+    }
+
+    .process-card h3 {
+      font-size: 17px;
+      margin-bottom: 12px;
+    }
+
+    .process-card p {
+      color: var(--text-soft);
+      font-size: 13px;
+    }
+
+    .process-card ul {
+      list-style: none;
+      margin-top: 15px;
+    }
+
+    .process-card li {
+      position: relative;
+
+      padding-left: 17px;
+
+      color: var(--text-muted);
+
+      font-size: 12px;
+
+      margin-bottom: 6px;
+    }
+
+    .process-card li::before {
+      content: "";
+
+      position: absolute;
+
+      width: 5px;
+      height: 5px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+
+      left: 0;
+      top: 9px;
+    }
+
+    /* =========================================================
+       JOURNAL
+       ========================================================= */
+
+    .journal-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+    }
+
+    .journal-card {
+      min-height: 220px;
+
+      padding: 25px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: var(--radius-small);
+
+      background: var(--surface);
+
+      transition: var(--transition);
+    }
+
+    .journal-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-light);
+    }
+
+    .journal-icon {
+      font-size: 22px;
+    }
+
+    .coming-soon {
+      display: inline-flex;
+      width: fit-content;
+
+      padding: 5px 8px;
+
+      border-radius: 7px;
+
+      background: var(--accent-soft);
+
+      color: var(--accent);
+
+      font-size: 9px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .journal-card h3 {
+      font-size: 16px;
+      margin-top: auto;
+      margin-bottom: 7px;
+    }
+
+    .journal-card p {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       INSIGHTS
+       ========================================================= */
+
+    .insights-wrapper {
+      padding: 38px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        28px;
+
+      background:
+        radial-gradient(
+          circle at 100% 0%,
+          rgba(0,217,255,.09),
+          transparent 35%
+        ),
+        var(--surface);
+    }
+
+    .insights-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 12px;
+    }
+
+    .insight {
+      padding: 20px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 15px;
+
+      background:
+        rgba(0,0,0,.10);
+
+      transition: var(--transition);
+    }
+
+    [data-theme="light"] .insight {
+      background: rgba(0,0,0,.025);
+    }
+
+    .insight:hover {
+      border-color:
+        rgba(0,217,255,.25);
+
+      transform: translateY(-3px);
+    }
+
+    .insight h3 {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .insight p {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    .analysis-desk {
+      margin-top: 28px;
+
+      padding: 26px;
+
+      border:
+        1px dashed var(--border-light);
+
+      border-radius: 17px;
+
+      text-align: center;
+    }
+
+    .analysis-desk strong {
+      display: block;
+
+      font-size: 17px;
+
+      margin-bottom: 5px;
+    }
+
+    .analysis-desk span {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    /* =========================================================
+       PERFORMANCE
+       ========================================================= */
+
+    .performance-card {
+      position: relative;
+
+      padding: 45px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        28px;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--surface-strong),
+          rgba(0,217,255,.025)
+        );
+
+      overflow: hidden;
+    }
+
+    .performance-card::after {
+      content: "";
+
+      position: absolute;
+
+      width: 320px;
+      height: 320px;
+
+      right: -150px;
+      top: -150px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(0,217,255,.12);
+    }
+
+    .performance-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      padding: 7px 10px;
+
+      background: var(--accent-soft);
+
+      color: var(--accent);
+
+      border-radius: 8px;
+
+      font-size: 10px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: .08em;
+
+      margin-bottom: 22px;
+    }
+
+    .performance-status::before {
+      content: "";
+
+      width: 6px;
+      height: 6px;
+
+      border-radius: 50%;
+
+      background: var(--accent);
+    }
+
+    .performance-card h3 {
+      font-family: "Manrope", sans-serif;
+
+      font-size:
+        clamp(26px, 4vw, 42px);
+
+      letter-spacing: -.04em;
+
+      margin-bottom: 13px;
+    }
+
+    .performance-card p {
+      max-width: 700px;
+
+      color: var(--text-soft);
+
+      font-size: 14px;
+    }
+
+    /* =========================================================
+       FUTURE SERVICES
+       ========================================================= */
+
+    .future-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 14px;
+    }
+
+    .future-card {
+      padding: 25px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius-small);
+
+      background:
+        var(--surface);
+
+      transition: var(--transition);
+    }
+
+    .future-card:hover {
+      transform: translateY(-4px);
+      border-color:
+        rgba(0,217,255,.25);
+    }
+
+    .future-card span {
+      display: block;
+
+      color: var(--accent);
+
+      font-size: 22px;
+
+      margin-bottom: 20px;
+    }
+
+    .future-card h3 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .future-card p {
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       TESTIMONIAL
+       ========================================================= */
+
+    .testimonial {
+      padding: 50px;
+
+      text-align: center;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        28px;
+
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(0,217,255,.07),
+          transparent 50%
+        ),
+        var(--surface);
+    }
+
+    .quote-icon {
+      color: var(--accent);
+
+      font-size: 40px;
+
+      line-height: 1;
+
+      margin-bottom: 18px;
+    }
+
+    .testimonial h3 {
+      font-family: "Manrope", sans-serif;
+
+      font-size:
+        clamp(25px, 4vw, 38px);
+
+      letter-spacing: -.04em;
+
+      margin-bottom: 10px;
+    }
+
+    .testimonial p {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+
+    .faq {
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    .faq-item {
+      border-bottom:
+        1px solid var(--border);
+    }
+
+    .faq-question {
+      width: 100%;
+
+      padding: 22px 0;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      background: transparent;
+
+      color: var(--text);
+
+      text-align: left;
+
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .faq-question span:last-child {
+      color: var(--accent);
+      font-size: 22px;
+
+      transition: var(--transition);
+    }
+
+    .faq-item.open .faq-question span:last-child {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+
+      transition:
+        max-height .35s ease;
+    }
+
+    .faq-answer-inner {
+      padding:
+        0 40px 22px 0;
+
+      color: var(--text-muted);
+
+      font-size: 13px;
+    }
+
+    /* =========================================================
+       NEWSLETTER
+       ========================================================= */
+
+    .newsletter {
+      padding: 50px;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      align-items: center;
+
+      gap: 40px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        28px;
+
+      background:
+        linear-gradient(
+          120deg,
+          var(--surface-strong),
+          rgba(0,217,255,.025)
+        );
+    }
+
+    .newsletter h3 {
+      font-family: "Manrope", sans-serif;
+
+      font-size:
+        clamp(25px, 4vw, 38px);
+
+      line-height: 1.1;
+
+      letter-spacing: -.04em;
+
+      margin-bottom: 10px;
+    }
+
+    .newsletter p {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 9px;
+    }
+
+    .input {
+      width: 100%;
+
+      min-height: 50px;
+
+      padding:
+        0 15px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 12px;
+
+      outline: none;
+
+      background:
+        rgba(255,255,255,.035);
+
+      color: var(--text);
+
+      transition: var(--transition);
+    }
+
+    .input:focus {
+      border-color: var(--accent);
+
+      box-shadow:
+        0 0 0 3px var(--accent-soft);
+    }
+
+    /* =========================================================
+       CONTACT
+       ========================================================= */
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns:
+        .8fr 1.2fr;
+
+      gap: 60px;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+    }
+
+    .contact-item {
+      padding: 19px;
+
+      display: flex;
+      gap: 14px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        15px;
+
+      background: var(--surface);
+    }
+
+    .contact-icon {
+      width: 38px;
+      height: 38px;
+
+      flex: 0 0 auto;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 10px;
+
+      background: var(--accent-soft);
+      color: var(--accent);
+    }
+
+    .contact-item small {
+      display: block;
+
+      color: var(--text-muted);
+
+      font-size: 9px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .1em;
+
+      font-weight: 800;
+
+      margin-bottom: 3px;
+    }
+
+    .contact-item strong {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .contact-form {
+      padding: 30px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius:
+        var(--radius);
+
+      background: var(--surface);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+
+      color: var(--text-soft);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      margin-bottom: 7px;
+    }
+
+    textarea.input {
+      min-height: 140px;
+
+      padding-top: 14px;
+
+      resize: vertical;
+    }
+
+    .form-message {
+      display: none;
+
+      margin-top: 13px;
+
+      padding: 11px 13px;
+
+      border-radius: 9px;
+
+      background: var(--accent-soft);
+
+      color: var(--accent);
+
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       SOCIAL
+       ========================================================= */
+
+    .socials {
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 25px;
+    }
+
+    .social-link {
+      padding: 9px 12px;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 9px;
+
+      color: var(--text-soft);
+
+      font-size: 11px;
+      font-weight: 700;
+
+      transition: var(--transition);
+    }
+
+    .social-link:hover {
+      color: var(--accent);
+
+      border-color:
+        var(--accent);
+
+      transform: translateY(-2px);
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      padding:
+        60px 0 25px;
+
+      border-top:
+        1px solid var(--border);
+
+      background:
+        rgba(0,0,0,.10);
+    }
+
+    .footer-grid {
+      display: grid;
+
+      grid-template-columns:
+        1.5fr 1fr 1fr;
+
+      gap: 50px;
+
+      padding-bottom: 45px;
+    }
+
+    .footer-brand p {
+      max-width: 350px;
+
+      color: var(--text-muted);
+
+      font-size: 12px;
+
+      margin-top: 15px;
+    }
+
+    .footer-column h4 {
+      font-size: 12px;
+
+      margin-bottom: 14px;
+
+      text-transform: uppercase;
+
+      letter-spacing: .08em;
+    }
+
+    .footer-column a {
+      display: block;
+
+      width: fit-content;
+
+      color: var(--text-muted);
+
+      font-size: 11px;
+
+      margin-bottom: 8px;
+
+      transition: var(--transition);
+    }
+
+    .footer-column a:hover {
+      color: var(--accent);
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+
+      border-top:
+        1px solid var(--border);
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      color: var(--text-muted);
+
+      font-size: 10px;
+    }
+
+    /* =========================================================
+       LEGAL MODALS
+       ========================================================= */
+
+    .legal-modal {
+      position: fixed;
+      inset: 0;
+
+      z-index: 2000;
+
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+
+      background:
+        rgba(0,0,0,.72);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .legal-modal.active {
+      display: flex;
+    }
+
+    .legal-box {
+      width: min(850px, 100%);
+      max-height: 85vh;
+
+      overflow-y: auto;
+
+      padding: 35px;
+
+      border:
+        1px solid var(--border-light);
+
+      border-radius:
+        24px;
+
+      background:
+        var(--bg-soft);
+
+      box-shadow:
+        0 40px 100px rgba(0,0,0,.45);
+
+      position: relative;
+    }
+
+    .legal-close {
+      position: absolute;
+
+      top: 15px;
+      right: 15px;
+
+      width: 38px;
+      height: 38px;
+
+      border-radius: 10px;
+
+      background: var(--surface);
+
+      color: var(--text);
+
+      font-size: 20px;
+    }
+
+    .legal-box h2 {
+      font-family: "Manrope", sans-serif;
+
+      font-size: 30px;
+
+      margin-bottom: 25px;
+    }
+
+    .legal-box h3 {
+      font-size: 16px;
+
+      margin:
+        22px 0 8px;
+    }
+
+    .legal-box p,
+    .legal-box li {
+      color: var(--text-soft);
+
+      font-size: 13px;
+    }
+
+    .legal-box ul {
+      padding-left: 20px;
+    }
+
+    /* =========================================================
+       BACK TO TOP
+       ========================================================= */
+
+    .back-top {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 44px;
+      height: 44px;
+
+      display: grid;
+      place-items: center;
+
+      border:
+        1px solid var(--border);
+
+      border-radius: 13px;
+
+      background:
+        rgba(10,14,21,.82);
+
+      backdrop-filter: blur(12px);
+
+      color: var(--accent);
+
+      opacity: 0;
+      visibility: hidden;
+
+      transform: translateY(15px);
+
+      transition: var(--transition);
+
+      z-index: 800;
+    }
+
+    [data-theme="light"] .back-top {
+      background:
+        rgba(255,255,255,.88);
+    }
+
+    .back-top.show {
+      opacity: 1;
+      visibility: visible;
+
+      transform: translateY(0);
+    }
+
+    .back-top:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+
+      transform:
+        translateY(25px);
+
+      transition:
+        opacity .7s ease,
+        transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+
+      transform:
+        translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (max-width: 1050px) {
+
+      .nav-links {
+        gap: 0;
+      }
+
+      .nav-links a {
+        padding-inline: 8px;
+        font-size: 12px;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .process-grid {
         grid-template-columns:
-        repeat(3,1fr);
-    }
-}
+          repeat(2, 1fr);
+      }
 
-
-@media(max-width:600px){
-
-    .hero{
-        padding-top:58px;
-    }
-
-    .cards,
-    .journal{
-        grid-template-columns:1fr;
-    }
-
-    .social-grid{
+      .journal-grid,
+      .future-grid {
         grid-template-columns:
-        repeat(2,1fr);
+          repeat(2, 1fr);
+      }
     }
 
-    .nav-actions .small-btn{
-        display:none;
+    @media (max-width: 850px) {
+
+      .mobile-toggle {
+        display: grid;
+      }
+
+      .nav-links {
+        position: fixed;
+
+        top: calc(var(--header-height) + 8px);
+
+        left: 20px;
+        right: 20px;
+
+        display: none;
+        flex-direction: column;
+
+        padding: 10px;
+
+        border:
+          1px solid var(--border);
+
+        border-radius: 18px;
+
+        background:
+          rgba(8,12,18,.94);
+
+        backdrop-filter: blur(20px);
+
+        box-shadow:
+          0 25px 70px rgba(0,0,0,.35);
+      }
+
+      [data-theme="light"] .nav-links {
+        background:
+          rgba(255,255,255,.95);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 12px 14px;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .hero {
+        padding-top:
+          calc(var(--header-height) + 55px);
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .profile-card {
+        width: min(340px, 90vw);
+      }
+
+      .badge-one {
+        right: 0;
+      }
+
+      .badge-two {
+        left: 0;
+      }
+
+      .about-grid,
+      .contact-grid,
+      .newsletter {
+        grid-template-columns: 1fr;
+      }
+
+      .status-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .status-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .status-item:last-child {
+        border-bottom: 0;
+      }
+
+      .insights-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
     }
 
-    h1{
-        font-size:48px;
+    @media (max-width: 580px) {
+
+      .container {
+        width:
+          min(
+            calc(100% - 28px),
+            var(--max-width)
+          );
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-bottom: 65px;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-description {
+        margin-top: 15px;
+      }
+
+      .process-grid,
+      .journal-grid,
+      .future-grid,
+      .insights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .insights-wrapper,
+      .performance-card,
+      .testimonial,
+      .newsletter {
+        padding: 25px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .contact-form {
+        padding: 20px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .disclaimer-box {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .profile-card {
+        width: min(310px, 90vw);
+      }
+
+      .badge-one {
+        right: -5px;
+      }
+
+      .badge-two {
+        left: -5px;
+      }
     }
 
-    .footer-row{
-        flex-direction:column;
+    @media (prefers-reduced-motion: reduce) {
 
-        align-items:flex-start;
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
     }
-
-    .arabic{
-        font-size:22px;
-    }
-}
-
-</style>
+  </style>
 </head>
-
 
 <body>
 
+  <!-- Background -->
+  <div class="background-grid"></div>
+  <div class="ambient-glow"></div>
+
+  <!-- =======================================================
+       HEADER
+       ======================================================= -->
+
+  <header class="header" id="header">
+
+    <div class="container nav">
+
+      <a href="#home"
+         class="brand"
+         aria-label="Mahadin Trader Home">
+
+        <div class="brand-mark">
+          MT
+        </div>
+
+        <div class="brand-text">
+          Mahadin Trader
+          <span>Forex Trader & Market Analyst</span>
+        </div>
+
+      </a>
+
 
-<!-- =========================
-     NAVIGATION
-========================= -->
+      <nav class="nav-links" id="navLinks">
 
-<header>
+        <a href="#home"
+           data-en="Home"
+           data-bn="হোম">
+          Home
+        </a>
 
-<div class="container nav">
+        <a href="#about"
+           data-en="About"
+           data-bn="পরিচিতি">
+          About
+        </a>
 
-<a href="#home" class="brand">
+        <a href="#process"
+           data-en="Process"
+           data-bn="প্রক্রিয়া">
+          Process
+        </a>
 
-<img
-src="logo.png"
-alt="Mahadin Trader Logo">
+        <a href="#journal"
+           data-en="Journal"
+           data-bn="জার্নাল">
+          Journal
+        </a>
 
-<div class="brand-name">
-Mahadin <span>Trader</span>
-</div>
+        <a href="#insights"
+           data-en="Insights"
+           data-bn="ইনসাইটস">
+          Insights
+        </a>
 
-</a>
+        <a href="#faq"
+           data-en="FAQ"
+           data-bn="প্রশ্নোত্তর">
+          FAQ
+        </a>
 
+        <a href="#contact"
+           data-en="Contact"
+           data-bn="যোগাযোগ">
+          Contact
+        </a>
 
-<nav class="nav-links" id="navLinks">
+      </nav>
 
-<a href="#about">About</a>
 
-<a href="#learning">Learning</a>
+      <div class="nav-actions">
 
-<a href="#analysis">Analysis</a>
+        <button
+          class="icon-btn lang-btn"
+          id="languageToggle"
+          type="button"
+          aria-label="Change language">
+          বাংলা
+        </button>
 
-<a href="#journal">Journal</a>
+        <button
+          class="icon-btn"
+          id="themeToggle"
+          type="button"
+          aria-label="Toggle theme">
+          ◐
+        </button>
 
-<a href="#progress">Progress</a>
+        <button
+          class="icon-btn"
+          id="soundToggle"
+          type="button"
+          aria-label="Toggle sound">
+          🔊
+        </button>
 
-<a href="#social">Social</a>
+        <button
+          class="icon-btn mobile-toggle"
+          id="mobileToggle"
+          type="button"
+          aria-label="Open navigation"
+          aria-expanded="false">
+          ☰
+        </button>
 
-<a href="#contact">Contact</a>
+      </div>
 
-</nav>
+    </div>
 
+  </header>
 
-<div class="nav-actions">
 
-<button
-class="small-btn"
-onclick="openAuth('login')">
+  <main>
 
-Login
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-</button>
+    <section class="hero" id="home">
 
-<button
-class="small-btn"
-onclick="openAuth('signup')">
+      <div class="container hero-grid">
 
-Sign Up
+        <div class="hero-content reveal">
 
-</button>
+          <div class="eyebrow"
+               data-en="Independent Forex Trading Journey"
+               data-bn="স্বাধীন ফরেক্স ট্রেডিং যাত্রা">
+            Independent Forex Trading Journey
+          </div>
 
-<button
-class="menu-btn"
-onclick="toggleMenu()">
 
-☰
+          <div class="arabic">
+            لا إله إلا الله محمد رسول الله
+          </div>
 
-</button>
 
-</div>
+          <h1>
+            <span data-en="Trade With Discipline."
+                  data-bn="শৃঙ্খলার সাথে ট্রেড করুন।">
+              Trade With Discipline.
+            </span>
 
-</div>
+            <br>
 
-</header>
+            <span class="gradient-text"
+                  data-en="Learn With Purpose."
+                  data-bn="উদ্দেশ্য নিয়ে শিখুন।">
+              Learn With Purpose.
+            </span>
 
+            <br>
 
+            <span data-en="Grow With Consistency."
+                  data-bn="ধারাবাহিকতার সাথে এগিয়ে যান।">
+              Grow With Consistency.
+            </span>
+          </h1>
 
-<main>
 
+          <p class="hero-description"
+             data-en="Mahadin Trader is a developing Forex personal brand focused on disciplined day trading, structured market analysis, risk management, trading psychology and continuous improvement."
+             data-bn="Mahadin Trader একটি বিকাশমান Forex personal brand, যার মূল লক্ষ্য disciplined day trading, structured market analysis, risk management, trading psychology এবং continuous improvement।">
+            Mahadin Trader is a developing Forex personal brand focused on disciplined day trading, structured market analysis, risk management, trading psychology and continuous improvement.
+          </p>
 
-<!-- =========================
-     HERO
-========================= -->
 
-<section
-class="hero"
-id="home">
+          <div class="hero-actions">
 
-<div class="container hero-grid">
+            <a href="#about"
+               class="btn btn-primary sound-action"
+               data-en="Explore My Journey →"
+               data-bn="আমার যাত্রা দেখুন →">
+              Explore My Journey →
+            </a>
 
+            <a href="assets/profile.pdf"
+               class="btn btn-secondary sound-action"
+               id="profileDownload"
+               download
+               data-en="Download Profile"
+               data-bn="প্রোফাইল ডাউনলোড">
+              Download Profile
+            </a>
 
-<div class="reveal">
+          </div>
 
-<div class="eyebrow">
+        </div>
 
-<span class="dot"></span>
 
-Forex Trading • Learning Journey
+        <div class="hero-visual reveal">
 
-</div>
+          <div class="floating-badge badge-one">
+            <span data-en="DAY TRADING"
+                  data-bn="DAY TRADING">
+              DAY TRADING
+            </span>
+          </div>
 
 
-<h1>
+          <div class="profile-card">
 
-Learn. Analyze.
+            <img
+              src="assets/profile.webp"
+              alt="Mahadin Trader profile"
+              class="profile-photo"
+              onerror="this.style.display='none'; this.parentElement.classList.add('profile-fallback');">
 
-<br>
 
-<span>Build the Edge.</span>
+            <div class="profile-overlay">
 
-</h1>
+              <small>
+                Mahadin Trader
+              </small>
 
+              <strong>
+                Forex Trader & Market Analyst
+              </strong>
 
-<p>
+            </div>
 
-Welcome to Mahadin Trader — a personal digital space
-documenting a learning journey in Forex trading,
-market analysis, risk management and trading psychology.
+          </div>
 
-</p>
 
+          <div class="floating-badge badge-two">
+            <span data-en="RISK FIRST"
+                  data-bn="ঝুঁকি আগে">
+              RISK FIRST
+            </span>
+          </div>
 
-<div
-class="arabic"
-lang="ar">
+        </div>
 
-لا إله إلا الله محمد رسول الله
+      </div>
 
-</div>
+    </section>
 
 
-<div class="hero-buttons">
+    <!-- =====================================================
+         LIVE STATUS
+         ===================================================== -->
 
-<a
-href="#learning"
-class="btn btn-primary">
+    <div class="status-strip">
 
-Explore Learning
+      <div class="container status-grid">
 
-</a>
+        <div class="status-item">
 
+          <div class="status-icon">
+            ◷
+          </div>
 
-<a
-href="#contact"
-class="btn btn-ghost">
+          <div>
+            <div class="status-label"
+                 data-en="Bangladesh Time"
+                 data-bn="বাংলাদেশ সময়">
+              Bangladesh Time
+            </div>
 
-Contact
+            <div class="status-value"
+                 id="bdTime">
+              --:--:--
+            </div>
+          </div>
 
-</a>
+        </div>
 
-</div>
 
-</div>
+        <div class="status-item">
 
+          <div class="status-icon">
+            ◫
+          </div>
 
+          <div>
+            <div class="status-label"
+                 data-en="Current Date"
+                 data-bn="বর্তমান তারিখ">
+              Current Date
+            </div>
 
-<!-- PROFILE -->
+            <div class="status-value"
+                 id="bdDate">
+              ----
+            </div>
+          </div>
 
-<div class="hero-card reveal">
+        </div>
 
-<div class="profile">
 
-<img
-src="logo.png"
-alt="Mahadin Trader">
+        <div class="status-item">
 
-<h2>
+          <div class="status-icon">
+            ◉
+          </div>
 
-Mahadin Trader
+          <div>
+            <div class="status-label"
+                 data-en="Trading Style"
+                 data-bn="ট্রেডিং স্টাইল">
+              Trading Style
+            </div>
 
-</h2>
+            <div class="status-value"
+                 data-en="Day Trading"
+                 data-bn="Day Trading">
+              Day Trading
+            </div>
+          </div>
 
+        </div>
 
-<div class="role">
+      </div>
 
-Trader in Progress
+    </div>
 
-</div>
 
+    <!-- =====================================================
+         DISCLAIMER
+         ===================================================== -->
 
-<p class="note">
+    <div class="container disclaimer">
 
-Learning, practicing and documenting
-the journey — one chart at a time.
+      <div class="disclaimer-box">
 
-</p>
+        <strong data-en="Risk Disclaimer"
+                data-bn="ঝুঁকি সংক্রান্ত ঘোষণা">
+          Risk Disclaimer
+        </strong>
 
-</div>
+        <span
+          data-en="Educational content only. This website does not provide personalized financial advice, investment recommendations, or guarantees of trading results."
+          data-bn="এই ওয়েবসাইটের কনটেন্ট শুধুমাত্র শিক্ষামূলক। এখানে ব্যক্তিগত আর্থিক পরামর্শ, বিনিয়োগের সুপারিশ বা ট্রেডিং ফলাফলের কোনো নিশ্চয়তা প্রদান করা হয় না।">
+          Educational content only. This website does not provide personalized financial advice, investment recommendations, or guarantees of trading results.
+        </span>
 
-</div>
+      </div>
 
-</div>
+    </div>
 
-</section>
 
+    <!-- =====================================================
+         ABOUT
+         ===================================================== -->
 
+    <section id="about">
 
-<!-- =========================
-     ABOUT
-========================= -->
+      <div class="container">
 
-<section id="about">
+        <div class="section-header reveal">
 
-<div class="container">
+          <div>
+            <div class="section-number">01 / ABOUT</div>
 
-<div class="section-head reveal">
+            <h2 class="section-title"
+                data-en="Built Around Process."
+                data-bn="প্রক্রিয়াকে ঘিরেই পথচলা।">
+              Built Around Process.
+            </h2>
+          </div>
 
-<div class="section-kicker">
-About
-</div>
+          <p class="section-description"
+             data-en="A developing trading journey built around discipline, capital protection, structured analysis and continuous learning."
+             data-bn="শৃঙ্খলা, মূলধন সুরক্ষা, কাঠামোবদ্ধ বিশ্লেষণ এবং ধারাবাহিক শেখার ওপর ভিত্তি করে গড়ে ওঠা একটি বিকাশমান ট্রেডিং যাত্রা।">
+            A developing trading journey built around discipline, capital protection, structured analysis and continuous learning.
+          </p>
 
-<h2>
-A transparent trading journey.
-</h2>
+        </div>
 
-<p>
 
-This website represents a learning journey
-in Forex trading — focused on education,
-practice, discipline and continuous improvement.
+        <div class="about-grid">
 
-</p>
+          <div class="about-highlight reveal">
 
-</div>
+            <div class="big-number">
+              2024
+            </div>
 
+            <p
+              data-en="Trading journey started on 28 January 2024."
+              data-bn="ট্রেডিং যাত্রা শুরু: ২৮ জানুয়ারি ২০২৪।">
+              Trading journey started on 28 January 2024.
+            </p>
 
+          </div>
 
-<div class="cards">
 
+          <div class="about-content reveal">
 
-<article class="card reveal">
+            <h3
+              data-en="Learning before claiming."
+              data-bn="দাবি করার আগে শেখা।">
+              Learning before claiming.
+            </h3>
 
-<div class="icon">
-<i class="fa-solid fa-graduation-cap"></i>
-</div>
+            <p
+              data-en="Mahadin Trader represents a developing Forex trading identity focused on building a structured process rather than chasing quick results."
+              data-bn="Mahadin Trader একটি বিকাশমান Forex trading identity, যেখানে দ্রুত ফলাফলের পেছনে না ছুটে একটি structured process গড়ে তোলাকে গুরুত্ব দেওয়া হয়।">
+              Mahadin Trader represents a developing Forex trading identity focused on building a structured process rather than chasing quick results.
+            </p>
 
-<h3>
-Learning First
-</h3>
+            <p
+              data-en="The philosophy is simple: protect capital first, control emotions, wait for quality setups and review every decision."
+              data-bn="দর্শনটি সহজ: প্রথমে মূলধন সুরক্ষা, আবেগ নিয়ন্ত্রণ, ভালো setup-এর জন্য অপেক্ষা এবং প্রতিটি সিদ্ধান্ত পর্যালোচনা করা।">
+              The philosophy is simple: protect capital first, control emotions, wait for quality setups and review every decision.
+            </p>
 
-<p>
 
-Building knowledge of Forex markets,
-technical concepts, market structure
-and disciplined execution.
+            <div class="philosophy">
 
-</p>
+              <span
+                data-en="Trading Philosophy"
+                data-bn="ট্রেডিং দর্শন">
+                Trading Philosophy
+              </span>
 
-</article>
+              <strong
+                data-en="Master the Mind. Manage the Risk. Build the Edge."
+                data-bn="মনকে নিয়ন্ত্রণ করুন। ঝুঁকি পরিচালনা করুন। নিজের Edge তৈরি করুন।">
+                Master the Mind. Manage the Risk. Build the Edge.
+              </strong>
 
+            </div>
 
+          </div>
 
-<article class="card reveal">
+        </div>
 
-<div class="icon">
-<i class="fa-solid fa-chart-line"></i>
-</div>
+      </div>
 
-<h3>
-Practice & Review
-</h3>
+    </section>
 
-<p>
 
-Using chart study, backtesting and journaling
-to understand what works and what needs improvement.
+    <!-- =====================================================
+         PROCESS
+         ===================================================== -->
 
-</p>
+    <section id="process">
 
-</article>
+      <div class="container">
 
+        <div class="section-header reveal">
 
+          <div>
+            <div class="section-number">02 / PROCESS</div>
 
-<article class="card reveal">
+            <h2 class="section-title"
+                data-en="The Trading Framework."
+                data-bn="ট্রেডিং ফ্রেমওয়ার্ক।">
+              The Trading Framework.
+            </h2>
+          </div>
 
-<div class="icon">
-<i class="fa-solid fa-shield-halved"></i>
-</div>
+          <p class="section-description"
+             data-en="A repeatable framework designed to keep decision-making structured and emotion under control."
+             data-bn="সিদ্ধান্ত গ্রহণকে কাঠামোবদ্ধ এবং আবেগকে নিয়ন্ত্রণে রাখার জন্য একটি repeatable framework।">
+            A repeatable framework designed to keep decision-making structured and emotion under control.
+          </p>
 
-<h3>
-Risk Awareness
-</h3>
+        </div>
 
-<p>
 
-Learning why risk management, patience
-and consistency matter more than chasing quick profits.
+        <div class="process-grid">
 
-</p>
 
-</article>
+          <!-- 01 -->
 
+          <article class="process-card reveal">
 
-</div>
+            <div class="process-number">01</div>
 
-</div>
+            <div class="process-icon">
+              ◈
+            </div>
 
-</section>
+            <h3
+              data-en="Core Discipline"
+              data-bn="মূল শৃঙ্খলা">
+              Core Discipline
+            </h3>
 
+            <p
+              data-en="The foundation of consistent decision-making."
+              data-bn="ধারাবাহিক সিদ্ধান্ত গ্রহণের ভিত্তি।">
+              The foundation of consistent decision-making.
+            </p>
 
+            <ul>
+              <li data-en="No revenge trading"
+                  data-bn="Revenge trading নয়">
+                No revenge trading
+              </li>
 
-<!-- =========================
-     LEARNING
-========================= -->
+              <li data-en="Follow the trading plan"
+                  data-bn="Trading plan অনুসরণ">
+                Follow the trading plan
+              </li>
 
-<section id="learning">
+              <li data-en="No emotional decisions"
+                  data-bn="আবেগের সিদ্ধান্ত নয়">
+                No emotional decisions
+              </li>
 
-<div class="container">
+              <li data-en="Avoid overtrading"
+                  data-bn="Overtrading এড়ানো">
+                Avoid overtrading
+              </li>
+            </ul>
 
-<div class="section-head reveal">
+          </article>
 
-<div class="section-kicker">
-Learning
-</div>
 
-<h2>
-Current learning areas.
-</h2>
+          <!-- 02 -->
 
-<p>
-Topics will continue to expand as the trading journey develops.
-</p>
+          <article class="process-card reveal">
 
-</div>
+            <div class="process-number">02</div>
 
+            <div class="process-icon">
+              ◇
+            </div>
 
+            <h3
+              data-en="Risk Management"
+              data-bn="Risk Management">
+              Risk Management
+            </h3>
 
-<div class="cards">
+            <p
+              data-en="Capital protection comes before profit."
+              data-bn="Profit-এর আগে capital protection।">
+              Capital protection comes before profit.
+            </p>
 
+            <ul>
+              <li data-en="Target risk: 1–2% per trade"
+                  data-bn="প্রতি trade-এ target risk: ১–২%">
+                Target risk: 1–2% per trade
+              </li>
 
-<article class="card reveal">
+              <li data-en="Daily loss limit: 3–5%"
+                  data-bn="Daily loss limit: ৩–৫%">
+                Daily loss limit: 3–5%
+              </li>
 
-<div class="icon">
-<i class="fa-solid fa-coins"></i>
-</div>
+              <li data-en="Stop after 2–3 consecutive losses"
+                  data-bn="পরপর ২–৩টি loss হলে stop">
+                Stop after 2–3 consecutive losses
+              </li>
 
-<h3>
-Forex Fundamentals
-</h3>
+              <li data-en="Always define Stop Loss"
+                  data-bn="সবসময় Stop Loss নির্ধারণ">
+                Always define Stop Loss
+              </li>
+            </ul>
 
-<p>
+          </article>
 
-Currency pairs, trading sessions,
-spreads, leverage and the basics
-of how the market works.
 
-</p>
+          <!-- 03 -->
 
-</article>
+          <article class="process-card reveal">
 
+            <div class="process-number">03</div>
 
+            <div class="process-icon">
+              ◌
+            </div>
 
-<article class="card reveal">
+            <h3
+              data-en="Trading Plan"
+              data-bn="Trading Plan">
+              Trading Plan
+            </h3>
 
-<div class="icon">
-<i class="fa-solid fa-chart-simple"></i>
-</div>
+            <p
+              data-en="No setup, no trade."
+              data-bn="Setup নেই, trade নেই।">
+              No setup, no trade.
+            </p>
 
-<h3>
-Market Structure
-</h3>
+            <ul>
+              <li data-en="Setup confirmed"
+                  data-bn="Setup confirmed">
+                Setup confirmed
+              </li>
 
-<p>
+              <li data-en="Trend verified"
+                  data-bn="Trend verified">
+                Trend verified
+              </li>
 
-Higher highs, lower lows,
-breaks of structure and meaningful
-price movement.
+              <li data-en="Minimum R:R target 1:2"
+                  data-bn="Minimum R:R target 1:2">
+                Minimum R:R target 1:2
+              </li>
 
-</p>
+              <li data-en="News impact checked"
+                  data-bn="News impact checked">
+                News impact checked
+              </li>
+            </ul>
 
-</article>
+          </article>
 
 
+          <!-- 04 -->
 
-<article class="card reveal">
+          <article class="process-card reveal">
 
-<div class="icon">
-<i class="fa-solid fa-water"></i>
-</div>
+            <div class="process-number">04</div>
 
-<h3>
-Liquidity & SMC
-</h3>
+            <div class="process-icon">
+              ◎
+            </div>
 
-<p>
+            <h3
+              data-en="Economic Awareness"
+              data-bn="Economic Awareness">
+              Economic Awareness
+            </h3>
 
-Studying liquidity concepts,
-price delivery and Smart Money Concepts.
+            <p
+              data-en="Understand the environment before entering."
+              data-bn="Entry-এর আগে market environment বোঝা।">
+              Understand the environment before entering.
+            </p>
 
-</p>
+            <ul>
+              <li data-en="Check economic calendar"
+                  data-bn="Economic calendar check">
+                Check economic calendar
+              </li>
 
-</article>
+              <li data-en="High-impact news awareness"
+                  data-bn="High-impact news awareness">
+                High-impact news awareness
+              </li>
 
+              <li data-en="Avoid unnecessary exposure"
+                  data-bn="অপ্রয়োজনীয় exposure এড়ানো">
+                Avoid unnecessary exposure
+              </li>
+            </ul>
 
+          </article>
 
-<article class="card reveal">
 
-<div class="icon">
-<i class="fa-solid fa-chart-column"></i>
-</div>
+          <!-- 05 -->
 
-<h3>
-Technical Analysis
-</h3>
+          <article class="process-card reveal">
 
-<p>
+            <div class="process-number">05</div>
 
-Price action, support and resistance,
-multi-timeframe analysis and chart reading.
+            <div class="process-icon">
+              ◫
+            </div>
 
-</p>
+            <h3
+              data-en="Performance Review"
+              data-bn="Performance Review">
+              Performance Review
+            </h3>
 
-</article>
+            <p
+              data-en="Every trade is data for improvement."
+              data-bn="প্রতিটি trade উন্নতির জন্য একটি data point।">
+              Every trade is data for improvement.
+            </p>
 
+            <ul>
+              <li data-en="Track decisions"
+                  data-bn="Decision track করা">
+                Track decisions
+              </li>
 
+              <li data-en="Record mistakes"
+                  data-bn="Mistake record করা">
+                Record mistakes
+              </li>
 
-<article class="card reveal">
+              <li data-en="Review losses"
+                  data-bn="Loss review করা">
+                Review losses
+              </li>
 
-<div class="icon">
-<i class="fa-solid fa-brain"></i>
-</div>
+              <li data-en="Improve weekly"
+                  data-bn="Weekly improvement">
+                Improve weekly
+              </li>
+            </ul>
 
-<h3>
-Trading Psychology
-</h3>
+          </article>
 
-<p>
 
-Discipline, patience, FOMO,
-emotional decisions and building a routine.
+          <!-- 06 -->
 
-</p>
+          <article class="process-card reveal">
 
-</article>
+            <div class="process-number">06</div>
 
+            <div class="process-icon">
+              ◉
+            </div>
 
+            <h3
+              data-en="Mindset"
+              data-bn="Mindset">
+              Mindset
+            </h3>
 
-<article class="card reveal">
+            <p
+              data-en="Consistency is built through controlled behavior."
+              data-bn="নিয়ন্ত্রিত আচরণের মাধ্যমেই consistency তৈরি হয়।">
+              Consistency is built through controlled behavior.
+            </p>
 
-<div class="icon">
-<i class="fa-solid fa-percent"></i>
-</div>
+            <ul>
+              <li data-en="Discipline over emotion"
+                  data-bn="Emotion-এর আগে discipline">
+                Discipline over emotion
+              </li>
 
-<h3>
-Risk Management
-</h3>
+              <li data-en="Losses are part of learning"
+                  data-bn="Loss learning-এর অংশ">
+                Losses are part of learning
+              </li>
 
-<p>
+              <li data-en="Stay patient"
+                  data-bn="ধৈর্য ধরে থাকা">
+                Stay patient
+              </li>
+            </ul>
 
-Position sizing, stop-loss planning,
-risk-to-reward and capital protection.
+          </article>
 
-</p>
+        </div>
 
-</article>
+      </div>
 
+    </section>
 
-</div>
 
-</div>
+    <!-- =====================================================
+         JOURNAL
+         ===================================================== -->
 
-</section>
+    <section id="journal">
 
+      <div class="container">
 
+        <div class="section-header reveal">
 
-<!-- =========================
-     ANALYSIS
-========================= -->
+          <div>
+            <div class="section-number">03 / JOURNAL</div>
 
-<section id="analysis">
+            <h2 class="section-title"
+                data-en="Document. Review. Improve."
+                data-bn="নথিভুক্ত করুন। পর্যালোচনা করুন। উন্নতি করুন।">
+              Document. Review. Improve.
+            </h2>
+          </div>
 
-<div class="container">
+          <p class="section-description"
+             data-en="The journal will become the transparent record of the learning process. No fabricated entries."
+             data-bn="এই journal learning process-এর একটি transparent record হবে। কোনো fabricated entry থাকবে না।">
+            The journal will become the transparent record of the learning process. No fabricated entries.
+          </p>
 
-<div class="section-head reveal">
+        </div>
 
-<div class="section-kicker">
-Analysis
-</div>
 
-<h2>
-Market analysis workspace.
-</h2>
+        <div class="journal-grid">
 
-<p>
 
-Educational chart analysis can be published here
-without presenting it as a guaranteed prediction.
+          <article class="journal-card reveal">
 
-</p>
+            <div class="journal-icon">
+              ◫
+            </div>
 
-</div>
+            <div>
+              <span class="coming-soon"
+                    data-en="Coming Soon"
+                    data-bn="শীঘ্রই">
+                Coming Soon
+              </span>
 
+              <h3
+                data-en="Market Analysis"
+                data-bn="Market Analysis">
+                Market Analysis
+              </h3>
 
+              <p
+                data-en="Future market observations and structured analysis."
+                data-bn="ভবিষ্যতের market observation ও structured analysis।">
+                Future market observations and structured analysis.
+              </p>
+            </div>
 
-<div class="journal">
+          </article>
 
 
-<article class="card reveal">
+          <article class="journal-card reveal">
 
-<span class="tag">
-EDUCATIONAL
-</span>
+            <div class="journal-icon">
+              ◌
+            </div>
 
-<h3>
-Forex Pair Analysis
-</h3>
+            <div>
+              <span class="coming-soon"
+                    data-en="Coming Soon"
+                    data-bn="শীঘ্রই">
+                Coming Soon
+              </span>
 
-<p>
+              <h3
+                data-en="Trading Journal"
+                data-bn="Trading Journal">
+                Trading Journal
+              </h3>
 
-Publish structured analysis for pairs such as
-EUR/USD or GBP/USD including timeframe,
-structure, levels and possible scenarios.
+              <p
+                data-en="Future trade-by-trade journal entries."
+                data-bn="ভবিষ্যতের trade-by-trade journal entry।">
+                Future trade-by-trade journal entries.
+              </p>
+            </div>
 
-</p>
+          </article>
 
-</article>
 
+          <article class="journal-card reveal">
 
+            <div class="journal-icon">
+              ◇
+            </div>
 
-<article class="card reveal">
+            <div>
+              <span class="coming-soon"
+                    data-en="Coming Soon"
+                    data-bn="শীঘ্রই">
+                Coming Soon
+              </span>
 
-<span class="tag">
-EDUCATIONAL
-</span>
+              <h3
+                data-en="Learning & Mistakes"
+                data-bn="Learning & Mistakes">
+                Learning & Mistakes
+              </h3>
 
-<h3>
-Gold / XAUUSD Analysis
-</h3>
+              <p
+                data-en="Lessons, mistakes and process improvements."
+                data-bn="Lessons, mistakes এবং process improvement।">
+                Lessons, mistakes and process improvements.
+              </p>
+            </div>
 
-<p>
+          </article>
 
-Document chart observations, key levels
-and possible scenarios while clearly
-separating analysis from certainty.
 
-</p>
+          <article class="journal-card reveal">
 
-</article>
+            <div class="journal-icon">
+              ◎
+            </div>
 
+            <div>
+              <span class="coming-soon"
+                    data-en="Coming Soon"
+                    data-bn="শীঘ্রই">
+                Coming Soon
+              </span>
 
-</div>
+              <h3
+                data-en="Weekly Progress"
+                data-bn="Weekly Progress">
+                Weekly Progress
+              </h3>
 
-</div>
+              <p
+                data-en="Regular review of development and discipline."
+                data-bn="উন্নতি ও discipline-এর নিয়মিত review।">
+                Regular review of development and discipline.
+              </p>
+            </div>
 
-</section>
+          </article>
 
+        </div>
 
+      </div>
 
-<!-- =========================
-     JOURNAL
-========================= -->
+    </section>
 
-<section id="journal">
 
-<div class="container">
+    <!-- =====================================================
+         INSIGHTS
+         ===================================================== -->
 
-<div class="section-head reveal">
+    <section id="insights">
 
-<div class="section-kicker">
-Trading Journal
-</div>
+      <div class="container">
 
-<h2>
-Document the process, not just the result.
-</h2>
+        <div class="section-header reveal">
 
-<p>
+          <div>
+            <div class="section-number">04 / INSIGHTS</div>
 
-A trading journal can become one of the
-most valuable parts of the website.
+            <h2 class="section-title"
+                data-en="Market Insights."
+                data-bn="Market Insights।">
+              Market Insights.
+            </h2>
+          </div>
 
-</p>
+          <p class="section-description"
+             data-en="Future educational content focused on understanding the market rather than chasing signals."
+             data-bn="Signal chase না করে market বোঝার ওপর ভিত্তি করে ভবিষ্যতের educational content।">
+            Future educational content focused on understanding the market rather than chasing signals.
+          </p>
 
-</div>
+        </div>
 
 
+        <div class="insights-wrapper reveal">
 
-<div class="cards">
+          <div class="insights-grid">
 
+            <div class="insight">
+              <h3>Market Structure</h3>
+              <p>Structure, trend and market context.</p>
+            </div>
 
-<article class="card reveal">
+            <div class="insight">
+              <h3>Price Action</h3>
+              <p>Reading price behavior and reactions.</p>
+            </div>
 
-<div class="icon">
-01
-</div>
+            <div class="insight">
+              <h3>Smart Money Concepts</h3>
+              <p>Educational exploration of SMC concepts.</p>
+            </div>
 
-<h3>
-Trade Setup
-</h3>
+            <div class="insight">
+              <h3>ICT Concepts</h3>
+              <p>Educational study of selected ICT concepts.</p>
+            </div>
 
-<p>
+            <div class="insight">
+              <h3>Risk Management</h3>
+              <p>Capital protection and position discipline.</p>
+            </div>
 
-Pair, timeframe, market context,
-setup and the reason behind the idea.
+            <div class="insight">
+              <h3>Trading Psychology</h3>
+              <p>Emotion, patience and decision-making.</p>
+            </div>
 
-</p>
+          </div>
 
-</article>
 
+          <div class="analysis-desk">
 
+            <strong
+              data-en="Analysis Desk — Coming Soon"
+              data-bn="Analysis Desk — শীঘ্রই">
+              Analysis Desk — Coming Soon
+            </strong>
 
-<article class="card reveal">
+            <span
+              data-en="Verified, educational and structured market content will be published here in the future."
+              data-bn="ভবিষ্যতে এখানে verified, educational এবং structured market content প্রকাশ করা হবে।">
+              Verified, educational and structured market content will be published here in the future.
+            </span>
 
-<div class="icon">
-02
-</div>
+          </div>
 
-<h3>
-Risk Plan
-</h3>
+        </div>
 
-<p>
+      </div>
 
-Planned risk, stop-loss logic
-and position sizing before a trade.
+    </section>
 
-</p>
 
-</article>
+    <!-- =====================================================
+         PERFORMANCE
+         ===================================================== -->
 
+    <section id="performance">
 
+      <div class="container">
 
-<article class="card reveal">
+        <div class="performance-card reveal">
 
-<div class="icon">
-03
-</div>
+          <div class="performance-status"
+               data-en="Current Status — Coming Soon"
+               data-bn="বর্তমান অবস্থা — শীঘ্রই">
+            Current Status — Coming Soon
+          </div>
 
-<h3>
-Review
-</h3>
+          <h3
+            data-en="Trading Performance"
+            data-bn="Trading Performance">
+            Trading Performance
+          </h3>
 
-<p>
+          <p
+            data-en="Verified performance data will only be displayed when legitimate records are available. No invented profit percentage, win rate, balance, drawdown or monthly return is presented."
+            data-bn="যখন legitimate record available হবে তখনই verified performance data প্রকাশ করা হবে। কোনো invented profit percentage, win rate, balance, drawdown বা monthly return দেখানো হচ্ছে না।">
+            Verified performance data will only be displayed when legitimate records are available. No invented profit percentage, win rate, balance, drawdown or monthly return is presented.
+          </p>
 
-What happened, what was learned
-and what can be improved next time.
+        </div>
 
-</p>
+      </div>
 
-</article>
+    </section>
 
 
-</div>
+    <!-- =====================================================
+         FUTURE SERVICES
+         ===================================================== -->
 
-</div>
+    <section>
 
-</section>
+      <div class="container">
 
+        <div class="section-header reveal">
 
+          <div>
+            <div class="section-number">05 / FUTURE</div>
 
-<!-- =========================
-     PROGRESS
-========================= -->
+            <h2 class="section-title"
+                data-en="Built For What Comes Next."
+                data-bn="ভবিষ্যতের জন্য প্রস্তুত।">
+              Built For What Comes Next.
+            </h2>
+          </div>
 
-<section id="progress">
+        </div>
 
-<div class="container">
 
-<div class="section-head reveal">
+        <div class="future-grid">
 
-<div class="section-kicker">
-Progress
-</div>
+          <div class="future-card reveal">
+            <span>◈</span>
 
-<h2>
-Learning progress.
-</h2>
+            <h3
+              data-en="Verified Performance"
+              data-bn="Verified Performance">
+              Verified Performance
+            </h3>
 
-<p>
+            <p
+              data-en="Coming Soon"
+              data-bn="শীঘ্রই">
+              Coming Soon
+            </p>
+          </div>
 
-These are learning milestones,
-not claims of profitability.
 
-</p>
+          <div class="future-card reveal">
+            <span>◎</span>
 
-</div>
+            <h3
+              data-en="Mentorship"
+              data-bn="Mentorship">
+              Mentorship
+            </h3>
 
+            <p
+              data-en="Coming Soon"
+              data-bn="শীঘ্রই">
+              Coming Soon
+            </p>
+          </div>
 
 
-<div class="progress">
+          <div class="future-card reveal">
+            <span>◇</span>
 
+            <h3
+              data-en="Services"
+              data-bn="Services">
+              Services
+            </h3>
 
-<div class="progress-card reveal">
+            <p
+              data-en="Coming Soon"
+              data-bn="শীঘ্রই">
+              Coming Soon
+            </p>
+          </div>
 
 
-<div class="progress-item">
+          <div class="future-card reveal">
+            <span>◫</span>
 
-<div class="progress-top">
+            <h3
+              data-en="Case Studies"
+              data-bn="Case Studies">
+              Case Studies
+            </h3>
 
-<span>
-Forex Fundamentals
-</span>
+            <p
+              data-en="Coming Soon"
+              data-bn="শীঘ্রই">
+              Coming Soon
+            </p>
+          </div>
 
-<span>
-Learning
-</span>
+        </div>
 
-</div>
+      </div>
 
-<div class="bar">
+    </section>
 
-<div
-class="fill"
-style="width:55%">
-</div>
 
-</div>
+    <!-- =====================================================
+         TESTIMONIALS
+         ===================================================== -->
 
-</div>
+    <section>
 
+      <div class="container">
 
+        <div class="testimonial reveal">
 
-<div class="progress-item">
+          <div class="quote-icon">
+            “
+          </div>
 
-<div class="progress-top">
+          <h3
+            data-en="Testimonials — Coming Soon"
+            data-bn="Testimonials — শীঘ্রই">
+            Testimonials — Coming Soon
+          </h3>
 
-<span>
-Market Structure
-</span>
+          <p
+            data-en="No fabricated reviews. Genuine feedback will be added only when available."
+            data-bn="কোনো fabricated review নয়। Genuine feedback available হলে তবেই যুক্ত করা হবে।">
+            No fabricated reviews. Genuine feedback will be added only when available.
+          </p>
 
-<span>
-Learning
-</span>
+        </div>
 
-</div>
+      </div>
 
-<div class="bar">
+    </section>
 
-<div
-class="fill"
-style="width:50%">
-</div>
 
-</div>
+    <!-- =====================================================
+         FAQ
+         ===================================================== -->
 
-</div>
+    <section id="faq">
 
+      <div class="container">
 
+        <div class="section-header reveal">
 
-<div class="progress-item">
+          <div>
+            <div class="section-number">06 / FAQ</div>
 
-<div class="progress-top">
+            <h2 class="section-title"
+                data-en="Frequently Asked."
+                data-bn="সাধারণ প্রশ্ন।">
+              Frequently Asked.
+            </h2>
+          </div>
 
-<span>
-Risk Management
-</span>
+        </div>
 
-<span>
-Learning
-</span>
 
-</div>
+        <div class="faq">
 
-<div class="bar">
 
-<div
-class="fill"
-style="width:45%">
-</div>
+          <div class="faq-item reveal">
 
-</div>
+            <button class="faq-question"
+                    type="button">
 
-</div>
+              <span
+                data-en="Does Mahadin Trader provide financial advice?"
+                data-bn="Mahadin Trader কি financial advice প্রদান করে?">
+                Does Mahadin Trader provide financial advice?
+              </span>
 
+              <span>+</span>
 
-</div>
+            </button>
 
+            <div class="faq-answer">
 
+              <div class="faq-answer-inner"
+                   data-en="No. The website is designed for educational and informational purposes. It does not provide personalized financial advice or investment recommendations."
+                   data-bn="না। এই website educational ও informational purpose-এর জন্য। এটি personalized financial advice বা investment recommendation প্রদান করে না।">
+                No. The website is designed for educational and informational purposes. It does not provide personalized financial advice or investment recommendations.
+              </div>
 
-<div class="progress-card reveal">
+            </div>
 
+          </div>
 
-<div class="progress-item">
 
-<div class="progress-top">
+          <div class="faq-item reveal">
 
-<span>
-Trading Psychology
-</span>
+            <button class="faq-question"
+                    type="button">
 
-<span>
-Learning
-</span>
+              <span
+                data-en="What is the trading style?"
+                data-bn="Trading style কী?">
+                What is the trading style?
+              </span>
 
-</div>
+              <span>+</span>
 
-<div class="bar">
+            </button>
 
-<div
-class="fill"
-style="width:42%">
-</div>
+            <div class="faq-answer">
 
-</div>
+              <div class="faq-answer-inner"
+                   data-en="The stated trading style is Day Trading, with emphasis on structured analysis, risk management and disciplined execution."
+                   data-bn="উল্লেখিত trading style হলো Day Trading, যেখানে structured analysis, risk management এবং disciplined execution-এর ওপর গুরুত্ব দেওয়া হয়।">
+                The stated trading style is Day Trading, with emphasis on structured analysis, risk management and disciplined execution.
+              </div>
 
-</div>
+            </div>
 
+          </div>
 
 
-<div class="progress-item">
+          <div class="faq-item reveal">
 
-<div class="progress-top">
+            <button class="faq-question"
+                    type="button">
 
-<span>
-Backtesting
-</span>
+              <span
+                data-en="When did the trading journey begin?"
+                data-bn="Trading journey কবে শুরু হয়?">
+                When did the trading journey begin?
+              </span>
 
-<span>
-Learning
-</span>
+              <span>+</span>
 
-</div>
+            </button>
 
-<div class="bar">
+            <div class="faq-answer">
 
-<div
-class="fill"
-style="width:35%">
-</div>
+              <div class="faq-answer-inner"
+                   data-en="The trading journey began on 28 January 2024."
+                   data-bn="Trading journey শুরু হয় ২৮ জানুয়ারি ২০২৪।">
+                The trading journey began on 28 January 2024.
+              </div>
 
-</div>
+            </div>
 
-</div>
+          </div>
 
 
+          <div class="faq-item reveal">
 
-<div class="progress-item">
+            <button class="faq-question"
+                    type="button">
 
-<div class="progress-top">
+              <span
+                data-en="Where will verified performance appear?"
+                data-bn="Verified performance কোথায় প্রকাশ হবে?">
+                Where will verified performance appear?
+              </span>
 
-<span>
-Consistency
-</span>
+              <span>+</span>
 
-<span>
-Building
-</span>
+            </button>
 
-</div>
+            <div class="faq-answer">
 
-<div class="bar">
+              <div class="faq-answer-inner"
+                   data-en="A dedicated performance section is prepared. Legitimate and verifiable records will be added there when available."
+                   data-bn="একটি dedicated performance section প্রস্তুত রাখা হয়েছে। Legitimate ও verifiable record available হলে সেখানে যুক্ত করা হবে।">
+                A dedicated performance section is prepared. Legitimate and verifiable records will be added there when available.
+              </div>
 
-<div
-class="fill"
-style="width:30%">
-</div>
+            </div>
 
-</div>
+          </div>
 
-</div>
 
+          <div class="faq-item reveal">
 
-</div>
+            <button class="faq-question"
+                    type="button">
 
-</div>
+              <span
+                data-en="Will educational content be published?"
+                data-bn="Educational content কি প্রকাশ করা হবে?">
+                Will educational content be published?
+              </span>
 
-</div>
+              <span>+</span>
 
-</section>
+            </button>
 
+            <div class="faq-answer">
 
+              <div class="faq-answer-inner"
+                   data-en="Yes. Future content may cover market structure, price action, SMC, ICT concepts, risk management and trading psychology."
+                   data-bn="হ্যাঁ। ভবিষ্যতের content-এ market structure, price action, SMC, ICT concepts, risk management এবং trading psychology থাকতে পারে।">
+                Yes. Future content may cover market structure, price action, SMC, ICT concepts, risk management and trading psychology.
+              </div>
 
-<!-- =========================
-     SOCIAL MEDIA
-========================= -->
+            </div>
 
-<section id="social">
+          </div>
 
-<div class="container">
 
-<div class="section-head reveal">
+        </div>
 
-<div class="section-kicker">
-Social Media
-</div>
+      </div>
 
-<h2>
-Follow Mahadin Trader.
-</h2>
+    </section>
 
-<p>
-Connect through the official social media profiles.
-</p>
 
-</div>
+    <!-- =====================================================
+         NEWSLETTER
+         ===================================================== -->
 
+    <section>
 
+      <div class="container">
 
-<div class="social-grid">
+        <div class="newsletter reveal">
 
+          <div>
 
-<!-- FACEBOOK -->
+            <div class="section-number">07 / NEWSLETTER</div>
 
-<a
-class="social facebook reveal"
-href="https://www.facebook.com/share/1EjmSv1Tke/"
-target="_blank"
-rel="noopener">
+            <h3
+              data-en="Stay Close To The Journey."
+              data-bn="এই যাত্রার সাথে থাকুন।">
+              Stay Close To The Journey.
+            </h3>
 
-<i class="fa-brands fa-facebook"></i>
+            <p
+              data-en="A future-ready space for market insights, journal updates and educational content."
+              data-bn="Market insights, journal updates এবং educational content-এর জন্য future-ready একটি space।">
+              A future-ready space for market insights, journal updates and educational content.
+            </p>
 
-<strong>
-Facebook
-</strong>
+          </div>
 
-</a>
 
+          <form class="newsletter-form"
+                id="newsletterForm">
 
+            <input
+              class="input"
+              type="email"
+              required
+              placeholder="Your email address"
+              data-placeholder-en="Your email address"
+              data-placeholder-bn="আপনার ইমেইল ঠিকানা"
+              aria-label="Email address">
 
-<!-- TIKTOK -->
+            <button
+              class="btn btn-primary sound-action"
+              type="submit"
+              data-en="Subscribe"
+              data-bn="সাবস্ক্রাইব">
+              Subscribe
+            </button>
 
-<a
-class="social tiktok reveal"
-href="https://www.tiktok.com/@mahadintrader?_r=1&_t=ZS-99XENTMh9Nt"
-target="_blank"
-rel="noopener">
+          </form>
 
-<i class="fa-brands fa-tiktok"></i>
+        </div>
 
-<strong>
-TikTok
-</strong>
+      </div>
 
-</a>
+    </section>
 
 
+    <!-- =====================================================
+         CONTACT
+         ===================================================== -->
 
-<!-- INSTAGRAM -->
+    <section id="contact">
 
-<a
-class="social instagram reveal"
-href="https://www.instagram.com/mahadintrader?stkn=MXkxaWJmeTNzd3VxYw=="
-target="_blank"
-rel="noopener">
+      <div class="container">
 
-<i class="fa-brands fa-instagram"></i>
+        <div class="section-header reveal">
 
-<strong>
-Instagram
-</strong>
+          <div>
+            <div class="section-number">08 / CONTACT</div>
 
-</a>
+            <h2 class="section-title"
+                data-en="Let's Connect."
+                data-bn="যোগাযোগ করুন।">
+              Let's Connect.
+            </h2>
+          </div>
 
+          <p class="section-description"
+             data-en="For professional inquiries, educational collaboration and future opportunities."
+             data-bn="Professional inquiry, educational collaboration এবং ভবিষ্যতের সুযোগের জন্য।">
+            For professional inquiries, educational collaboration and future opportunities.
+          </p>
 
+        </div>
 
-<!-- YOUTUBE -->
 
-<a
-class="social youtube reveal"
-href="https://youtube.com/@mahadintrader?si=rJx87N6uk10hBkGC"
-target="_blank"
-rel="noopener">
+        <div class="contact-grid">
 
-<i class="fa-brands fa-youtube"></i>
 
-<strong>
-YouTube
-</strong>
+          <div class="contact-info reveal">
 
-</a>
 
+            <div class="contact-item">
 
+              <div class="contact-icon">
+                @
+              </div>
 
-<!-- MESSENGER -->
+              <div>
 
-<a
-class="social messenger reveal"
-href="https://m.me/mahadintrader"
-target="_blank"
-rel="noopener">
+                <small
+                  data-en="Email"
+                  data-bn="ইমেইল">
+                  Email
+                </small>
 
-<i class="fa-brands fa-facebook-messenger"></i>
+                <strong>
+                  <a href="mailto:mahadintrader@gmail.com">
+                    mahadintrader@gmail.com
+                  </a>
+                </strong>
 
-<strong>
-Messenger
-</strong>
+              </div>
 
-</a>
+            </div>
 
 
-</div>
+            <div class="contact-item">
 
-</div>
+              <div class="contact-icon">
+                ☎
+              </div>
 
-</section>
+              <div>
 
+                <small
+                  data-en="Phone"
+                  data-bn="ফোন">
+                  Phone
+                </small>
 
+                <strong>
+                  <a href="tel:01577088379">
+                    01577088379
+                  </a>
+                </strong>
 
-<!-- =========================
-     CONTACT
-========================= -->
+              </div>
 
-<section id="contact">
+            </div>
 
-<div class="container">
 
-<div class="section-head reveal">
+            <div class="contact-item">
 
-<div class="section-kicker">
-Contact
-</div>
+              <div class="contact-icon">
+                ⌖
+              </div>
 
-<h2>
-Get in touch.
-</h2>
+              <div>
 
-<p>
+                <small
+                  data-en="Location"
+                  data-bn="ঠিকানা">
+                  Location
+                </small>
 
-For general communication and social connections.
+                <strong
+                  data-en="Shihuri, Shihata, Ward - 04, Char Banipakuria, Melandaha, Jamalpur, Bangladesh."
+                  data-bn="শিহরী, শিহাটা, ওয়ার্ড নং- ০৪, চর বানিপাকুরিয়া, মেলান্দহ, জামালপুর, বাংলাদেশ।">
+                  Shihuri, Shihata, Ward - 04,
+                  Char Banipakuria, Melandaha,
+                  Jamalpur, Bangladesh.
+                </strong>
 
-</p>
+              </div>
 
-</div>
+            </div>
 
 
+            <div class="socials">
 
-<div class="contact">
+              <a class="social-link"
+                 href="https://www.facebook.com/share/1DFQGz97H6/"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Facebook
+              </a>
 
+              <a class="social-link"
+                 href="https://www.tiktok.com/@mahadintrader"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                TikTok
+              </a>
 
-<div class="card reveal">
+              <a class="social-link"
+                 href="https://www.instagram.com/mahadintrader"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Instagram
+              </a>
 
-<form
-onsubmit="sendMessage(event)">
+              <a class="social-link"
+                 href="https://youtube.com/@mahadintrader"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                YouTube
+              </a>
 
-<input
-type="text"
-id="name"
-placeholder="Your name"
-required>
+              <a class="social-link"
+                 href="https://m.me/mahadintrader"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                Messenger
+              </a>
 
+            </div>
 
-<input
-type="email"
-id="email"
-placeholder="Your email"
-required>
+          </div>
 
 
-<textarea
-id="message"
-placeholder="Your message"
-required>
-</textarea>
+          <form class="contact-form reveal"
+                id="contactForm">
 
+            <div class="form-group">
 
-<button
-class="btn btn-primary"
-type="submit">
+              <label
+                for="name"
+                data-en="Name"
+                data-bn="নাম">
+                Name
+              </label>
 
-Send Message
+              <input
+                class="input"
+                id="name"
+                type="text"
+                required
+                autocomplete="name"
+                placeholder="Your name"
+                data-placeholder-en="Your name"
+                data-placeholder-bn="আপনার নাম">
 
-</button>
+            </div>
 
-</form>
 
-</div>
+            <div class="form-group">
 
+              <label
+                for="email"
+                data-en="Email"
+                data-bn="ইমেইল">
+                Email
+              </label>
 
+              <input
+                class="input"
+                id="email"
+                type="email"
+                required
+                autocomplete="email"
+                placeholder="Your email"
+                data-placeholder-en="Your email"
+                data-placeholder-bn="আপনার ইমেইল">
 
-<div class="contact-info">
+            </div>
 
 
-<div class="info-box reveal">
+            <div class="form-group">
 
-<b>
-Social Media
-</b>
+              <label
+                for="message"
+                data-en="Message"
+                data-bn="মেসেজ">
+                Message
+              </label>
 
-<span>
-Facebook • TikTok • Instagram • YouTube • Messenger
-</span>
+              <textarea
+                class="input"
+                id="message"
+                required
+                placeholder="Write your message..."
+                data-placeholder-en="Write your message..."
+                data-placeholder-bn="আপনার মেসেজ লিখুন..."></textarea>
 
-</div>
+            </div>
 
 
+            <button
+              class="btn btn-primary sound-action"
+              type="submit"
+              data-en="Send Message →"
+              data-bn="মেসেজ পাঠান →">
+              Send Message →
+            </button>
 
-<div class="info-box reveal">
 
-<b>
-Website Focus
-</b>
+            <div class="form-message"
+                 id="contactMessage"
+                 data-en="Your message form is ready. A backend/email service must be connected before real messages can be delivered."
+                 data-bn="আপনার message form প্রস্তুত। বাস্তবে message পাঠানোর জন্য backend/email service connect করতে হবে।">
+              Your message form is ready. A backend/email service must be connected before real messages can be delivered.
+            </div>
 
-<span>
-Forex learning, market analysis,
-trading psychology and journaling
-</span>
+          </form>
 
-</div>
+        </div>
 
+      </div>
 
+    </section>
 
-<div class="info-box reveal">
+  </main>
 
-<b>
-Brand
-</b>
 
-<span>
-Mahadin Trader
-</span>
+  <!-- =======================================================
+       FOOTER
+       ======================================================= -->
 
-</div>
+  <footer>
 
+    <div class="container">
 
-</div>
+      <div class="footer-grid">
 
-</div>
 
-</div>
+        <div class="footer-brand">
 
-</section>
+          <a href="#home"
+             class="brand">
 
+            <div class="brand-mark">
+              MT
+            </div>
 
+            <div class="brand-text">
+              Mahadin Trader
+              <span>Forex Trader & Market Analyst</span>
+            </div>
 
-<!-- =========================
-     DISCLAIMER
-========================= -->
+          </a>
 
-<section>
+          <p
+            data-en="Trade With Discipline. Learn With Purpose. Grow With Consistency."
+            data-bn="শৃঙ্খলার সাথে ট্রেড করুন। উদ্দেশ্য নিয়ে শিখুন। ধারাবাহিকতার সাথে এগিয়ে যান।">
+            Trade With Discipline. Learn With Purpose. Grow With Consistency.
+          </p>
 
-<div class="container">
+        </div>
 
-<div class="disclaimer reveal">
 
-<strong>
-Risk Disclaimer:
-</strong>
+        <div class="footer-column">
 
-The content on this website is for educational
-and informational purposes only.
+          <h4
+            data-en="Explore"
+            data-bn="এক্সপ্লোর">
+            Explore
+          </h4>
 
-It is not financial, investment or trading advice.
+          <a href="#about"
+             data-en="About"
+             data-bn="পরিচিতি">
+            About
+          </a>
 
-No profit or performance is guaranteed.
+          <a href="#process"
+             data-en="Process"
+             data-bn="প্রক্রিয়া">
+            Process
+          </a>
 
-Forex and leveraged trading involve significant
-risk of loss.
+          <a href="#journal"
+             data-en="Journal"
+             data-bn="জার্নাল">
+            Journal
+          </a>
 
-</div>
+          <a href="#insights"
+             data-en="Insights"
+             data-bn="ইনসাইটস">
+            Insights
+          </a>
 
-</div>
+          <a href="#contact"
+             data-en="Contact"
+             data-bn="যোগাযোগ">
+            Contact
+          </a>
 
-</section>
+        </div>
 
 
-</main>
+        <div class="footer-column">
 
+          <h4
+            data-en="Legal"
+            data-bn="আইনি তথ্য">
+            Legal
+          </h4>
 
+          <a href="#"
+             class="legal-link"
+             data-modal="privacy"
+             data-en="Privacy Policy"
+             data-bn="Privacy Policy">
+            Privacy Policy
+          </a>
 
-<!-- =========================
-     FOOTER
-========================= -->
+          <a href="#"
+             class="legal-link"
+             data-modal="terms"
+             data-en="Terms of Service"
+             data-bn="Terms of Service">
+            Terms of Service
+          </a>
 
-<footer>
+          <a href="#"
+             class="legal-link"
+             data-modal="risk"
+             data-en="Risk Disclaimer"
+             data-bn="Risk Disclaimer">
+            Risk Disclaimer
+          </a>
 
-<div class="container footer-row">
+        </div>
 
+      </div>
 
-<div>
 
-© <span id="year"></span>
-Mahadin Trader.
-All rights reserved.
+      <div class="footer-bottom">
 
-</div>
+        <span>
+          © 2026 Mahadin Trader —
+          <span data-en="All Rights Reserved."
+                data-bn="সর্বস্বত্ব সংরক্ষিত।">
+            All Rights Reserved.
+          </span>
+        </span>
 
+        <span>
+          <span data-en="Built for a long-term journey."
+                data-bn="দীর্ঘমেয়াদি যাত্রার জন্য তৈরি।">
+            Built for a long-term journey.
+          </span>
+        </span>
 
-<div class="footer-links">
+      </div>
 
-<a href="#home">
-Home
-</a>
+    </div>
 
-<a href="#about">
-About
-</a>
+  </footer>
 
-<a href="#learning">
-Learning
-</a>
 
-<a href="#social">
-Social
-</a>
+  <!-- =======================================================
+       LEGAL MODALS
+       ======================================================= -->
 
-<a href="#contact">
-Contact
-</a>
+  <div class="legal-modal"
+       id="privacyModal"
+       aria-hidden="true">
 
-<a href="#home">
-↑ Top
-</a>
+    <div class="legal-box">
 
-</div>
+      <button class="legal-close"
+              type="button"
+              aria-label="Close">
+        ×
+      </button>
 
-</div>
+      <h2
+        data-en="Privacy Policy"
+        data-bn="Privacy Policy">
+        Privacy Policy
+      </h2>
 
-</footer>
+      <h3
+        data-en="Information We Collect"
+        data-bn="যে তথ্য সংগ্রহ হতে পারে">
+        Information We Collect
+      </h3>
 
+      <p
+        data-en="This website may collect information voluntarily submitted through contact or newsletter forms, such as name and email address."
+        data-bn="এই website-এর contact বা newsletter form-এর মাধ্যমে স্বেচ্ছায় দেওয়া name ও email address-এর মতো তথ্য সংগ্রহ হতে পারে।">
+        This website may collect information voluntarily submitted through contact or newsletter forms, such as name and email address.
+      </p>
 
+      <h3
+        data-en="Local Storage"
+        data-bn="Local Storage">
+        Local Storage
+      </h3>
 
-<!-- =========================
-     LOGIN / SIGNUP MODAL
-========================= -->
+      <p
+        data-en="The website may use browser local storage to remember preferences such as theme, language and sound settings."
+        data-bn="Theme, language এবং sound setting-এর মতো preference মনে রাখার জন্য browser local storage ব্যবহার করা হতে পারে।">
+        The website may use browser local storage to remember preferences such as theme, language and sound settings.
+      </p>
 
-<div
-class="modal"
-id="authModal"
-onclick="closeOnBackdrop(event)">
+      <h3
+        data-en="Third-Party Services"
+        data-bn="Third-Party Services">
+        Third-Party Services
+      </h3>
 
+      <p
+        data-en="External services may be added in the future. Any such service should be reviewed before implementation."
+        data-bn="ভবিষ্যতে external service যুক্ত হতে পারে। কোনো service যুক্ত করার আগে তার privacy ও security terms পর্যালোচনা করা উচিত।">
+        External services may be added in the future. Any such service should be reviewed before implementation.
+      </p>
 
-<div class="modal-box">
+      <h3
+        data-en="Contact"
+        data-bn="যোগাযোগ">
+        Contact
+      </h3>
 
+      <p>
+        mahadintrader@gmail.com
+      </p>
 
-<div class="modal-head">
+    </div>
 
-<h3 id="authTitle">
-Login
-</h3>
+  </div>
 
-<button
-class="close"
-onclick="closeAuth()">
 
-×
+  <div class="legal-modal"
+       id="termsModal"
+       aria-hidden="true">
 
-</button>
+    <div class="legal-box">
 
-</div>
+      <button class="legal-close"
+              type="button"
+              aria-label="Close">
+        ×
+      </button>
 
+      <h2
+        data-en="Terms of Service"
+        data-bn="Terms of Service">
+        Terms of Service
+      </h2>
 
+      <h3
+        data-en="Educational Purpose"
+        data-bn="শিক্ষামূলক উদ্দেশ্য">
+        Educational Purpose
+      </h3>
 
-<div class="tabs">
+      <p
+        data-en="All website content is provided for educational and informational purposes."
+        data-bn="Website-এর সকল content educational ও informational purpose-এর জন্য প্রদান করা হয়।">
+        All website content is provided for educational and informational purposes.
+      </p>
 
-<button
-class="tab active"
-id="loginTab"
-onclick="switchAuth('login')">
+      <h3
+        data-en="No Financial Advice"
+        data-bn="Financial Advice নয়">
+        No Financial Advice
+      </h3>
 
-Login
+      <p
+        data-en="Nothing on this website should be interpreted as personalized financial advice, investment advice or a recommendation to buy or sell any financial instrument."
+        data-bn="এই website-এর কোনো content-কে personalized financial advice, investment advice অথবা কোনো financial instrument কেনা-বেচার recommendation হিসেবে বিবেচনা করা উচিত নয়।">
+        Nothing on this website should be interpreted as personalized financial advice, investment advice or a recommendation to buy or sell any financial instrument.
+      </p>
 
-</button>
+      <h3
+        data-en="No Guarantees"
+        data-bn="কোনো নিশ্চয়তা নেই">
+        No Guarantees
+      </h3>
 
+      <p
+        data-en="Past or future trading performance is not guaranteed. Users are responsible for their own decisions."
+        data-bn="Past বা future trading performance-এর কোনো নিশ্চয়তা নেই। ব্যবহারকারী নিজের সিদ্ধান্তের জন্য নিজেই দায়ী।">
+        Past or future trading performance is not guaranteed. Users are responsible for their own decisions.
+      </p>
 
-<button
-class="tab"
-id="signupTab"
-onclick="switchAuth('signup')">
+      <h3
+        data-en="Changes"
+        data-bn="পরিবর্তন">
+        Changes
+      </h3>
 
-Sign Up
+      <p
+        data-en="Website content, features and terms may be updated as the brand develops."
+        data-bn="Brand-এর উন্নতির সাথে website-এর content, feature এবং terms পরিবর্তন হতে পারে।">
+        Website content, features and terms may be updated as the brand develops.
+      </p>
 
-</button>
+    </div>
 
-</div>
+  </div>
 
 
+  <div class="legal-modal"
+       id="riskModal"
+       aria-hidden="true">
 
-<form
-class="auth-form"
-onsubmit="demoAuth(event)">
+    <div class="legal-box">
 
+      <button class="legal-close"
+              type="button"
+              aria-label="Close">
+        ×
+      </button>
 
-<input
-type="email"
-placeholder="Email address"
-required>
+      <h2
+        data-en="Risk Disclaimer"
+        data-bn="Risk Disclaimer">
+        Risk Disclaimer
+      </h2>
 
+      <h3
+        data-en="Trading Risk"
+        data-bn="Trading Risk">
+        Trading Risk
+      </h3>
 
-<input
-type="password"
-placeholder="Password"
-minlength="6"
-required>
+      <p
+        data-en="Forex and other financial markets involve significant risk. Losses can occur and no trading method can guarantee profits."
+        data-bn="Forex এবং অন্যান্য financial market-এ উল্লেখযোগ্য risk রয়েছে। Loss হতে পারে এবং কোনো trading method profit-এর নিশ্চয়তা দিতে পারে না।">
+        Forex and other financial markets involve significant risk. Losses can occur and no trading method can guarantee profits.
+      </p>
 
+      <h3
+        data-en="Educational Only"
+        data-bn="শুধুমাত্র শিক্ষামূলক">
+        Educational Only
+      </h3>
 
-<button
-class="btn btn-primary"
-type="submit"
-id="authSubmit">
+      <p
+        data-en="Information published by Mahadin Trader is intended for educational purposes and should not be treated as individualized financial advice."
+        data-bn="Mahadin Trader-এর প্রকাশিত information educational purpose-এর জন্য এবং এটিকে individualized financial advice হিসেবে বিবেচনা করা উচিত নয়।">
+        Information published by Mahadin Trader is intended for educational purposes and should not be treated as individualized financial advice.
+      </p>
 
-Login
+      <h3
+        data-en="Capital Protection"
+        data-bn="Capital Protection">
+        Capital Protection
+      </h3>
 
-</button>
+      <p
+        data-en="Risk management principles presented on this website are educational guidelines, not personalized instructions for any individual."
+        data-bn="এই website-এ দেখানো risk management principle educational guideline; কোনো ব্যক্তির জন্য personalized instruction নয়।">
+        Risk management principles presented on this website are educational guidelines, not personalized instructions for any individual.
+      </p>
 
+    </div>
 
-<p>
+  </div>
 
-Login and Sign Up interface is ready.
-Real authentication requires a secure backend.
 
-</p>
+  <!-- =======================================================
+       BACK TO TOP
+       ======================================================= -->
 
-</form>
+  <button
+    class="back-top"
+    id="backTop"
+    type="button"
+    aria-label="Back to top">
+    ↑
+  </button>
 
-</div>
 
-</div>
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================= -->
 
+  <script>
 
+    /* =======================================================
+       CORE STATE
+       ======================================================= */
 
-<script>
+    const html = document.documentElement;
+    const body = document.body;
 
-/* =========================
-   YEAR
-========================= */
+    let currentLanguage =
+      localStorage.getItem("mt-language") || "en";
 
-document.getElementById("year").textContent =
-new Date().getFullYear();
+    let currentTheme =
+      localStorage.getItem("mt-theme") || "dark";
 
+    let soundEnabled =
+      localStorage.getItem("mt-sound") !== "off";
 
 
-/* =========================
-   MOBILE MENU
-========================= */
+    /* =======================================================
+       THEME
+       ======================================================= */
 
-function toggleMenu(){
+    function applyTheme() {
 
-const nav =
-document.getElementById("navLinks");
+      html.setAttribute(
+        "data-theme",
+        currentTheme
+      );
 
-if(nav.style.display === "flex"){
+      localStorage.setItem(
+        "mt-theme",
+        currentTheme
+      );
 
-nav.style.display = "";
+      const button =
+        document.getElementById("themeToggle");
 
-}else{
+      if (button) {
 
-nav.style.display = "flex";
+        button.textContent =
+          currentTheme === "dark"
+            ? "☼"
+            : "◐";
 
-nav.style.position = "absolute";
+      }
 
-nav.style.top = "74px";
+    }
 
-nav.style.left = "4%";
+    applyTheme();
 
-nav.style.right = "4%";
 
-nav.style.padding = "16px";
+    document
+      .getElementById("themeToggle")
+      .addEventListener("click", () => {
 
-nav.style.flexDirection = "column";
+        currentTheme =
+          currentTheme === "dark"
+            ? "light"
+            : "dark";
 
-nav.style.background = "#081523";
+        applyTheme();
 
-nav.style.border =
-"1px solid rgba(255,255,255,.09)";
+        playSound("soft");
 
-nav.style.borderRadius = "16px";
+      });
 
-}
 
-}
+    /* =======================================================
+       LANGUAGE
+       ======================================================= */
 
+    function applyLanguage() {
 
+      const elements =
+        document.querySelectorAll("[data-en][data-bn]");
 
-/* =========================
-   AUTH MODAL
-========================= */
+      elements.forEach(element => {
 
-function openAuth(mode){
+        const value =
+          currentLanguage === "bn"
+            ? element.dataset.bn
+            : element.dataset.en;
 
-document
-.getElementById("authModal")
-.classList.add("active");
+        if (
+          element.tagName === "INPUT" ||
+          element.tagName === "TEXTAREA"
+        ) {
 
-switchAuth(mode);
+          element.placeholder = value;
 
-}
+        } else {
 
+          element.textContent = value;
 
-function closeAuth(){
+        }
 
-document
-.getElementById("authModal")
-.classList.remove("active");
+      });
 
-}
 
+      const placeholderElements =
+        document.querySelectorAll(
+          "[data-placeholder-en][data-placeholder-bn]"
+        );
 
-function closeOnBackdrop(event){
+      placeholderElements.forEach(element => {
 
-if(event.target.id === "authModal"){
+        element.placeholder =
+          currentLanguage === "bn"
+            ? element.dataset.placeholderBn
+            : element.dataset.placeholderEn;
 
-closeAuth();
+      });
 
-}
 
-}
+      body.classList.toggle(
+        "bn",
+        currentLanguage === "bn"
+      );
 
+      html.lang =
+        currentLanguage === "bn"
+          ? "bn"
+          : "en";
 
-function switchAuth(mode){
 
-const login =
-mode === "login";
+      const langButton =
+        document.getElementById(
+          "languageToggle"
+        );
 
-document.getElementById("authTitle")
-.textContent =
-login ? "Login" : "Create your account";
+      langButton.textContent =
+        currentLanguage === "en"
+          ? "বাংলা"
+          : "EN";
 
 
-document.getElementById("authSubmit")
-.textContent =
-login ? "Login" : "Sign Up";
+      localStorage.setItem(
+        "mt-language",
+        currentLanguage
+      );
 
+    }
 
-document.getElementById("loginTab")
-.classList.toggle(
-"active",
-login
-);
 
+    applyLanguage();
 
-document.getElementById("signupTab")
-.classList.toggle(
-"active",
-!login
-);
 
-}
+    document
+      .getElementById("languageToggle")
+      .addEventListener("click", () => {
 
+        currentLanguage =
+          currentLanguage === "en"
+            ? "bn"
+            : "en";
 
+        applyLanguage();
 
-/* =========================
-   DEMO LOGIN
-========================= */
+        playSound("soft");
 
-function demoAuth(event){
+      });
 
-event.preventDefault();
 
-alert(
-"Authentication is not connected yet. " +
-"This interface is ready for a secure backend."
-);
+    /* =======================================================
+       MOBILE NAVIGATION
+       ======================================================= */
 
-}
+    const mobileToggle =
+      document.getElementById(
+        "mobileToggle"
+      );
 
+    const navLinks =
+      document.getElementById(
+        "navLinks"
+      );
 
 
-/* =========================
-   CONTACT
-========================= */
+    mobileToggle.addEventListener(
+      "click",
+      () => {
 
-function sendMessage(event){
+        const open =
+          navLinks.classList.toggle(
+            "open"
+          );
 
-event.preventDefault();
+        mobileToggle.setAttribute(
+          "aria-expanded",
+          open
+        );
 
-const name =
-document
-.getElementById("name")
-.value
-.trim();
+        mobileToggle.textContent =
+          open ? "×" : "☰";
 
-alert(
-"Thank you, " +
-name +
-"! The contact form interface is ready. " +
-"Connect an email/form backend to receive real messages."
-);
+        playSound("soft");
 
-event.target.reset();
+      }
+    );
 
-}
 
+    navLinks
+      .querySelectorAll("a")
+      .forEach(link => {
 
+        link.addEventListener(
+          "click",
+          () => {
 
-/* =========================
-   SCROLL ANIMATION
-========================= */
+            navLinks.classList.remove(
+              "open"
+            );
 
-const observer =
-new IntersectionObserver(
+            mobileToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
 
-entries => {
+            mobileToggle.textContent =
+              "☰";
 
-entries.forEach(entry => {
+          }
+        );
 
-if(entry.isIntersecting){
+      });
 
-entry.target.classList.add("show");
 
-}
+    /* =======================================================
+       HEADER SCROLL
+       ======================================================= */
 
-});
+    const header =
+      document.getElementById("header");
 
-},
+    const backTop =
+      document.getElementById("backTop");
 
-{
-threshold:.12
-}
 
-);
+    function handleScroll() {
 
+      if (window.scrollY > 30) {
 
-document
-.querySelectorAll(".reveal")
-.forEach(element => {
+        header.classList.add(
+          "scrolled"
+        );
 
-observer.observe(element);
+      } else {
 
-});
+        header.classList.remove(
+          "scrolled"
+        );
 
+      }
 
-</script>
 
+      if (window.scrollY > 600) {
+
+        backTop.classList.add(
+          "show"
+        );
+
+      } else {
+
+        backTop.classList.remove(
+          "show"
+        );
+
+      }
+
+    }
+
+
+    window.addEventListener(
+      "scroll",
+      handleScroll,
+      {
+        passive: true
+      }
+    );
+
+
+    handleScroll();
+
+
+    backTop.addEventListener(
+      "click",
+      () => {
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+
+        playSound("soft");
+
+      }
+    );
+
+
+    /* =======================================================
+       ACTIVE NAVIGATION
+       ======================================================= */
+
+    const sections =
+      document.querySelectorAll(
+        "main section[id]"
+      );
+
+    const navAnchors =
+      document.querySelectorAll(
+        ".nav-links a"
+      );
+
+
+    const navObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              navAnchors.forEach(
+                anchor => {
+
+                  anchor.classList.remove(
+                    "active"
+                  );
+
+                }
+              );
+
+
+              const active =
+                document.querySelector(
+                  `.nav-links a[href="#${entry.target.id}"]`
+                );
+
+              if (active) {
+
+                active.classList.add(
+                  "active"
+                );
+
+              }
+
+            }
+
+          });
+
+        },
+        {
+          rootMargin:
+            "-25% 0px -65% 0px"
+        }
+      );
+
+
+    sections.forEach(section => {
+
+      navObserver.observe(section);
+
+    });
+
+
+    /* =======================================================
+       REVEAL ON SCROLL
+       ======================================================= */
+
+    const revealElements =
+      document.querySelectorAll(
+        ".reveal"
+      );
+
+
+    const revealObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (
+              entry.isIntersecting
+            ) {
+
+              entry.target.classList.add(
+                "visible"
+              );
+
+              revealObserver.unobserve(
+                entry.target
+              );
+
+            }
+
+          });
+
+        },
+        {
+          threshold: .12
+        }
+      );
+
+
+    revealElements.forEach(element => {
+
+      revealObserver.observe(element);
+
+    });
+
+
+    /* =======================================================
+       BANGLADESH CLOCK
+       ======================================================= */
+
+    function updateBangladeshClock() {
+
+      const now =
+        new Date();
+
+
+      const time =
+        new Intl.DateTimeFormat(
+          "en-GB",
+          {
+            timeZone: "Asia/Dhaka",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: false
+          }
+        ).format(now);
+
+
+      const date =
+        new Intl.DateTimeFormat(
+          currentLanguage === "bn"
+            ? "bn-BD"
+            : "en-GB",
+          {
+            timeZone: "Asia/Dhaka",
+            weekday: "short",
+            day: "2-digit",
+            month: "short",
+            year: "numeric"
+          }
+        ).format(now);
+
+
+      document.getElementById(
+        "bdTime"
+      ).textContent = time;
+
+
+      document.getElementById(
+        "bdDate"
+      ).textContent = date;
+
+    }
+
+
+    updateBangladeshClock();
+
+    setInterval(
+      updateBangladeshClock,
+      1000
+    );
+
+
+    /* =======================================================
+       FAQ
+       ======================================================= */
+
+    document
+      .querySelectorAll(".faq-question")
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            const item =
+              button.closest(
+                ".faq-item"
+              );
+
+            const answer =
+              item.querySelector(
+                ".faq-answer"
+              );
+
+
+            document
+              .querySelectorAll(
+                ".faq-item.open"
+              )
+              .forEach(other => {
+
+                if (other !== item) {
+
+                  other.classList.remove(
+                    "open"
+                  );
+
+                  other.querySelector(
+                    ".faq-answer"
+                  ).style.maxHeight =
+                    null;
+
+                }
+
+              });
+
+
+            item.classList.toggle(
+              "open"
+            );
+
+
+            if (
+              item.classList.contains(
+                "open"
+              )
+            ) {
+
+              answer.style.maxHeight =
+                answer.scrollHeight +
+                "px";
+
+            } else {
+
+              answer.style.maxHeight =
+                null;
+
+            }
+
+
+            playSound("soft");
+
+          }
+        );
+
+      });
+
+
+    /* =======================================================
+       SIMPLE SOUND SYSTEM
+       Uses Web Audio only after user interaction.
+       ======================================================= */
+
+    let audioContext = null;
+
+
+    function getAudioContext() {
+
+      if (!audioContext) {
+
+        const AudioCtx =
+          window.AudioContext ||
+          window.webkitAudioContext;
+
+        if (!AudioCtx) return null;
+
+        audioContext =
+          new AudioCtx();
+
+      }
+
+      return audioContext;
+
+    }
+
+
+    function playSound(type = "soft") {
+
+      if (!soundEnabled) return;
+
+
+      const context =
+        getAudioContext();
+
+      if (!context) return;
+
+
+      if (
+        context.state ===
+        "suspended"
+      ) {
+
+        context.resume();
+
+      }
+
+
+      const oscillator =
+        context.createOscillator();
+
+      const gain =
+        context.createGain();
+
+
+      oscillator.connect(gain);
+
+      gain.connect(
+        context.destination
+      );
+
+
+      const now =
+        context.currentTime;
+
+
+      oscillator.type =
+        "sine";
+
+
+      if (type === "soft") {
+
+        oscillator.frequency.setValueAtTime(
+          620,
+          now
+        );
+
+      } else {
+
+        oscillator.frequency.setValueAtTime(
+          820,
+          now
+        );
+
+      }
+
+
+      gain.gain.setValueAtTime(
+        0.0001,
+        now
+      );
+
+      gain.gain.exponentialRampToValueAtTime(
+        0.035,
+        now + .01
+      );
+
+      gain.gain.exponentialRampToValueAtTime(
+        0.0001,
+        now + .10
+      );
+
+
+      oscillator.start(now);
+
+      oscillator.stop(
+        now + .11
+      );
+
+    }
+
+
+    function updateSoundButton() {
+
+      document.getElementById(
+        "soundToggle"
+      ).textContent =
+        soundEnabled
+          ? "🔊"
+          : "🔇";
+
+    }
+
+
+    updateSoundButton();
+
+
+    document
+      .getElementById("soundToggle")
+      .addEventListener(
+        "click",
+        () => {
+
+          soundEnabled =
+            !soundEnabled;
+
+          localStorage.setItem(
+            "mt-sound",
+            soundEnabled
+              ? "on"
+              : "off"
+          );
+
+          updateSoundButton();
+
+          if (soundEnabled) {
+
+            playSound("success");
+
+          }
+
+        }
+      );
+
+
+    document
+      .querySelectorAll(
+        ".sound-action"
+      )
+      .forEach(element => {
+
+        element.addEventListener(
+          "click",
+          () => {
+
+            playSound("soft");
+
+          }
+        );
+
+      });
+
+
+    /* =======================================================
+       CONTACT FORM
+       Frontend only — no fake backend.
+       ======================================================= */
+
+    const contactForm =
+      document.getElementById(
+        "contactForm"
+      );
+
+    const contactMessage =
+      document.getElementById(
+        "contactMessage"
+      );
+
+
+    contactForm.addEventListener(
+      "submit",
+      event => {
+
+        event.preventDefault();
+
+        contactMessage.style.display =
+          "block";
+
+        contactForm.reset();
+
+        applyLanguage();
+
+        playSound("success");
+
+      }
+    );
+
+
+    /* =======================================================
+       NEWSLETTER FORM
+       Frontend only.
+       ======================================================= */
+
+    const newsletterForm =
+      document.getElementById(
+        "newsletterForm"
+      );
+
+
+    newsletterForm.addEventListener(
+      "submit",
+      event => {
+
+        event.preventDefault();
+
+        const button =
+          newsletterForm.querySelector(
+            "button"
+          );
+
+
+        button.textContent =
+          currentLanguage === "bn"
+            ? "শীঘ্রই চালু হবে"
+            : "Coming Soon";
+
+
+        playSound("success");
+
+        newsletterForm.reset();
+
+        setTimeout(() => {
+
+          applyLanguage();
+
+        }, 2500);
+
+      }
+    );
+
+
+    /* =======================================================
+       LEGAL MODALS
+       ======================================================= */
+
+    const legalLinks =
+      document.querySelectorAll(
+        ".legal-link"
+      );
+
+    const legalModals =
+      document.querySelectorAll(
+        ".legal-modal"
+      );
+
+
+    function closeLegalModals() {
+
+      legalModals.forEach(modal => {
+
+        modal.classList.remove(
+          "active"
+        );
+
+        modal.setAttribute(
+          "aria-hidden",
+          "true"
+        );
+
+      });
+
+      document.body.style.overflow =
+        "";
+
+    }
+
+
+    legalLinks.forEach(link => {
+
+      link.addEventListener(
+        "click",
+        event => {
+
+          event.preventDefault();
+
+          const modalName =
+            link.dataset.modal;
+
+          const modal =
+            document.getElementById(
+              modalName + "Modal"
+            );
+
+          if (!modal) return;
+
+
+          closeLegalModals();
+
+
+          modal.classList.add(
+            "active"
+          );
+
+          modal.setAttribute(
+            "aria-hidden",
+            "false"
+          );
+
+          document.body.style.overflow =
+            "hidden";
+
+          playSound("soft");
+
+        }
+      );
+
+    });
+
+
+    document
+      .querySelectorAll(
+        ".legal-close"
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          closeLegalModals
+        );
+
+      });
+
+
+    legalModals.forEach(modal => {
+
+      modal.addEventListener(
+        "click",
+        event => {
+
+          if (
+            event.target === modal
+          ) {
+
+            closeLegalModals();
+
+          }
+
+        }
+      );
+
+    });
+
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeLegalModals();
+
+        }
+
+      }
+    );
+
+
+    /* =======================================================
+       PROFILE PDF HANDLING
+       ======================================================= */
+
+    const profileDownload =
+      document.getElementById(
+        "profileDownload"
+      );
+
+
+    profileDownload.addEventListener(
+      "click",
+      event => {
+
+        /*
+          The link points to:
+          assets/profile.pdf
+
+          Add your real profile/CV PDF there
+          when it becomes available.
+        */
+
+        playSound("soft");
+
+      }
+    );
+
+
+    /* =======================================================
+       PROFILE IMAGE FALLBACK
+       ======================================================= */
+
+    const profileCard =
+      document.querySelector(
+        ".profile-card"
+      );
+
+
+    const profileImage =
+      document.querySelector(
+        ".profile-photo"
+      );
+
+
+    profileImage.addEventListener(
+      "error",
+      () => {
+
+        profileCard.style.background =
+          `
+          radial-gradient(
+            circle at 50% 30%,
+            rgba(0,217,255,.18),
+            transparent 35%
+          ),
+          linear-gradient(
+            145deg,
+            #111827,
+            #05070b
+          )
+          `;
+
+      }
+    );
+
+
+    /* =======================================================
+       YEAR
+       ======================================================= */
+
+    /*
+      Footer currently intentionally shows
+      © 2026 according to the requested brand copy.
+    */
+
+
+    /* =======================================================
+       INITIALIZATION
+       ======================================================= */
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+        applyTheme();
+        applyLanguage();
+        handleScroll();
+
+      }
+    );
+
+  </script>
 
 </body>
 </html>
