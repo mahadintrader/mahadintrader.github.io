@@ -3,197 +3,624 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Forex Risk Disclaimer | Mahadin Trader</title>
-  <meta name="description" content="Forex trading risk disclaimer for Mahadin Trader.">
+  <meta name="description" content="Forex risk disclaimer for Mahadin Trader. Educational information only.">
+
   <style>
-    :root{
-      --bg:#07090d; --card:#0d1118; --text:#f4f7fb; --muted:#a7b0bd;
-      --orange:#ff8a2a; --teal:#19c3b1; --border:rgba(255,255,255,.09);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{
-      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #050708;
+      color: #f1f5f9;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(5, 7, 8, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 21px;
+      letter-spacing: 0.5px;
+    }
+
+    .brand img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    .brand strong {
+      color: #ff8a00;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #b8c1cc;
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: #ff8a00;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: #0d1115;
+      color: #ffffff;
+      padding: 9px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 90px 0 60px;
+      text-align: center;
       background:
-        linear-gradient(rgba(25,195,177,.025) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,138,42,.025) 1px,transparent 1px),
-        var(--bg);
-      background-size:42px 42px;
-      color:var(--text); line-height:1.7;
+        radial-gradient(circle at top right, rgba(255, 138, 0, 0.12), transparent 30%),
+        radial-gradient(circle at top left, rgba(0, 190, 180, 0.10), transparent 30%);
     }
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1100px,92%);margin:auto}
-    header{
-      position:sticky;top:0;z-index:20;
-      background:rgba(7,9,13,.88);backdrop-filter:blur(14px);
-      border-bottom:1px solid var(--border);
+
+    .arabic {
+      color: #00c2b8;
+      font-size: 20px;
+      margin-bottom: 20px;
+      direction: rtl;
     }
-    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.4px}
-    .brand img{width:42px;height:42px;object-fit:contain}
-    .brand span{font-size:18px}
-    nav{display:flex;flex-wrap:wrap;gap:18px}
-    nav a{font-size:14px;color:#cbd3dd;transition:.25s}
-    nav a:hover{color:var(--orange)}
-    .hero{padding:92px 0 52px;text-align:center}
-    .eyebrow{color:var(--teal);font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-    h1{font-size:clamp(36px,6vw,64px);line-height:1.08;margin:14px 0}
-    .hero p{max-width:720px;margin:auto;color:var(--muted);font-size:17px}
-    .notice{
-      margin:34px auto 0;max-width:850px;padding:18px 20px;
-      border:1px solid rgba(255,138,42,.3);border-left:4px solid var(--orange);
-      background:rgba(255,138,42,.06);border-radius:14px;color:#e9edf2
+
+    .hero h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      line-height: 1.1;
+      margin-bottom: 20px;
     }
-    main{padding-bottom:70px}
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-    .card{
-      background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.018));
-      border:1px solid var(--border);border-radius:18px;padding:28px;
-      box-shadow:0 16px 50px rgba(0,0,0,.22);
+
+    .hero h1 span {
+      color: #ff8a00;
     }
-    .card h2{font-size:22px;margin-bottom:12px}
-    .card h2::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--teal);margin:0 10px 3px 0}
-    .card p{color:var(--muted);font-size:15px}
-    .card ul{margin:12px 0 0 20px;color:var(--muted)}
-    .card li{margin:6px 0}
-    .full{grid-column:1/-1}
-    .footer{
-      border-top:1px solid var(--border);padding:28px 0;color:#8e98a6;
-      font-size:13px;text-align:center;
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      color: #aeb8c4;
+      font-size: 17px;
     }
-    .back{display:inline-block;margin-top:28px;color:var(--teal);font-weight:700}
-    @media(max-width:760px){
-      .nav{align-items:flex-start;padding:14px 0;flex-direction:column}
-      nav{gap:10px 14px}
-      .hero{padding-top:58px}
-      .grid{grid-template-columns:1fr}
-      .full{grid-column:auto}
+
+    /* CONTENT */
+    .section {
+      padding: 70px 0;
+    }
+
+    .warning-box {
+      border: 1px solid rgba(255, 138, 0, 0.45);
+      background: rgba(255, 138, 0, 0.07);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 35px;
+    }
+
+    .warning-box h2 {
+      color: #ff8a00;
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    .warning-box p {
+      color: #d6dde5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: #0b0f12;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 28px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 138, 0, 0.35);
+    }
+
+    .card h3 {
+      color: #ffffff;
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #aeb8c4;
+    }
+
+    .full-card {
+      margin-top: 22px;
+    }
+
+    .contact-box {
+      margin-top: 35px;
+      padding: 30px;
+      text-align: center;
+      background: linear-gradient(
+        135deg,
+        rgba(0, 194, 184, 0.08),
+        rgba(255, 138, 0, 0.08)
+      );
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+    }
+
+    .contact-box h2 {
+      margin-bottom: 10px;
+    }
+
+    .contact-box p {
+      color: #aeb8c4;
+      margin-bottom: 15px;
+    }
+
+    .email {
+      color: #00c2b8;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    /* SOCIAL */
+    .social-section {
+      padding: 50px 0 70px;
+      text-align: center;
+    }
+
+    .social-section h2 {
+      margin-bottom: 22px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .social-links a {
+      padding: 10px 17px;
+      border-radius: 10px;
+      background: #0d1115;
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      color: #cbd5e1;
+      transition: 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #ff8a00;
+      border-color: rgba(255, 138, 0, 0.45);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 30px 0;
+      text-align: center;
+      color: #7f8b98;
+      font-size: 14px;
+    }
+
+    footer .footer-brand {
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 7px;
+    }
+
+    footer .footer-brand span {
+      color: #ff8a00;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #070a0c;
+        padding: 20px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        padding: 8px 0;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        padding: 70px 0 45px;
+      }
+
+      .section {
+        padding: 50px 0;
+      }
+
+      .card,
+      .warning-box,
+      .contact-box {
+        padding: 22px;
+      }
+
+      .arabic {
+        font-size: 17px;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <div class="container nav">
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="Mahadin Trader logo">
-      <span>Mahadin Trader</span>
-    </a>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="journey.html">Journey</a>
-      <a href="learning.html">Learning</a>
-      <a href="goals.html">Goals</a>
-      <a href="journal.html">Journal</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav">
 
-<main>
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Mahadin Trader Logo">
+        <span><strong>Mahadin</strong> Trader</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="journey.html">Journey</a>
+        <a href="learning.html">Learning</a>
+        <a href="goals.html">Goals</a>
+        <a href="journal.html">Journal</a>
+        <a href="contact.html">Contact</a>
+        <a href="risk-disclaimer.html" class="active">Risk Disclaimer</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="resources.html">Resources</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
   <section class="hero">
     <div class="container">
-      <div class="eyebrow">Important Notice</div>
-      <h1>Forex Risk Disclaimer</h1>
-      <p>
-        Please read this notice before using the information published on Mahadin Trader.
-      </p>
-      <div class="notice">
-        Forex trading involves substantial risk and may not be suitable for every person.
-        You can lose some or all of the money you choose to trade. Past performance does
-        not guarantee future results.
+
+      <div class="arabic">
+        لا إله إلا الله محمد رسول الله
       </div>
+
+      <h1>
+        Forex Risk <span>Disclaimer</span>
+      </h1>
+
+      <p>
+        Important information about the educational purpose of Mahadin Trader
+        and the risks involved in Forex trading.
+      </p>
+
     </div>
   </section>
 
-  <section class="container">
-    <div class="grid">
 
-      <article class="card">
-        <h2>Educational & Personal Content</h2>
-        <p>
-          Mahadin Trader is a personal website documenting Mahmudul Hasan's learning
-          journey in Forex trading. Articles, notes, journal ideas, market observations,
-          and other materials are shared for educational and informational purposes only.
-        </p>
-      </article>
+  <!-- DISCLAIMER CONTENT -->
+  <section class="section">
+    <div class="container">
 
-      <article class="card">
-        <h2>Not Financial Advice</h2>
-        <p>
-          Nothing on this website should be understood as financial, investment, legal,
-          tax, or professional advice. No information on this website is a recommendation
-          to buy, sell, or hold any currency or financial instrument.
-        </p>
-      </article>
+      <div class="warning-box">
+        <h2>⚠️ Important Risk Warning</h2>
 
-      <article class="card">
-        <h2>Trading Risk</h2>
         <p>
-          The Forex market can move quickly and unexpectedly. Leverage can increase both
-          potential gains and potential losses. You should understand the risks involved
-          before trading and should never trade money you cannot afford to lose.
+          Forex trading involves substantial risk and may not be suitable
+          for everyone. You can lose some or all of your trading capital.
+          Never trade with money you cannot afford to lose.
         </p>
-      </article>
+      </div>
 
-      <article class="card">
-        <h2>No Profit Guarantee</h2>
-        <p>
-          Mahadin Trader does not promise, guarantee, or represent that any particular
-          trading result or level of profit will be achieved. Losses are a normal risk
-          of trading and individual results can vary significantly.
-        </p>
-      </article>
 
-      <article class="card">
-        <h2>Risk Management</h2>
-        <p>
-          As part of the personal trading discipline documented on this website, the
-          approach emphasizes protecting capital before pursuing profit. Personal rules
-          include controlled risk per trade, use of stop loss, avoiding overtrading,
-          and stopping after a series of losses.
-        </p>
-      </article>
+      <div class="grid">
 
-      <article class="card">
-        <h2>Do Your Own Research</h2>
-        <p>
-          Before making any trading or investment decision, conduct your own research
-          and consider seeking advice from a qualified financial professional who can
-          assess your individual circumstances.
-        </p>
-      </article>
+        <div class="card">
+          <h3>Educational Purpose Only</h3>
 
-      <article class="card full">
-        <h2>Personal Trading Discipline</h2>
+          <p>
+            The information published on Mahadin Trader is provided for
+            educational, informational, and personal learning purposes only.
+            It is based on my own learning journey, observations, studies,
+            and experiences as a Forex learner.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h3>Not Financial Advice</h3>
+
+          <p>
+            Nothing on this website should be considered financial,
+            investment, trading, or professional advice. The content is not
+            intended to recommend that you buy, sell, or hold any financial
+            instrument.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h3>No Guaranteed Results</h3>
+
+          <p>
+            There are no guarantees of profit in Forex trading. Past
+            performance, examples, analysis, opinions, or educational
+            information do not guarantee future results.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h3>Trading Risk</h3>
+
+          <p>
+            Leverage and market volatility can increase both potential gains
+            and potential losses. Before participating in Forex trading,
+            understand the risks and consider whether trading is appropriate
+            for your personal circumstances.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h3>Your Own Responsibility</h3>
+
+          <p>
+            Any trading decision you make is your own responsibility.
+            You should conduct your own research, analysis, and risk
+            assessment before making any financial decision.
+          </p>
+        </div>
+
+
+        <div class="card">
+          <h3>Learning Journey</h3>
+
+          <p>
+            Mahadin Trader represents my personal journey of learning Forex
+            trading. I am continuously studying, practicing, reviewing
+            mistakes, and developing my knowledge and discipline.
+          </p>
+        </div>
+
+      </div>
+
+
+      <div class="card full-card">
+        <h3>Market Analysis and Future Content</h3>
+
         <p>
-          The trading discipline principles used in this personal journey include:
+          Any future market analysis, trade ideas, charts, journal entries,
+          or market observations published on this website will be shared
+          for educational purposes. They should not be interpreted as
+          signals, instructions, or guarantees of profitable trading.
         </p>
-        <ul>
-          <li>Follow a trading plan rather than chasing profit.</li>
-          <li>Avoid revenge trading, impulsive entries, and emotional decisions.</li>
-          <li>Use appropriate stop loss and risk controls.</li>
-          <li>Check market and economic-news conditions before trading.</li>
-          <li>Keep a trading journal and review mistakes and losing trades.</li>
-          <li>Focus on consistency, patience, discipline, and continuous improvement.</li>
-        </ul>
-      </article>
+      </div>
+
+
+      <div class="card full-card">
+        <h3>Third-Party Links</h3>
+
+        <p>
+          This website may contain links to third-party websites, platforms,
+          tools, or resources. Mahadin Trader does not control or guarantee
+          the accuracy, availability, security, or content of external
+          websites. Visiting third-party websites is done at your own risk.
+        </p>
+      </div>
+
+
+      <div class="card full-card">
+        <h3>Information Accuracy</h3>
+
+        <p>
+          I make reasonable efforts to share useful and accurate information,
+          but I do not guarantee that every piece of information on this
+          website will always be complete, current, or error-free.
+          Information may change over time.
+        </p>
+      </div>
+
+
+      <div class="card full-card">
+        <h3>Personal Responsibility Before Trading</h3>
+
+        <p>
+          Before risking real money, take time to understand Forex markets,
+          develop a trading plan, practice appropriate risk management,
+          and consider seeking advice from a qualified financial
+          professional where appropriate.
+        </p>
+      </div>
+
+
+      <div class="contact-box">
+
+        <h2>Questions?</h2>
+
+        <p>
+          If you have questions about this website or its educational
+          content, you can contact Mahadin Trader.
+        </p>
+
+        <a class="email" href="mailto:mahadintrader@gmail.com">
+          mahadintrader@gmail.com
+        </a>
+
+      </div>
 
     </div>
-
-    <a class="back" href="index.html">← Back to Mahadin Trader</a>
   </section>
-</main>
 
-<footer class="footer">
-  <div class="container">
-    © <span id="year"></span> Mahadin Trader · Mahmudul Hasan
-  </div>
-</footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <!-- SOCIAL -->
+  <section class="social-section">
+    <div class="container">
+
+      <h2>Follow Mahadin Trader</h2>
+
+      <div class="social-links">
+
+        <a
+          href="https://www.facebook.com/share/1GmUrxPa9d/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Facebook
+        </a>
+
+        <a
+          href="https://www.tiktok.com/@mahadintrader?_r=1&_t=ZS-99f3wghpehp"
+          target="_blank"
+          rel="noopener noreferrer">
+          TikTok
+        </a>
+
+        <a
+          href="https://youtube.com/@mahadintrader?si=HSvaxI7Iwl4LCsZE"
+          target="_blank"
+          rel="noopener noreferrer">
+          YouTube
+        </a>
+
+        <a
+          href="https://www.instagram.com/mahadintrader?stkn=MXkxaWJmeTNzd3VxYw=="
+          target="_blank"
+          rel="noopener noreferrer">
+          Instagram
+        </a>
+
+        <a
+          href="https://m.me/mahadintrader"
+          target="_blank"
+          rel="noopener noreferrer">
+          Messenger
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+
+      <div class="footer-brand">
+        <span>Mahadin</span> Trader
+      </div>
+
+      <p>
+        Learning the Market. Building the Mindset.
+      </p>
+
+      <p>
+        © <span id="year"></span> Mahadin Trader. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("show");
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        document.getElementById("navLinks").classList.remove("show");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
