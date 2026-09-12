@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning & Skills | Mahadin Trader</title>
+<meta name="description" content="The Forex trading skills Mahmudul Hasan is learning and developing through the Mahadin Trader journey.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#080a0c;color:#f1f1f1;line-height:1.7}
+a{text-decoration:none;color:inherit}
+header{position:sticky;top:0;z-index:1000;background:rgba(8,10,12,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{max-width:1200px;margin:auto;padding:16px 25px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:bold}
+.brand img{width:42px;height:42px;object-fit:contain;border-radius:50%}
+nav ul{list-style:none;display:flex;gap:22px}
+nav a{color:#bbb;font-size:14px;transition:.3s}
+nav a:hover,nav a.active{color:#ff8a00}
+.menu-btn{display:none;font-size:28px;cursor:pointer}
+.hero{min-height:65vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 20px;position:relative;overflow:hidden;background:linear-gradient(rgba(8,10,12,.82),rgba(8,10,12,.96)),radial-gradient(circle at 20% 30%,rgba(255,138,0,.13),transparent 35%),radial-gradient(circle at 80% 70%,rgba(0,190,180,.10),transparent 35%)}
+.hero-content{max-width:850px;animation:fadeUp 1s ease}
+.badge{display:inline-block;padding:7px 15px;border:1px solid rgba(255,138,0,.4);border-radius:30px;color:#ff9d2e;font-size:13px;margin-bottom:20px;background:rgba(255,138,0,.05)}
+.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.1;margin-bottom:20px}
+.hero h1 span{color:#ff8a00}
+.hero p{color:#aaa;max-width:720px;margin:auto;font-size:17px}
+section{max-width:1150px;margin:auto;padding:90px 25px}
+.section-title{text-align:center;margin-bottom:55px}
+.section-title h2{font-size:38px;margin-bottom:12px}
+.section-title p{color:#888}
+.notice{background:#101316;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px;max-width:900px;margin:0 auto 70px;text-align:center}
+.notice strong{color:#ff8a00}.notice p{color:#aaa}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.skill{background:#101316;border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:28px;transition:.35s;position:relative;overflow:hidden}
+.skill:hover{transform:translateY(-7px);border-color:rgba(255,138,0,.4);box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.skill::after{content:"";position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,#ff8a00,#00b8ad);opacity:.7}
+.icon{font-size:32px;margin-bottom:14px}.skill h3{font-size:20px;margin-bottom:8px}
+.skill p{color:#929292;font-size:14px;margin-bottom:18px}
+.status{display:inline-block;font-size:11px;text-transform:uppercase;letter-spacing:1px;padding:5px 10px;border-radius:20px;background:rgba(0,184,173,.08);color:#55d8cf;border:1px solid rgba(0,184,173,.25)}
+.levels{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:20px}
+.level{background:#0e1113;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:25px}
+.level h3{margin-bottom:8px}.level p{color:#888;font-size:14px}
+.roadmap{max-width:850px;margin:auto}
+.roadmap-item{display:flex;gap:25px;margin-bottom:22px}
+.number{min-width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#101316;border:1px solid rgba(255,138,0,.4);color:#ff8a00;font-weight:bold}
+.roadmap-card{flex:1;background:#101316;border:1px solid rgba(255,255,255,.07);border-radius:16px;padding:22px}
+.roadmap-card h3{margin-bottom:5px}.roadmap-card p{color:#8e8e8e;font-size:14px}
+.disclaimer{max-width:1050px;margin:0 auto 60px;padding:25px;background:#0d1012;border-left:3px solid #ff8a00;color:#888;font-size:13px}
+footer{border-top:1px solid rgba(255,255,255,.08);text-align:center;padding:35px 20px;color:#777;background:#060708}
+footer strong{color:#ff8a00}
+@keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:850px){.skills{grid-template-columns:repeat(2,1fr)}.levels{grid-template-columns:1fr}}
+@media(max-width:768px){
+.menu-btn{display:block}
+nav ul{display:none;position:absolute;top:74px;left:0;right:0;background:#090b0d;flex-direction:column;padding:25px;text-align:center;border-bottom:1px solid rgba(255,255,255,.08)}
+nav ul.show{display:flex}.hero{min-height:60vh}section{padding:70px 20px}.skills{grid-template-columns:1fr}.roadmap-item{gap:15px}
+}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a href="index.html" class="brand"><img src="logo.png" alt="Mahadin Trader Logo"><span>Mahadin Trader</span></a>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<nav><ul id="menu">
+<li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="journey.html">Journey</a></li><li><a href="learning.html" class="active">Learning</a></li><li><a href="goals.html">Goals</a></li><li><a href="journal.html">Journal</a></li><li><a href="contact.html">Contact</a></li>
+</ul></nav>
+</div></header>
+
+<div class="hero"><div class="hero-content">
+<div class="badge">LEARNING • PRACTICE • IMPROVEMENT</div>
+<h1>Learning <span>& Skills</span></h1>
+<p>The concepts, skills and habits I am studying and practicing as I continue building my foundation in Forex trading.</p>
+</div></div>
+
+<section>
+<div class="notice"><p><strong>Learning in progress:</strong> I am currently learning Forex trading step by step. These topics represent my areas of study and practice, not a claim of professional expertise or guaranteed results.</p></div>
+
+<div class="section-title"><h2>What I Am Learning</h2><p>Building knowledge one skill at a time.</p></div>
+<div class="skills">
+
+<div class="skill"><div class="icon">📊</div><h3>Price Action</h3><p>Studying how price moves and learning to read market behavior without relying only on indicators.</p><span class="status">Learning</span></div>
+<div class="skill"><div class="icon">📈</div><h3>Technical Analysis</h3><p>Learning charts, market structure, trends and technical tools to improve market analysis.</p><span class="status">Learning</span></div>
+<div class="skill"><div class="icon">🌍</div><h3>Fundamental Analysis</h3><p>Understanding how economic conditions and fundamental information can influence the market.</p><span class="status">Learning</span></div>
+<div class="skill"><div class="icon">🧱</div><h3>Supply & Demand</h3><p>Studying supply and demand areas and how they may influence price reactions.</p><span class="status">Practicing</span></div>
+<div class="skill"><div class="icon">🧠</div><h3>Smart Money Concept</h3><p>Exploring SMC concepts and learning how to interpret liquidity, structure and price behavior.</p><span class="status">Learning</span></div>
+<div class="skill"><div class="icon">⏱️</div><h3>ICT Concepts</h3><p>Studying ICT-based concepts and gradually developing a clearer understanding through practice.</p><span class="status">Learning</span></div>
+<div class="skill"><div class="icon">📍</div><h3>Support & Resistance</h3><p>Learning to identify important price levels and understand their role in market structure.</p><span class="status">Practicing</span></div>
+<div class="skill"><div class="icon">🕯️</div><h3>Candlestick Analysis</h3><p>Studying candlestick formations and what they can reveal about buying and selling pressure.</p><span class="status">Practicing</span></div>
+<div class="skill"><div class="icon">🛡️</div><h3>Risk Management</h3><p>Learning to protect capital through position sizing, stop loss and controlled risk.</p><span class="status">Priority</span></div>
+<div class="skill"><div class="icon">🧘</div><h3>Trading Psychology</h3><p>Working on patience, emotional control, discipline and accepting losses as part of learning.</p><span class="status">Developing</span></div>
+<div class="skill"><div class="icon">📋</div><h3>Trading Plan</h3><p>Learning to define setups, entry conditions, risk/reward and rules before taking a trade.</p><span class="status">Developing</span></div>
+<div class="skill"><div class="icon">📰</div><h3>Economic & News Awareness</h3><p>Learning to check economic events and understand how high-impact news can affect volatility.</p><span class="status">Learning</span></div>
+<div class="skill"><div class="icon">📝</div><h3>Trading Journal</h3><p>Recording trades, observations and mistakes so the learning process can be reviewed later.</p><span class="status">Building</span></div>
+<div class="skill"><div class="icon">📊</div><h3>Performance Review</h3><p>Reviewing results, mistakes and losing trades to identify areas that need improvement.</p><span class="status">Developing</span></div>
+<div class="skill"><div class="icon">🎯</div><h3>Discipline & Consistency</h3><p>Focusing on following the process, avoiding impulsive decisions and improving consistency.</p><span class="status">Priority</span></div>
+
+</div>
+</section>
+
+<section>
+<div class="section-title"><h2>My Learning Approach</h2><p>A simple process I want to follow throughout the journey.</p></div>
+<div class="levels">
+<div class="level"><h3>01 — Study</h3><p>Learn a concept carefully and build a clear foundation before trying to apply it.</p></div>
+<div class="level"><h3>02 — Practice</h3><p>Observe charts, analyze setups and practice applying the concepts in a controlled way.</p></div>
+<div class="level"><h3>03 — Review</h3><p>Review decisions, identify mistakes and use the lessons to improve future practice.</p></div>
+</div>
+</section>
+
+<section>
+<div class="section-title"><h2>My Development Roadmap</h2><p>From knowledge to disciplined execution.</p></div>
+<div class="roadmap">
+<div class="roadmap-item"><div class="number">1</div><div class="roadmap-card"><h3>Build the Foundation</h3><p>Strengthen understanding of Forex, price action, technical and fundamental concepts.</p></div></div>
+<div class="roadmap-item"><div class="number">2</div><div class="roadmap-card"><h3>Develop a Trading Process</h3><p>Work on a structured trading plan, setup confirmation, risk/reward and news awareness.</p></div></div>
+<div class="roadmap-item"><div class="number">3</div><div class="roadmap-card"><h3>Improve Risk & Psychology</h3><p>Focus on capital protection, patience, emotional control and disciplined decision-making.</p></div></div>
+<div class="roadmap-item"><div class="number">4</div><div class="roadmap-card"><h3>Journal & Review</h3><p>Record observations and trades, review mistakes and look for repeatable areas of improvement.</p></div></div>
+<div class="roadmap-item"><div class="number">5</div><div class="roadmap-card"><h3>Keep Improving</h3><p>Continue learning, practicing and refining the process instead of chasing quick results.</p></div></div>
+</div>
+</section>
+
+<div class="disclaimer"><strong>Forex Risk Disclaimer:</strong><br><br>
+The information presented on Mahadin Trader represents my personal learning journey and opinions.
+I am currently learning Forex trading and this website does not provide financial, investment or trading advice.
+Forex trading involves significant risk and you can lose your invested capital. Always conduct your own research
+and understand the risks before making financial decisions.</div>
+
+<footer><p>© <span id="year"></span> <strong>Mahadin Trader</strong>. All Rights Reserved.</p>
+<p style="margin-top:8px;">Learning the Market. Building the Mindset.</p></footer>
+
+<script>
+function toggleMenu(){document.getElementById("menu").classList.toggle("show")}
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
+
