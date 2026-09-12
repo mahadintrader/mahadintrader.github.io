@@ -1,210 +1,834 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Mahmudul Hasan — creator of Mahadin Trader and a Forex trading learner from Bangladesh.">
-  <meta name="theme-color" content="#050807">
-  <title>About Me | Mahadin Trader</title>
-  <style>
-    :root{
-      --bg:#050807;--soft:#09110f;--card:#0d1916;--text:#f5f8f7;--muted:#9caeaa;
-      --orange:#ff8a2a;--teal:#24c7a6;--line:rgba(255,255,255,.09);
-      --max:1180px;--radius:22px;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--text);background:
-      radial-gradient(circle at 80% 8%,rgba(36,199,166,.12),transparent 27%),
-      radial-gradient(circle at 8% 35%,rgba(255,138,42,.09),transparent 25%),var(--bg);
-      line-height:1.7;overflow-x:hidden
-    }
-    a{text-decoration:none;color:inherit}
-    img{display:block;max-width:100%}
-    .container{width:min(var(--max),92%);margin:auto}
-    .nav-wrap{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(5,8,7,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    nav{height:78px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:900}
-    .brand img{width:47px;height:47px;object-fit:contain}
-    .brand b{color:var(--orange)}
-    .links{display:flex;gap:27px;align-items:center;list-style:none}
-    .links a{font-size:.9rem;color:#c4d0cc;transition:.2s}
-    .links a:hover,.links .active{color:#fff}
-    .cta{padding:10px 16px;border:1px solid rgba(36,199,166,.4);border-radius:999px;background:rgba(36,199,166,.07)}
-    .menu{display:none;background:none;border:0;color:white;font-size:1.7rem}
-    .hero{padding:160px 0 85px;position:relative}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
-    .eyebrow{display:flex;align-items:center;gap:9px;color:var(--teal);font-size:.76rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-    .eyebrow:before{content:"";width:25px;height:1px;background:var(--teal)}
-    h1{font-size:clamp(3rem,6.5vw,5.8rem);line-height:.96;letter-spacing:-.055em;margin:16px 0 24px}
-    h1 span{color:var(--orange)}
-    .lead{font-size:1.08rem;color:var(--muted);max-width:680px}
-    .location{margin-top:23px;color:#c7d3d0;font-size:.9rem}
-    .portrait{position:relative;max-width:420px;margin:auto}
-    .portrait-frame{padding:11px;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));transform:rotate(1deg);box-shadow:0 25px 70px rgba(0,0,0,.38)}
-    .portrait-frame img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:19px}
-    .badge{position:absolute;left:-25px;bottom:28px;background:rgba(7,15,13,.95);border:1px solid var(--line);padding:14px 17px;border-radius:15px;box-shadow:0 20px 50px rgba(0,0,0,.35);font-size:.8rem}
-    .badge strong{display:block;color:var(--teal);font-size:.96rem}
-    .section{padding:95px 0}
-    .two{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:start}
-    h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.08;margin:14px 0 18px}
-    .card{background:linear-gradient(145deg,rgba(17,31,27,.78),rgba(9,17,15,.8));border:1px solid var(--line);border-radius:var(--radius);padding:30px}
-    .card p{color:var(--muted);margin-bottom:17px}
-    .quote{border-left:3px solid var(--orange);padding:20px 22px;background:rgba(255,138,42,.05);border-radius:0 14px 14px 0;color:#d4ddda;font-size:1rem}
-    .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:17px;margin-top:35px}
-    .principle{padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(13,25,22,.62)}
-    .icon{font-size:1.25rem;margin-bottom:12px}
-    .principle h3{font-size:1rem;margin-bottom:5px}
-    .principle p{font-size:.86rem;color:var(--muted)}
-    .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin-top:25px}
-    .fact{padding:19px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.025)}
-    .fact small{display:block;color:#788a85;text-transform:uppercase;letter-spacing:.09em;font-size:.68rem}
-    .fact strong{display:block;margin-top:4px;font-size:.95rem}
-    .disclaimer{margin-top:20px;color:#8d9b97;font-size:.78rem}
-    footer{border-top:1px solid var(--line);padding:28px 0;color:#788782;font-size:.8rem}
-    .foot{display:flex;justify-content:space-between;gap:18px;align-items:center}
-    .foot strong{color:#dce6e3}
-    .reveal{opacity:0;transform:translateY(18px);transition:.65s}
-    .reveal.show{opacity:1;transform:none}
-    @media(max-width:900px){
-      .links{position:fixed;top:78px;right:4%;width:min(300px,92%);display:none;flex-direction:column;align-items:stretch;padding:18px;background:#08100e;border:1px solid var(--line);border-radius:18px}
-      .links.open{display:flex}.menu{display:block}.hero-grid,.two{grid-template-columns:1fr}.portrait{max-width:430px}.hero{padding-top:125px}
-    }
-    @media(max-width:560px){
-      nav{height:70px}.brand img{width:40px;height:40px}.hero{padding:120px 0 65px}.section{padding:70px 0}
-      .principles,.facts{grid-template-columns:1fr}.badge{left:8px}.foot{flex-direction:column;align-items:flex-start}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Mahmudul Hasan | Mahadin Trader</title>
+
+    <meta name="description" content="Learn about Mahmudul Hasan, creator of Mahadin Trader, and his ongoing Forex trading learning journey.">
+
+    <style>
+        :root {
+            --bg: #07090c;
+            --bg-soft: #0d1117;
+            --card: #10161d;
+            --border: rgba(255,255,255,0.08);
+            --text: #f5f7fa;
+            --muted: #9aa4b2;
+            --orange: #ff8a00;
+            --teal: #00c2a8;
+            --shadow: 0 20px 60px rgba(0,0,0,0.35);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            background:
+                linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px),
+                var(--bg);
+            background-size: 45px 45px;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        /* HEADER */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(7,9,12,0.94);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav {
+            min-height: 74px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 20px;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .brand img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .brand span {
+            color: var(--orange);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: #cbd2da;
+            font-size: 14px;
+            transition: 0.25s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--orange);
+        }
+
+        .menu-btn {
+            display: none;
+            background: var(--card);
+            color: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 9px 12px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* HERO */
+
+        .hero {
+            padding: 100px 0 75px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            color: var(--teal);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(40px, 6vw, 68px);
+            line-height: 1.1;
+            margin-bottom: 22px;
+        }
+
+        h1 span {
+            color: var(--orange);
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: auto;
+            color: var(--muted);
+            font-size: 18px;
+        }
+
+        /* ABOUT */
+
+        .about-section {
+            padding: 30px 0 80px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 35px;
+            align-items: center;
+        }
+
+        .photo-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 14px;
+            box-shadow: var(--shadow);
+        }
+
+        .photo-card img {
+            width: 100%;
+            display: block;
+            border-radius: 16px;
+            max-height: 620px;
+            object-fit: cover;
+        }
+
+        .content-card {
+            background: rgba(16,22,29,0.92);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .content-card h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .content-card p {
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        .highlight {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        /* VALUES */
+
+        .section {
+            padding: 75px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: auto;
+            color: var(--muted);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255,138,0,0.35);
+        }
+
+        .card-number {
+            color: var(--orange);
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 15px;
+        }
+
+        /* IDENTITY */
+
+        .identity {
+            padding: 0 0 80px;
+        }
+
+        .identity-box {
+            max-width: 900px;
+            margin: auto;
+            padding: 45px;
+            text-align: center;
+            border-radius: 22px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,138,0,0.08),
+                    rgba(0,194,168,0.06)
+                );
+            border: 1px solid var(--border);
+        }
+
+        .arabic {
+            font-size: 25px;
+            margin-bottom: 18px;
+            color: white;
+        }
+
+        .identity-box p {
+            color: var(--muted);
+        }
+
+        /* SOCIAL */
+
+        .social {
+            text-align: center;
+            padding-bottom: 75px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            padding: 11px 18px;
+            border-radius: 10px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            transition: 0.25s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--orange);
+            border-color: var(--orange);
+            transform: translateY(-2px);
+        }
+
+        /* DISCLAIMER */
+
+        .disclaimer {
+            margin-bottom: 70px;
+            padding: 24px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,138,0,0.2);
+            background: rgba(255,138,0,0.04);
+            color: var(--muted);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .disclaimer strong {
+            color: var(--orange);
+        }
+
+        /* FOOTER */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--orange);
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 850px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 74px;
+                left: 0;
+                right: 0;
+                padding: 20px;
+                background: rgba(7,9,12,0.98);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links.show {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                padding: 8px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                padding-top: 75px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .brand {
+                font-size: 17px;
+            }
+
+            .brand img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .content-card {
+                padding: 25px 20px;
+            }
+
+            .identity-box {
+                padding: 30px 20px;
+            }
+
+            .arabic {
+                font-size: 21px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-<header class="nav-wrap">
-  <div class="container">
-    <nav>
-      <a class="brand" href="index.html"><img src="logo.png" alt="Mahadin Trader logo"><span>Mahadin <b>Trader</b></span></a>
-      <button class="menu" id="menu" aria-label="Open navigation">☰</button>
-      <ul class="links" id="links">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="about.html">About</a></li>
-        <li><a href="journey.html">Journey</a></li>
-        <li><a href="learning.html">Learning</a></li>
-        <li><a href="goals.html">Goals</a></li>
-        <li><a href="journal.html">Journal</a></li>
-        <li><a class="cta" href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+
+<header>
+
+    <div class="container nav">
+
+        <a href="index.html" class="brand">
+            <img src="logo.png" alt="Mahadin Trader Logo">
+            <div>
+                Mahadin <span>Trader</span>
+            </div>
+        </a>
+
+        <button
+            class="menu-btn"
+            onclick="toggleMenu()"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+
+        <nav class="nav-links" id="navLinks">
+
+            <a href="index.html">Home</a>
+
+            <a href="about.html" class="active">
+                About
+            </a>
+
+            <a href="journey.html">
+                Journey
+            </a>
+
+            <a href="learning.html">
+                Learning
+            </a>
+
+            <a href="goals.html">
+                Goals
+            </a>
+
+            <a href="journal.html">
+                Journal
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+            <a href="risk-disclaimer.html">
+                Risk Disclaimer
+            </a>
+
+            <a href="privacy.html">
+                Privacy
+            </a>
+
+            <a href="resources.html">
+                Resources
+            </a>
+
+        </nav>
+
+    </div>
+
 </header>
 
+
 <main>
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="reveal">
-        <div class="eyebrow">About Mahadin Trader</div>
-        <h1>Meet <span>Mahmudul</span> Hasan.</h1>
-        <p class="lead">
-          I’m the person behind Mahadin Trader — a personal brand documenting my journey
-          of learning Forex trading, developing discipline, and becoming better one step at a time.
-        </p>
-        <p class="location">📍 Melandaha, Jamalpur, Bangladesh</p>
-      </div>
-      <div class="portrait reveal">
-        <div class="portrait-frame">
-          <img src="IMG_20260829_163606228_HDR_PORTRAIT.jpg" alt="Mahmudul Hasan">
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="container">
+
+            <div class="eyebrow">
+                About Mahadin Trader
+            </div>
+
+            <h1>
+                Meet <span>Mahmudul Hasan</span>
+            </h1>
+
+            <p>
+                A Forex learner documenting the journey of building
+                knowledge, discipline, patience, and a strong trading mindset.
+            </p>
+
         </div>
-        <div class="badge"><strong>Mahadin Trader</strong>Learning · Practice · Growth</div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="container two">
-      <div class="reveal">
-        <div class="eyebrow">My Story</div>
-        <h2>Still learning. Still building.</h2>
-        <p class="lead">
-          My Forex journey began on <strong>January 28, 2024</strong>. Since then, my focus has been
-          on understanding the market rather than pretending to have mastered it.
-        </p>
-      </div>
+    </section>
 
-      <div class="card reveal">
-        <p>
-          I’m <strong>Mahmudul Hasan</strong>, the creator of <strong>Mahadin Trader</strong>.
-          I’m currently learning Forex trading and building my knowledge step by step through
-          study, market analysis, practice, and experience.
-        </p>
-        <p>
-          This website is a personal record of that journey — a place to document what I’m
-          learning, reflect on mistakes, improve my process, and grow toward becoming a more
-          disciplined trader.
-        </p>
-        <p>
-          My goal is not to rush for profits. I want to develop the knowledge, patience,
-          risk awareness and mindset required for long-term growth in the financial markets.
-        </p>
-        <div class="quote">
-          “The goal is progress, not perfection.”
+
+    <!-- ABOUT -->
+
+    <section class="about-section">
+
+        <div class="container">
+
+            <div class="about-grid">
+
+                <div class="photo-card">
+
+                    <img
+                        src="IMG_20260829_163606228_HDR_PORTRAIT.jpg"
+                        alt="Mahmudul Hasan - Mahadin Trader"
+                    >
+
+                </div>
+
+
+                <div class="content-card">
+
+                    <h2>
+                        My Story
+                    </h2>
+
+                    <p>
+                        I’m <span class="highlight">Mahmudul Hasan</span>,
+                        the creator of Mahadin Trader.
+                    </p>
+
+                    <p>
+                        I’m currently learning Forex trading and building
+                        my knowledge step by step through study, market
+                        analysis, practice, and experience.
+                    </p>
+
+                    <p>
+                        This website is a personal record of my journey —
+                        where I learn, make mistakes, improve my skills,
+                        and grow toward becoming a disciplined trader.
+                    </p>
+
+                    <p>
+                        My goal is not to rush for profits, but to develop
+                        the knowledge, discipline, patience, and mindset
+                        needed for long-term growth in the financial markets.
+                    </p>
+
+                </div>
+
+            </div>
+
         </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section" style="padding-top:20px">
+    </section>
+
+
+    <!-- VALUES -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    What I Am Building
+                </h2>
+
+                <p>
+                    My focus is on developing the foundation required
+                    for responsible and disciplined trading.
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="card-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Knowledge
+                    </h3>
+
+                    <p>
+                        Continuously studying market structure,
+                        technical analysis, fundamentals, price action,
+                        and other important trading concepts.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Discipline
+                    </h3>
+
+                    <p>
+                        Developing the ability to follow a trading plan,
+                        manage risk, remain patient, and avoid emotional
+                        decisions.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Experience
+                    </h3>
+
+                    <p>
+                        Learning through chart analysis, practice,
+                        journaling, reviewing mistakes, and observing
+                        the financial markets.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- IDENTITY -->
+
+    <section class="identity">
+
+        <div class="container">
+
+            <div class="identity-box">
+
+                <div class="arabic">
+                    لا إله إلا الله محمد رسول الله
+                </div>
+
+                <p>
+                    Mahadin Trader represents my personal journey of
+                    learning the market and building the mindset required
+                    to grow as a trader.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SOCIAL -->
+
+    <section class="social">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    Follow Mahadin Trader
+                </h2>
+
+                <p>
+                    Connect with me and follow my ongoing trading
+                    learning journey.
+                </p>
+
+            </div>
+
+
+            <div class="social-links">
+
+                <a
+                    href="https://www.facebook.com/share/1GmUrxPa9d/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Facebook
+                </a>
+
+                <a
+                    href="https://www.tiktok.com/@mahadintrader?_r=1&_t=ZS-99f3wghpehp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    TikTok
+                </a>
+
+                <a
+                    href="https://youtube.com/@mahadintrader?si=HSvaxI7Iwl4LCsZE"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    YouTube
+                </a>
+
+                <a
+                    href="https://www.instagram.com/mahadintrader?stkn=MXkxaWJmeTNzd3VxYw=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Instagram
+                </a>
+
+                <a
+                    href="https://m.me/mahadintrader"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Messenger
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DISCLAIMER -->
+
     <div class="container">
-      <div class="eyebrow">My Core Principles</div>
-      <h2>What I want to build.</h2>
-      <p class="lead">The qualities I’m working on throughout my trading journey.</p>
 
-      <div class="principles">
-        <article class="principle reveal"><div class="icon">🧠</div><h3>Discipline</h3><p>Learning to follow a process instead of letting emotion control decisions.</p></article>
-        <article class="principle reveal"><div class="icon">🛡️</div><h3>Risk Awareness</h3><p>Understanding that protecting capital comes before chasing returns.</p></article>
-        <article class="principle reveal"><div class="icon">📚</div><h3>Continuous Learning</h3><p>Studying concepts, reviewing mistakes and improving knowledge over time.</p></article>
-        <article class="principle reveal"><div class="icon">⌛</div><h3>Patience</h3><p>Accepting that becoming consistent takes time, practice and experience.</p></article>
-        <article class="principle reveal"><div class="icon">🔍</div><h3>Self-Review</h3><p>Looking back at decisions to understand what worked and what needs improvement.</p></article>
-        <article class="principle reveal"><div class="icon">📈</div><h3>Long-Term Growth</h3><p>Focusing on sustainable skill development rather than quick results.</p></article>
-      </div>
-    </div>
-  </section>
+        <div class="disclaimer">
 
-  <section class="section">
-    <div class="container">
-      <div class="eyebrow">Quick Facts</div>
-      <h2>A little more about me.</h2>
-      <div class="facts">
-        <div class="fact reveal"><small>Name</small><strong>Mahmudul Hasan</strong></div>
-        <div class="fact reveal"><small>Brand</small><strong>Mahadin Trader</strong></div>
-        <div class="fact reveal"><small>Journey Started</small><strong>January 28, 2024</strong></div>
-        <div class="fact reveal"><small>Based In</small><strong>Melandaha, Jamalpur, Bangladesh</strong></div>
-        <div class="fact reveal"><small>Current Focus</small><strong>Learning & Skill Development</strong></div>
-        <div class="fact reveal"><small>Website Purpose</small><strong>Personal Trading Journey</strong></div>
-      </div>
-      <p class="disclaimer">
-        Mahadin Trader is a personal learning and documentation project. Nothing on this website
-        should be considered financial advice, a trading signal, or a promise of profit.
-      </p>
+            <strong>Forex Risk Disclaimer:</strong>
+
+            <br><br>
+
+            Mahadin Trader is a personal learning and educational
+            website. Nothing on this website should be considered
+            financial, investment, or trading advice.
+
+            Forex trading involves significant risk and may result
+            in substantial financial loss. Always do your own research
+            and consider your own risk tolerance before making any
+            financial decision.
+
+        </div>
+
     </div>
-  </section>
+
 </main>
 
+
 <footer>
-  <div class="container foot">
-    <strong>Mahadin Trader</strong>
-    <span>© <span id="year"></span> Mahmudul Hasan. All rights reserved.</span>
-    <a href="index.html">← Back to Home</a>
-  </div>
+
+    <div class="container">
+
+        <p>
+            © <span id="year"></span>
+            <a href="index.html">Mahadin Trader</a>.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Learning the Market. Building the Mindset.
+        </p>
+
+    </div>
+
 </footer>
 
+
 <script>
-  const menu=document.getElementById("menu"), links=document.getElementById("links");
-  menu.addEventListener("click",()=>links.classList.toggle("open"));
-  links.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>links.classList.remove("open")));
-  document.getElementById("year").textContent=new Date().getFullYear();
-  const observer=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show");observer.unobserve(e.target)}})
-  },{threshold:.12});
-  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+    function toggleMenu() {
+
+        const menu = document.getElementById("navLinks");
+
+        menu.classList.toggle("show");
+
+    }
+
+
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+            document
+                .getElementById("navLinks")
+                .classList.remove("show");
+
+        });
+
+    });
+
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
 </script>
+
 </body>
 </html>
