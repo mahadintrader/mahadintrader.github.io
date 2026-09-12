@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Mahadin Trader</title>
+  <meta name="description" content="Contact Mahadin Trader — Mahmudul Hasan's personal Forex trading learning journey.">
+  <style>
+    :root{
+      --bg:#050708;--panel:#0c1113;--text:#f4f7f7;--muted:#9aa9aa;
+      --orange:#ff8a24;--teal:#19c7b5;--line:rgba(255,255,255,.09)
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);background:
+      radial-gradient(circle at 80% 10%,rgba(25,199,181,.09),transparent 28%),
+      radial-gradient(circle at 15% 35%,rgba(255,138,36,.07),transparent 25%),var(--bg);
+      line-height:1.7;overflow-x:hidden
+    }
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(5,7,8,.84);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}.brand img{width:42px;height:42px;object-fit:contain;border-radius:10px}
+    .brand b{color:var(--orange)}.links{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+    .links a{padding:9px 12px;border-radius:9px;color:#c4cece;font-size:.91rem;transition:.25s}
+    .links a:hover,.links a.active{color:#fff;background:rgba(255,255,255,.06)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:9px;padding:8px 11px;font-size:1.1rem}
+    .hero{padding:100px 0 70px;text-align:center}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--teal);font-size:.8rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 18px var(--orange)}
+    h1{font-size:clamp(2.7rem,6vw,5rem);line-height:1.02;letter-spacing:-2px;margin:18px 0}
+    h1 span{color:var(--orange)}.hero p{max-width:700px;margin:auto;color:var(--muted);font-size:1.07rem}
+    section{padding:65px 0}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .card{border:1px solid var(--line);border-radius:20px;background:rgba(12,17,19,.88);padding:28px;transition:.3s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(25,199,181,.3)}
+    .icon{width:48px;height:48px;border-radius:13px;display:grid;place-items:center;background:rgba(255,138,36,.1);color:var(--orange);font-weight:900;font-size:1.1rem;margin-bottom:16px}
+    .card:nth-child(even) .icon{background:rgba(25,199,181,.1);color:var(--teal)}
+    .card h2{font-size:1.25rem;margin-bottom:7px}.card p{color:var(--muted);font-size:.92rem}
+    .card .link{display:inline-block;margin-top:14px;color:var(--teal);font-weight:750;font-size:.92rem;word-break:break-word}
+    .location{margin-top:18px;padding:25px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(120deg,rgba(25,199,181,.06),rgba(255,138,36,.04))}
+    .location h2{font-size:1.15rem;margin-bottom:5px}.location p{color:var(--muted)}
+    .socials{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .social{padding:20px;border:1px solid var(--line);border-radius:15px;background:var(--panel);transition:.25s}
+    .social:hover{transform:translateY(-3px);border-color:rgba(255,138,36,.3)}
+    .social strong{display:block;margin-bottom:3px}.social span{color:var(--muted);font-size:.84rem}
+    .cta{padding:42px;border:1px solid rgba(25,199,181,.2);border-radius:23px;text-align:center;background:linear-gradient(120deg,rgba(25,199,181,.07),rgba(255,138,36,.05))}
+    .cta h2{font-size:2rem;margin-bottom:9px}.cta p{color:var(--muted);max-width:650px;margin:auto}
+    .button{display:inline-block;margin-top:22px;padding:12px 20px;border-radius:10px;background:var(--orange);color:#101010;font-weight:850;transition:.25s}
+    .button:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(255,138,36,.18)}
+    .disclaimer{margin-top:30px;padding:18px 20px;border-left:3px solid var(--orange);background:rgba(255,138,36,.05);color:#aeb9b9;font-size:.82rem}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:#819090;font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-brand{font-weight:800;color:#fff}.footer-brand span{color:var(--orange)}
+    @media(max-width:900px){
+      .socials{grid-template-columns:repeat(2,1fr)}
+      .links{display:none;position:absolute;left:4%;right:4%;top:70px;padding:12px;background:#0a0e10;border:1px solid var(--line);border-radius:13px;flex-direction:column;align-items:stretch}
+      .links.open{display:flex}.links a{padding:12px}.menu{display:block}
+    }
+    @media(max-width:600px){
+      .hero{padding:70px 0 50px}.grid,.socials{grid-template-columns:1fr}section{padding:50px 0}
+      .footer-inner{flex-direction:column;align-items:flex-start}h1{letter-spacing:-1px}.cta{padding:30px 20px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Mahadin Trader logo"><span>Mahadin <b>Trader</b></span></a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <nav class="links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="journey.html">Journey</a>
+      <a href="learning.html">Learning</a><a href="goals.html">Goals</a><a href="journal.html">Journal</a><a class="active" href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow"><i class="dot"></i> Get In Touch</div>
+      <h1>Connect With <span>Mahadin Trader</span></h1>
+      <p>
+        Have a question, feedback, or simply want to connect? You can reach me
+        through email or any of my social media platforms below.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid">
+        <article class="card">
+          <div class="icon">✉</div>
+          <h2>Email</h2>
+          <p>For general inquiries, feedback, or collaboration-related messages.</p>
+          <a class="link" href="mailto:mahadintrader@gmail.com">mahadintrader@gmail.com</a>
+        </article>
+        <article class="card">
+          <div class="icon">⌖</div>
+          <h2>Location</h2>
+          <p>Mahadin Trader is based in</p>
+          <div class="location"><h2>Melandaha, Jamalpur</h2><p>Bangladesh</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head" style="margin-bottom:30px">
+        <div class="eyebrow">01 — Social Media</div>
+        <h2 style="font-size:clamp(1.9rem,4vw,3rem);margin:10px 0">Follow the Journey</h2>
+        <p style="color:var(--muted)">Follow Mahadin Trader for updates, learning content, and the ongoing trading journey.</p>
+      </div>
+      <div class="socials">
+        <a class="social" href="https://www.facebook.com/share/1GmUrxPa9d/" target="_blank" rel="noopener"><strong>Facebook</strong><span>Connect on Facebook →</span></a>
+        <a class="social" href="https://www.tiktok.com/@mahadintrader?_r=1&_t=ZS-99f3wghpehp" target="_blank" rel="noopener"><strong>TikTok</strong><span>Follow on TikTok →</span></a>
+        <a class="social" href="https://youtube.com/@mahadintrader?si=HSvaxI7Iwl4LCsZE" target="_blank" rel="noopener"><strong>YouTube</strong><span>Watch on YouTube →</span></a>
+        <a class="social" href="https://www.instagram.com/mahadintrader?stkn=MXkxaWJmeTNzd3VxYw==" target="_blank" rel="noopener"><strong>Instagram</strong><span>Follow on Instagram →</span></a>
+        <a class="social" href="https://m.me/mahadintrader" target="_blank" rel="noopener"><strong>Messenger</strong><span>Message directly →</span></a>
+        <a class="social" href="mailto:mahadintrader@gmail.com"><strong>Email</strong><span>Send an email →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="cta">
+        <div class="eyebrow">02 — Stay Connected</div>
+        <h2>Let's Connect & Learn Together</h2>
+        <p>
+          Mahadin Trader is a personal learning journey. I welcome respectful
+          conversations, useful feedback, and connections with people interested
+          in learning about the financial markets.
+        </p>
+        <a class="button" href="mailto:mahadintrader@gmail.com">Email Mahadin Trader</a>
+      </div>
+      <div class="disclaimer">
+        <strong>Forex Risk Disclaimer:</strong> Mahadin Trader is a personal learning and educational platform. Nothing on this website is financial or investment advice, and no profit or performance result is guaranteed. Forex trading involves substantial risk.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">Mahadin <span>Trader</span> — Learning. Discipline. Growth.</div>
+    <div>© <span id="year"></span> Mahadin Trader. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll(".links a").forEach(a => {
+    a.addEventListener("click", () => document.querySelector(".links").classList.remove("open"));
+  });
+</script>
+</body>
+</html>
