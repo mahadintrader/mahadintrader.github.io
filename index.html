@@ -1,43 +1,1042 @@
-            <h3>The Beginning</h3>
+<!DOCTYPE html>
+<html lang="en">
 
-            <p>
-              My Forex trading learning journey officially began.
-              I started exploring the market and learning the basics.
-            </p>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Mahadin Trader | Learning the Market. Building the Mindset.</title>
+
+  <meta name="description" content="Mahadin Trader — Mahmudul Hasan's personal Forex trading learning journey focused on knowledge, discipline, risk management, and continuous improvement.">
+
+  <meta name="author" content="Mahmudul Hasan">
+
+  <style>
+
+    :root {
+      --bg: #050708;
+      --panel: #0b1012;
+      --panel2: #101719;
+      --text: #f5f7f7;
+      --muted: #9aa8a9;
+      --orange: #ff8a24;
+      --teal: #19c7b5;
+      --line: rgba(255,255,255,.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 78% 12%, rgba(25,199,181,.10), transparent 29%),
+        radial-gradient(circle at 12% 25%, rgba(255,138,36,.08), transparent 25%),
+        var(--bg);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .14;
+
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+
+      background-size: 46px 46px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1140px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+
+      background: rgba(5,7,8,.84);
+      backdrop-filter: blur(16px);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 76px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+
+      gap: 11px;
+
+      font-weight: 850;
+    }
+
+    .brand img {
+      width: 43px;
+      height: 43px;
+
+      object-fit: contain;
+
+      border-radius: 10px;
+    }
+
+    .brand b {
+      color: var(--orange);
+    }
+
+    .links {
+      display: flex;
+      align-items: center;
+
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .links a {
+      padding: 9px 10px;
+
+      border-radius: 9px;
+
+      color: #c4cdcd;
+
+      font-size: .84rem;
+
+      transition: .25s;
+    }
+
+    .links a:hover,
+    .links a.active {
+      color: #fff;
+      background: rgba(255,255,255,.06);
+    }
+
+    .menu {
+      display: none;
+
+      background: none;
+
+      border: 1px solid var(--line);
+
+      color: #fff;
+
+      border-radius: 9px;
+
+      padding: 8px 11px;
+
+      font-size: 1.1rem;
+
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: calc(100vh - 76px);
+
+      display: flex;
+      align-items: center;
+
+      padding: 75px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+
+      grid-template-columns: 1.12fr .88fr;
+
+      gap: 55px;
+
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 9px;
+
+      color: var(--teal);
+
+      font-size: .79rem;
+
+      font-weight: 850;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background: var(--orange);
+
+      box-shadow: 0 0 18px var(--orange);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6rem);
+
+      line-height: .98;
+
+      letter-spacing: -3px;
+
+      margin: 18px 0 23px;
+    }
+
+    h1 span {
+      color: var(--orange);
+    }
+
+    .hero h2 {
+      font-size: clamp(1.25rem, 2.4vw, 1.8rem);
+
+      font-weight: 650;
+
+      margin-bottom: 13px;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+
+      color: var(--muted);
+
+      max-width: 700px;
+    }
+
+    .actions {
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 28px;
+    }
+
+    .btn {
+      padding: 12px 19px;
+
+      border-radius: 10px;
+
+      font-weight: 800;
+
+      border: 1px solid var(--line);
+
+      transition: .25s;
+    }
+
+    .btn.primary {
+      background: var(--orange);
+
+      color: #101010;
+
+      border-color: var(--orange);
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,.03);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       PROFILE
+    ========================== */
+
+    .profile {
+      position: relative;
+
+      max-width: 420px;
+
+      margin: auto;
+    }
+
+    .profile::before {
+      content: "";
+
+      position: absolute;
+
+      inset: -20px;
+
+      border: 1px solid rgba(25,199,181,.15);
+
+      border-radius: 30px;
+
+      transform: rotate(4deg);
+    }
+
+    .photo-wrap {
+      position: relative;
+
+      border: 1px solid var(--line);
+
+      border-radius: 24px;
+
+      overflow: hidden;
+
+      background: var(--panel);
+
+      box-shadow: 0 25px 70px rgba(0,0,0,.4);
+    }
+
+    .photo-wrap img {
+      display: block;
+
+      width: 100%;
+
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+
+      object-position: center top;
+
+      filter: saturate(.92) contrast(1.03);
+    }
+
+    .photo-label {
+      position: absolute;
+
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+
+      padding: 15px 17px;
+
+      border: 1px solid rgba(255,255,255,.1);
+
+      border-radius: 14px;
+
+      background: rgba(5,7,8,.76);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .photo-label strong {
+      display: block;
+
+      font-size: 1.05rem;
+    }
+
+    .photo-label span {
+      color: var(--muted);
+
+      font-size: .82rem;
+    }
+
+    /* =========================
+       SECTIONS
+    ========================== */
+
+    section {
+      padding: 78px 0;
+    }
+
+    .section-head {
+      max-width: 750px;
+
+      margin-bottom: 36px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+
+      line-height: 1.12;
+
+      margin: 9px 0;
+    }
+
+    .section-head p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       STATS
+    ========================== */
+
+    .stats {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 15px;
+    }
+
+    .stat {
+      padding: 23px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 16px;
+
+      background: rgba(12,17,19,.82);
+    }
+
+    .stat strong {
+      display: block;
+
+      font-size: 1.45rem;
+
+      color: var(--orange);
+    }
+
+    .stat span {
+      font-size: .86rem;
+
+      color: var(--muted);
+    }
+
+    /* =========================
+       CARDS
+    ========================== */
+
+    .cards {
+      display: grid;
+
+      grid-template-columns: repeat(3,1fr);
+
+      gap: 18px;
+    }
+
+    .card {
+      padding: 25px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 18px;
+
+      background: rgba(12,17,19,.86);
+
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+
+      border-color: rgba(25,199,181,.28);
+    }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+
+      border-radius: 12px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 16px;
+
+      background: rgba(255,138,36,.1);
+
+      color: var(--orange);
+
+      font-weight: 900;
+    }
+
+    .card:nth-child(even) .icon {
+      background: rgba(25,199,181,.1);
+
+      color: var(--teal);
+    }
+
+    .card h3 {
+      font-size: 1.12rem;
+
+      margin-bottom: 7px;
+    }
+
+    .card p {
+      color: var(--muted);
+
+      font-size: .92rem;
+    }
+
+    /* =========================
+       JOURNEY
+    ========================== */
+
+    .journey {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .journey-card {
+      padding: 29px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(16,23,25,.95),
+          rgba(8,11,12,.95)
+        );
+    }
+
+    .journey-card h3 {
+      font-size: 1.35rem;
+
+      margin-bottom: 9px;
+    }
+
+    .journey-card p {
+      color: var(--muted);
+    }
+
+    .date {
+      display: inline-block;
+
+      margin-top: 18px;
+
+      color: var(--teal);
+
+      font-size: .82rem;
+
+      font-weight: 800;
+    }
+
+    /* =========================
+       QUOTE
+    ========================== */
+
+    .quote {
+      padding: 40px;
+
+      border: 1px solid rgba(25,199,181,.2);
+
+      border-radius: 23px;
+
+      background:
+        linear-gradient(
+          120deg,
+          rgba(25,199,181,.07),
+          rgba(255,138,36,.05)
+        );
+    }
+
+    .quote p {
+      font-size: clamp(1.25rem,3vw,2rem);
+
+      line-height: 1.4;
+
+      font-weight: 700;
+
+      max-width: 850px;
+    }
+
+    .quote p span {
+      color: var(--orange);
+    }
+
+    /* =========================
+       SOCIAL
+    ========================== */
+
+    .socials {
+      display: grid;
+
+      grid-template-columns: repeat(5,1fr);
+
+      gap: 12px;
+    }
+
+    .social {
+      padding: 18px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 14px;
+
+      background: var(--panel);
+
+      text-align: center;
+
+      transition: .25s;
+    }
+
+    .social:hover {
+      transform: translateY(-3px);
+
+      border-color: rgba(255,138,36,.28);
+    }
+
+    .social strong {
+      display: block;
+
+      font-size: .9rem;
+    }
+
+    .social span {
+      font-size: .75rem;
+
+      color: var(--muted);
+    }
+
+    /* =========================
+       DISCLAIMER
+    ========================== */
+
+    .disclaimer {
+      margin-top: 30px;
+
+      padding: 18px 20px;
+
+      border-left: 3px solid var(--orange);
+
+      background: rgba(255,138,36,.05);
+
+      color: #aeb9b9;
+
+      font-size: .81rem;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      border-top: 1px solid var(--line);
+
+      padding: 30px 0;
+
+      color: #819090;
+
+      font-size: .84rem;
+    }
+
+    .footer-inner {
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 20px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      color: #fff;
+
+      font-weight: 800;
+    }
+
+    .footer-brand span {
+      color: var(--orange);
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 15px;
+
+      flex-wrap: wrap;
+
+      justify-content: flex-end;
+    }
+
+    .footer-links a {
+      color: #819090;
+
+      transition: .25s;
+    }
+
+    .footer-links a:hover {
+      color: var(--orange);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 950px) {
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile {
+        max-width: 390px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .socials {
+        grid-template-columns: repeat(3,1fr);
+      }
+
+      .menu {
+        display: block;
+      }
+
+      .links {
+        display: none;
+
+        position: absolute;
+
+        left: 4%;
+        right: 4%;
+        top: 70px;
+
+        padding: 12px;
+
+        background: #0a0e10;
+
+        border: 1px solid var(--line);
+
+        border-radius: 13px;
+
+        flex-direction: column;
+
+        align-items: stretch;
+      }
+
+      .links.open {
+        display: flex;
+      }
+
+      .links a {
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 650px) {
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      section {
+        padding: 55px 0;
+      }
+
+      .cards,
+      .journey,
+      .stats,
+      .socials {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        text-align: center;
+      }
+
+      h1 {
+        letter-spacing: -1.5px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+
+        align-items: flex-start;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <div class="container nav">
+
+      <a class="brand" href="index.html">
+
+        <img
+          src="logo.png"
+          alt="Mahadin Trader logo"
+        >
+
+        <span>
+          Mahadin <b>Trader</b>
+        </span>
+
+      </a>
+
+
+      <button
+        class="menu"
+        aria-label="Open menu"
+        onclick="document.querySelector('.links').classList.toggle('open')"
+      >
+        ☰
+      </button>
+
+
+      <nav class="links">
+
+        <a class="active" href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="journey.html">
+          Journey
+        </a>
+
+        <a href="learning.html">
+          Learning
+        </a>
+
+        <a href="goals.html">
+          Goals
+        </a>
+
+        <a href="journal.html">
+          Journal
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="risk-disclaimer.html">
+          Risk Disclaimer
+        </a>
+
+        <a href="privacy.html">
+          Privacy
+        </a>
+
+        <a href="resources.html">
+          Resources
+        </a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="container hero-grid">
+
+
+        <div>
+
+          <div class="eyebrow">
+
+            <i class="dot"></i>
+
+            Mahadin Trader
 
           </div>
 
 
-          <div class="journey-card">
+          <h1>
 
-            <div class="journey-year">
-              LEARNING PHASE
+            Learning the Market.
+
+            <br>
+
+            <span>
+              Building the Mindset.
+            </span>
+
+          </h1>
+
+
+          <h2>
+
+            A personal Forex trading journey focused on knowledge,
+            discipline, risk management, and continuous improvement.
+
+          </h2>
+
+
+          <p>
+
+            I’m Mahmudul Hasan. I’m currently learning Forex trading
+            and building my knowledge step by step through study,
+            market analysis, practice, and experience.
+
+          </p>
+
+
+          <div class="actions">
+
+            <a
+              class="btn primary"
+              href="journey.html"
+            >
+              Explore My Journey →
+            </a>
+
+
+            <a
+              class="btn secondary"
+              href="about.html"
+            >
+              About Mahmudul
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="profile">
+
+          <div class="photo-wrap">
+
+            <img
+              src="IMG_20260829_163606228_HDR_PORTRAIT.jpg"
+              alt="Mahmudul Hasan"
+            >
+
+
+            <div class="photo-label">
+
+              <strong>
+                Mahmudul Hasan
+              </strong>
+
+              <span>
+                Forex Trading Learner • Mahadin Trader
+              </span>
+
             </div>
 
-            <h3>Study &amp; Practice</h3>
+          </div>
 
-            <p>
-              I continued studying market structure, technical analysis,
-              price action, risk management, and trading psychology.
-            </p>
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- STATS -->
+
+    <section>
+
+      <div class="container">
+
+        <div class="stats">
+
+
+          <div class="stat">
+
+            <strong>
+              Jan 28, 2024
+            </strong>
+
+            <span>
+              Trading journey started
+            </span>
 
           </div>
 
 
-          <div class="journey-card">
+          <div class="stat">
 
-            <div class="journey-year">
-              PRESENT
-            </div>
+            <strong>
+              Still Learning
+            </strong>
 
-            <h3>Still Developing</h3>
-
-            <p>
-              I am still learning, reviewing mistakes, improving my
-              understanding, and working toward becoming a disciplined trader.
-            </p>
+            <span>
+              Study • Practice • Improve
+            </span>
 
           </div>
+
+
+          <div class="stat">
+
+            <strong>
+              Bangladesh
+            </strong>
+
+            <span>
+              Melandaha, Jamalpur
+            </span>
+
+          </div>
+
 
         </div>
 
@@ -46,25 +1045,26 @@
     </section>
 
 
-    <!-- PROCESS -->
+    <!-- LEARNING FOCUS -->
 
     <section>
 
       <div class="container">
 
-        <div class="section-heading">
+
+        <div class="section-head">
 
           <div class="eyebrow">
-            My Process
+            01 — What I Focus On
           </div>
 
           <h2>
-            Process before profit.
+            Building a Strong Foundation
           </h2>
 
           <p>
-            I believe long-term trading development starts with a
-            strong process rather than chasing quick results.
+            I’m learning the market from multiple perspectives
+            while keeping risk management and discipline at the center.
           </p>
 
         </div>
@@ -72,59 +1072,177 @@
 
         <div class="cards">
 
-          <div class="card">
-            <div class="card-icon">01</div>
-            <h3>Study</h3>
+
+          <article class="card">
+
+            <div class="icon">
+              01
+            </div>
+
+            <h3>
+              Price Action
+            </h3>
+
             <p>
-              Learn concepts and understand why the market may behave
-              in different ways.
+              Studying how price behaves and how market structure
+              can be interpreted.
             </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="icon">
+              02
+            </div>
+
+            <h3>
+              Technical Analysis
+            </h3>
+
+            <p>
+              Learning charts, structure, levels, trends,
+              and technical decision-making.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="icon">
+              03
+            </div>
+
+            <h3>
+              Fundamental Analysis
+            </h3>
+
+            <p>
+              Understanding economic conditions and how fundamentals
+              can influence markets.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="icon">
+              04
+            </div>
+
+            <h3>
+              Supply &amp; Demand
+            </h3>
+
+            <p>
+              Developing an understanding of important areas
+              where market activity may change.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="icon">
+              05
+            </div>
+
+            <h3>
+              SMC &amp; ICT
+            </h3>
+
+            <p>
+              Studying Smart Money Concepts and ICT concepts
+              as part of my ongoing education.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="icon">
+              06
+            </div>
+
+            <h3>
+              Risk &amp; Psychology
+            </h3>
+
+            <p>
+              Learning to control risk, emotions, patience,
+              discipline, and consistency.
+            </p>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- JOURNEY -->
+
+    <section>
+
+      <div class="container">
+
+
+        <div class="journey">
+
+
+          <div class="journey-card">
+
+            <div class="eyebrow">
+              02 — My Story
+            </div>
+
+            <h3>
+              From Learning to Experience
+            </h3>
+
+            <p>
+              This website is a personal record of my journey —
+              where I learn, make mistakes, improve my skills,
+              and grow toward becoming a disciplined trader.
+            </p>
+
+            <span class="date">
+              January 28, 2024 → Present
+            </span>
+
           </div>
 
-          <div class="card">
-            <div class="card-icon">02</div>
-            <h3>Analyze</h3>
+
+          <div class="journey-card">
+
+            <div class="eyebrow">
+              03 — My Approach
+            </div>
+
+            <h3>
+              Process Before Profit
+            </h3>
+
             <p>
-              Review charts, market structure, levels, news, and possible
-              scenarios before making decisions.
+              My goal is not to rush for profits, but to develop
+              the knowledge, discipline, patience, and mindset
+              needed for long-term growth in the financial markets.
             </p>
+
+            <span class="date">
+              Knowledge • Discipline • Risk Management
+            </span>
+
           </div>
 
-          <div class="card">
-            <div class="card-icon">03</div>
-            <h3>Practice</h3>
-            <p>
-              Apply knowledge through structured practice and observation
-              instead of rushing into decisions.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">04</div>
-            <h3>Journal</h3>
-            <p>
-              Record decisions, mistakes, emotions, lessons, and
-              observations for future review.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">05</div>
-            <h3>Review</h3>
-            <p>
-              Look back at previous decisions to identify weaknesses
-              and areas that need improvement.
-            </p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">06</div>
-            <h3>Improve</h3>
-            <p>
-              Build better habits, stronger discipline, and a more
-              consistent trading process over time.
-            </p>
-          </div>
 
         </div>
 
@@ -135,25 +1253,25 @@
 
     <!-- MINDSET -->
 
-    <section class="mindset">
+    <section>
 
       <div class="container">
 
-        <div class="quote-box">
+        <div class="quote">
 
-          <div class="quote-mark">
-            “
+          <div class="eyebrow">
+            04 — Trading Mindset
           </div>
 
-          <h2>
-            The goal is not to predict every move.
-            The goal is to build the discipline to manage uncertainty.
-          </h2>
-
           <p>
-            Trading is a continuous learning process. Knowledge,
-            patience, risk management, emotional control, and consistency
-            matter more to me than chasing quick profits.
+
+            “I want to measure progress not only by results,
+            but by how well I
+            <span>
+              follow my plan, control risk, learn from mistakes,
+              and stay consistent.
+            </span>”
+
           </p>
 
         </div>
@@ -163,16 +1281,17 @@
     </section>
 
 
-    <!-- SOCIAL -->
+    <!-- SOCIAL MEDIA -->
 
-    <section class="social-section">
+    <section>
 
       <div class="container">
 
-        <div class="section-heading">
+
+        <div class="section-head">
 
           <div class="eyebrow">
-            Connect
+            05 — Connect
           </div>
 
           <h2>
@@ -180,144 +1299,235 @@
           </h2>
 
           <p>
-            Follow my journey, learning updates, trading thoughts,
-            and future content on social media.
+            Follow the journey for learning content, updates,
+            and future trading journal or market-analysis posts.
           </p>
 
         </div>
 
 
-        <div class="social-links">
+        <div class="socials">
+
 
           <a
+            class="social"
             href="https://www.facebook.com/share/1GmUrxPa9d/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Facebook
+
+            <strong>
+              Facebook
+            </strong>
+
+            <span>
+              Connect →
+            </span>
+
           </a>
 
+
           <a
+            class="social"
             href="https://www.tiktok.com/@mahadintrader?_r=1&_t=ZS-99f3wghpehp"
             target="_blank"
             rel="noopener noreferrer"
           >
-            TikTok
+
+            <strong>
+              TikTok
+            </strong>
+
+            <span>
+              Follow →
+            </span>
+
           </a>
 
+
           <a
+            class="social"
             href="https://youtube.com/@mahadintrader?si=HSvaxI7Iwl4LCsZE"
             target="_blank"
             rel="noopener noreferrer"
           >
-            YouTube
+
+            <strong>
+              YouTube
+            </strong>
+
+            <span>
+              Watch →
+            </span>
+
           </a>
 
+
           <a
+            class="social"
             href="https://www.instagram.com/mahadintrader?stkn=MXkxaWJmeTNzd3VxYw=="
             target="_blank"
             rel="noopener noreferrer"
           >
-            Instagram
+
+            <strong>
+              Instagram
+            </strong>
+
+            <span>
+              Follow →
+            </span>
+
           </a>
 
+
           <a
+            class="social"
             href="https://m.me/mahadintrader"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Messenger
+
+            <strong>
+              Messenger
+            </strong>
+
+            <span>
+              Message →
+            </span>
+
           </a>
 
-          <a href="mailto:mahadintrader@gmail.com">
-            Email
-          </a>
 
         </div>
+
+
+        <div class="disclaimer">
+
+          <strong>
+            Forex Risk Disclaimer:
+          </strong>
+
+          This website documents a personal learning journey
+          and is for educational and informational purposes only.
+          It is not financial advice, investment advice, or a
+          recommendation to buy or sell any financial instrument.
+          Forex trading involves substantial risk, and past
+          performance does not guarantee future results.
+
+        </div>
+
 
       </div>
 
     </section>
 
-
-    <!-- DISCLAIMER -->
-
-    <section class="disclaimer">
-
-      <div class="container">
-
-        <div class="disclaimer-box">
-
-          <h3>
-            Forex Risk Disclaimer
-          </h3>
-
-          <p>
-            Forex trading involves substantial risk and may not be suitable
-            for everyone. The content on Mahadin Trader represents my personal
-            learning journey, opinions, studies, and experiences. It is not
-            financial, investment, or trading advice. Past performance does
-            not guarantee future results. Always conduct your own research
-            and understand the risks before making financial decisions.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
 
   </main>
 
 
-  <!-- ================= FOOTER ================= -->
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
 
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-
-          <div class="footer-brand">
-            Mahadin <span>Trader</span>
-          </div>
-
-          <div class="copyright">
-            © 2026 Mahadin Trader. All rights reserved.
-          </div>
-
-        </div>
+    <div class="container footer-inner">
 
 
-        <div class="footer-links">
+      <div class="footer-brand">
 
-          <a href="about.html">About</a>
+        Mahadin
+        <span>
+          Trader
+        </span>
 
-          <a href="journey.html">Journey</a>
-
-          <a href="learning.html">Learning</a>
-
-          <a href="goals.html">Goals</a>
-
-          <a href="journal.html">Journal</a>
-
-          <a href="contact.html">Contact</a>
-
-          <a href="risk-disclaimer.html">Risk Disclaimer</a>
-
-          <a href="privacy.html">Privacy</a>
-
-          <a href="resources.html">Resources</a>
-
-        </div>
+        — Learning. Discipline. Growth.
 
       </div>
+
+
+      <div class="footer-links">
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="journey.html">
+          Journey
+        </a>
+
+        <a href="learning.html">
+          Learning
+        </a>
+
+        <a href="goals.html">
+          Goals
+        </a>
+
+        <a href="journal.html">
+          Journal
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+        <a href="risk-disclaimer.html">
+          Risk Disclaimer
+        </a>
+
+        <a href="privacy.html">
+          Privacy
+        </a>
+
+        <a href="resources.html">
+          Resources
+        </a>
+
+      </div>
+
+
+      <div>
+
+        © <span id="year"></span>
+        Mahadin Trader.
+        All rights reserved.
+
+      </div>
+
 
     </div>
 
   </footer>
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    document.querySelectorAll(".links a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        document
+          .querySelector(".links")
+          .classList
+          .remove("open");
+
+      });
+
+    });
+
+  </script>
+
+
 </body>
+
 </html>
