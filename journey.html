@@ -1,0 +1,36 @@
+
+  <footer>
+
+    <p>
+      © <span id="year"></span>
+      <strong>Mahadin Trader</strong>.
+      All Rights Reserved.
+    </p>
+
+    <p style="margin-top:8px;">
+      Learning the Market. Building the Mindset.
+    </p>
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    function toggleMenu() {
+
+      document
+        .getElementById("menu")
+        .classList
+        .toggle("show");
+
+    }
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
