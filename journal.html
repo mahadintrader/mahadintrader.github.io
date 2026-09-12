@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Journal | Mahadin Trader</title>
+  <meta name="description" content="Mahadin Trader personal Forex trading journal and performance review page.">
+  <style>
+    :root{
+      --bg:#050708;--panel:#0c1113;--panel2:#101719;--text:#f4f7f7;
+      --muted:#9aa9aa;--orange:#ff8a24;--teal:#19c7b5;--line:rgba(255,255,255,.09);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);background:
+      radial-gradient(circle at 80% 10%,rgba(25,199,181,.09),transparent 28%),
+      radial-gradient(circle at 15% 35%,rgba(255,138,36,.07),transparent 25%),var(--bg);
+      line-height:1.7;overflow-x:hidden
+    }
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+    a{color:inherit;text-decoration:none}.container{width:min(1120px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:20;background:rgba(5,7,8,.84);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}.brand img{width:42px;height:42px;object-fit:contain;border-radius:10px}
+    .brand b{color:var(--orange)}.links{display:flex;gap:5px;align-items:center;flex-wrap:wrap}
+    .links a{padding:9px 12px;border-radius:9px;color:#c4cece;font-size:.91rem;transition:.25s}
+    .links a:hover,.links a.active{color:#fff;background:rgba(255,255,255,.06)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:9px;padding:8px 11px;font-size:1.1rem}
+    .hero{padding:100px 0 75px}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--teal);font-size:.8rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 18px var(--orange)}
+    h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.03;letter-spacing:-2px;margin:18px 0}
+    h1 span{color:var(--orange)}.hero p{color:var(--muted);font-size:1.07rem;max-width:690px}
+    .hero-card{border:1px solid var(--line);border-radius:22px;padding:30px;background:linear-gradient(145deg,rgba(16,23,25,.96),rgba(7,10,11,.96));box-shadow:0 20px 60px rgba(0,0,0,.38)}
+    .hero-card h3{font-size:1.25rem;margin-bottom:9px}.hero-card p{font-size:.93rem}
+    .badge{display:inline-block;margin-top:20px;padding:7px 12px;border:1px solid rgba(25,199,181,.25);border-radius:999px;color:var(--teal);font-size:.78rem}
+    section{padding:70px 0}.section-head{max-width:740px;margin-bottom:35px}.section-head h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.15;margin:10px 0}.section-head p{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:rgba(12,17,19,.86);border:1px solid var(--line);border-radius:18px;padding:25px;transition:.3s}
+    .card:hover{transform:translateY(-5px);border-color:rgba(25,199,181,.3)}
+    .icon{width:43px;height:43px;display:grid;place-items:center;border-radius:12px;margin-bottom:16px;background:rgba(255,138,36,.1);color:var(--orange);font-weight:900}
+    .card:nth-child(even) .icon{background:rgba(25,199,181,.1);color:var(--teal)}
+    .card h3{font-size:1.1rem;margin-bottom:7px}.card p{font-size:.92rem;color:var(--muted)}
+    .journal-box{border:1px solid var(--line);border-radius:22px;background:var(--panel);padding:30px}
+    .fields{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+    .field{border:1px solid var(--line);border-radius:13px;padding:16px;background:rgba(255,255,255,.02)}
+    .field strong{display:block;color:var(--teal);font-size:.78rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+    .field span{color:#b9c3c3;font-size:.91rem}
+    .template{margin-top:18px;padding:22px;border-radius:15px;border:1px dashed rgba(255,138,36,.28);background:rgba(255,138,36,.035)}
+    .template h3{margin-bottom:10px}.template ul{padding-left:20px;color:var(--muted)}.template li{margin:4px 0}
+    .review{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .review-card{border:1px solid var(--line);border-radius:18px;padding:25px;background:rgba(12,17,19,.86)}
+    .review-card h3{margin-bottom:10px}.review-card p,.review-card li{color:var(--muted);font-size:.92rem}.review-card ul{padding-left:20px}
+    .notice{margin-top:30px;padding:18px 20px;border-left:3px solid var(--orange);background:rgba(255,138,36,.05);color:#aeb9b9;font-size:.82rem}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:#819090;font-size:.85rem}.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-brand{font-weight:800;color:#fff}.footer-brand span{color:var(--orange)}
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}
+      .links{display:none;position:absolute;left:4%;right:4%;top:70px;padding:12px;background:#0a0e10;border:1px solid var(--line);border-radius:13px;flex-direction:column;align-items:stretch}
+      .links.open{display:flex}.links a{padding:12px}.menu{display:block}
+    }
+    @media(max-width:600px){
+      .hero{padding:70px 0 50px}section{padding:52px 0}.grid,.fields,.review{grid-template-columns:1fr}
+      .footer-inner{flex-direction:column;align-items:flex-start}h1{letter-spacing:-1px}
+    }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Mahadin Trader logo"><span>Mahadin <b>Trader</b></span></a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <nav class="links">
+      <a href="index.html">Home</a><a href="about.html">About</a><a href="journey.html">Journey</a>
+      <a href="learning.html">Learning</a><a href="goals.html">Goals</a><a class="active" href="journal.html">Journal</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow"><i class="dot"></i> Trading Journal</div>
+        <h1>Learn From Every <span>Trade.</span></h1>
+        <p>
+          This page is designed to document my trading decisions, observations,
+          mistakes, and lessons. The purpose of the journal is not simply to count
+          wins and losses, but to understand the process behind each decision.
+        </p>
+      </div>
+      <div class="hero-card">
+        <h3>My Journal Philosophy</h3>
+        <p>
+          A loss can be part of learning. A good trade can still lose, and a bad
+          trade can still win. I want to judge my progress by process, discipline,
+          risk control, and the lessons I take from each session.
+        </p>
+        <span class="badge">Process • Review • Improve</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">01 — What I Record</div>
+        <h2>My Trading Journal</h2>
+        <p>Each journal entry can capture the context around a trade so I can review what happened and why.</p>
+      </div>
+      <div class="grid">
+        <article class="card"><div class="icon">01</div><h3>Market Context</h3><p>Record the market condition, trend, structure, key levels, and relevant observations before entering.</p></article>
+        <article class="card"><div class="icon">02</div><h3>Trade Setup</h3><p>Document the setup or idea that led to the trade and whether the planned conditions were actually confirmed.</p></article>
+        <article class="card"><div class="icon">03</div><h3>Entry & Exit</h3><p>Record entry, stop-loss, take-profit, exit, and the reason behind the decision.</p></article>
+        <article class="card"><div class="icon">04</div><h3>Risk & Reward</h3><p>Track planned risk and reward so that risk management remains part of the decision-making process.</p></article>
+        <article class="card"><div class="icon">05</div><h3>Emotion & Psychology</h3><p>Note fear, greed, impatience, hesitation, overconfidence, or other emotions that may have influenced the trade.</p></article>
+        <article class="card"><div class="icon">06</div><h3>Lesson Learned</h3><p>Write down what worked, what failed, what mistake was made, and what should be improved next time.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">02 — Journal Template</div>
+        <h2>Trade Entry Structure</h2>
+        <p>A simple template I can use later when I start publishing individual journal records.</p>
+      </div>
+      <div class="journal-box">
+        <div class="fields">
+          <div class="field"><strong>Date</strong><span>Trading session date</span></div>
+          <div class="field"><strong>Pair / Instrument</strong><span>Example: EUR/USD</span></div>
+          <div class="field"><strong>Market Bias</strong><span>What I observed before the trade</span></div>
+          <div class="field"><strong>Setup</strong><span>Why the setup was considered valid</span></div>
+          <div class="field"><strong>Entry</strong><span>Entry level and confirmation</span></div>
+          <div class="field"><strong>Stop-Loss</strong><span>Planned invalidation / protection level</span></div>
+          <div class="field"><strong>Take-Profit</strong><span>Planned target and risk/reward</span></div>
+          <div class="field"><strong>Result</strong><span>Outcome and what happened</span></div>
+        </div>
+        <div class="template">
+          <h3>Review Notes</h3>
+          <ul>
+            <li>Did I follow my trading plan?</li>
+            <li>Was the entry confirmed or impulsive?</li>
+            <li>Was risk controlled properly?</li>
+            <li>Did news or market conditions affect the trade?</li>
+            <li>What mistake or lesson should I remember?</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">03 — Performance Review</div>
+        <h2>Review Before I Improve</h2>
+        <p>Regular review helps turn individual trades into useful feedback for future learning.</p>
+      </div>
+      <div class="review">
+        <div class="review-card">
+          <h3>Daily Review</h3>
+          <ul>
+            <li>Did I follow my plan?</li>
+            <li>Did I avoid overtrading?</li>
+            <li>Did I control emotions?</li>
+            <li>Did I respect stop-loss and risk rules?</li>
+            <li>What is one lesson from today?</li>
+          </ul>
+        </div>
+        <div class="review-card">
+          <h3>Weekly Review</h3>
+          <ul>
+            <li>Review winning and losing trades.</li>
+            <li>Identify repeated mistakes.</li>
+            <li>Look for patterns in decision-making.</li>
+            <li>Review strategy and execution quality.</li>
+            <li>Choose one or two areas to improve next week.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="notice">
+        <strong>Important:</strong> This journal is intended as a personal learning and record-keeping system. It does not represent verified trading performance, guaranteed returns, or financial advice.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">Mahadin <span>Trader</span> — Learning. Discipline. Growth.</div>
+    <div>© <span id="year"></span> Mahadin Trader. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll(".links a").forEach(a => {
+    a.addEventListener("click", () => document.querySelector(".links").classList.remove("open"));
+  });
+</script>
+</body>
+</html>
