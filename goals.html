@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Goals | Mahadin Trader</title>
+  <meta name="description" content="Mahadin Trader trading goals — a personal Forex learning journey focused on knowledge, discipline, risk management, and continuous improvement.">
+  <style>
+    :root{
+      --bg:#050708; --panel:#0c1113; --panel2:#101719; --text:#f4f7f7;
+      --muted:#9aa9aa; --orange:#ff8a24; --teal:#19c7b5; --line:rgba(255,255,255,.09);
+      --shadow:0 20px 60px rgba(0,0,0,.38);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text); background:
+      radial-gradient(circle at 80% 10%,rgba(25,199,181,.09),transparent 28%),
+      radial-gradient(circle at 15% 30%,rgba(255,138,36,.07),transparent 25%),
+      var(--bg); line-height:1.7; overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:45px 45px;mask-image:linear-gradient(to bottom,black,transparent 85%);
+    }
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1120px,92%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:20;background:rgba(5,7,8,.82);
+      backdrop-filter:blur(16px);border-bottom:1px solid var(--line)
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.3px}
+    .brand img{width:42px;height:42px;object-fit:contain;border-radius:10px}
+    .brand span{font-size:1.05rem}
+    .brand b{color:var(--orange)}
+    .links{display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+    .links a{padding:9px 12px;border-radius:9px;color:#c4cece;font-size:.91rem;transition:.25s}
+    .links a:hover,.links a.active{color:#fff;background:rgba(255,255,255,.06)}
+    .menu{display:none;background:none;border:1px solid var(--line);color:#fff;border-radius:9px;padding:8px 11px;font-size:1.1rem}
+    .hero{padding:105px 0 80px;position:relative}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+    .eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--teal);font-size:.82rem;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 18px var(--orange)}
+    h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.02;margin:18px 0 22px;letter-spacing:-2px}
+    h1 span{color:var(--orange)}
+    .hero p{font-size:1.08rem;color:var(--muted);max-width:680px}
+    .hero-card{
+      border:1px solid var(--line);background:linear-gradient(145deg,rgba(16,23,25,.96),rgba(7,10,11,.95));
+      padding:28px;border-radius:22px;box-shadow:var(--shadow);position:relative;overflow:hidden
+    }
+    .hero-card:after{content:"";position:absolute;width:180px;height:180px;right:-80px;top:-90px;border-radius:50%;background:rgba(25,199,181,.12);filter:blur(8px)}
+    .quote{font-size:1.25rem;font-weight:750;line-height:1.45}
+    .quote span{color:var(--teal)}
+    .meta{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+    .meta div{border-top:1px solid var(--line);padding-top:13px;color:var(--muted);font-size:.88rem}
+    .meta strong{display:block;color:#fff;font-size:.95rem;margin-bottom:3px}
+    section{padding:76px 0}
+    .section-head{max-width:720px;margin-bottom:38px}
+    .section-head h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.15;margin:10px 0}
+    .section-head p{color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      background:rgba(12,17,19,.84);border:1px solid var(--line);border-radius:18px;padding:25px;
+      transition:transform .3s,border-color .3s,box-shadow .3s
+    }
+    .card:hover{transform:translateY(-5px);border-color:rgba(25,199,181,.32);box-shadow:0 16px 40px rgba(0,0,0,.25)}
+    .icon{width:43px;height:43px;border-radius:12px;display:grid;place-items:center;margin-bottom:17px;
+      background:rgba(255,138,36,.1);color:var(--orange);font-weight:900}
+    .card:nth-child(even) .icon{background:rgba(25,199,181,.1);color:var(--teal)}
+    .card h3{font-size:1.12rem;margin-bottom:8px}.card p{color:var(--muted);font-size:.94rem}
+    .roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .step{padding:22px 18px;border:1px solid var(--line);background:var(--panel);border-radius:15px}
+    .step .num{color:var(--orange);font-size:.75rem;font-weight:900;letter-spacing:1.5px}
+    .step h3{margin:7px 0 6px;font-size:1rem}.step p{font-size:.88rem;color:var(--muted)}
+    .vision{border:1px solid rgba(25,199,181,.2);border-radius:24px;padding:42px;
+      background:linear-gradient(120deg,rgba(25,199,181,.07),rgba(255,138,36,.05));}
+    .vision h2{font-size:2rem;margin-bottom:12px}.vision p{color:#c3cece;max-width:850px}
+    .principles{display:grid;grid-template-columns:repeat(2,1fr);gap:13px;margin-top:25px}
+    .principle{padding:15px 17px;border:1px solid var(--line);border-radius:12px;background:rgba(0,0,0,.18)}
+    .principle strong{color:var(--teal)}
+    .disclaimer{margin-top:30px;padding:18px 20px;border-left:3px solid var(--orange);background:rgba(255,138,36,.05);color:#aeb9b9;font-size:.82rem}
+    footer{border-top:1px solid var(--line);padding:30px 0;color:#819090;font-size:.85rem}
+    .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .footer-brand{color:#fff;font-weight:800}.footer-brand span{color:var(--orange)}
+    .animate{animation:fadeUp .8s ease both}.delay{animation-delay:.12s}
+    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.roadmap{grid-template-columns:repeat(2,1fr)}.links{display:none;position:absolute;left:4%;right:4%;top:70px;padding:12px;background:#0a0e10;border:1px solid var(--line);border-radius:13px;flex-direction:column;align-items:stretch}.links.open{display:flex}.links a{padding:12px}.menu{display:block}}
+    @media(max-width:600px){.hero{padding:75px 0 55px}section{padding:55px 0}.cards,.roadmap,.principles{grid-template-columns:1fr}.vision{padding:28px}.meta{grid-template-columns:1fr}.footer-inner{flex-direction:column;align-items:flex-start}h1{letter-spacing:-1px}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="logo.png" alt="Mahadin Trader logo"><span>Mahadin <b>Trader</b></span></a>
+    <button class="menu" aria-label="Open menu" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+    <nav class="links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="journey.html">Journey</a>
+      <a href="learning.html">Learning</a>
+      <a class="active" href="goals.html">Goals</a>
+      <a href="journal.html">Journal</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="animate">
+        <div class="eyebrow"><i class="dot"></i> My Trading Goals</div>
+        <h1>Building a <span>Trader</span>, Not Chasing a Trade.</h1>
+        <p>
+          My goals are centered on learning, discipline, risk management, patience,
+          and continuous improvement. I am still learning Forex trading, so the focus
+          is on building a strong foundation step by step.
+        </p>
+      </div>
+      <div class="hero-card animate delay">
+        <div class="quote">“Follow the plan. Protect the capital. <span>Keep improving.</span>”</div>
+        <div class="meta">
+          <div><strong>Focus</strong>Knowledge & discipline</div>
+          <div><strong>Approach</strong>Step-by-step learning</div>
+          <div><strong>Priority</strong>Risk management</div>
+          <div><strong>Mindset</strong>Consistency over emotion</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">01 — Short Term</div>
+        <h2>Short-Term Goals</h2>
+        <p>My immediate goals are about creating a reliable learning and practice process rather than chasing quick profits.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">01</div><h3>Strengthen the Foundation</h3><p>Build a clearer understanding of Price Action, Technical Analysis, Fundamental Analysis, Supply & Demand, SMC, ICT, and other core concepts.</p></article>
+        <article class="card"><div class="icon">02</div><h3>Build a Trading Plan</h3><p>Develop a structured plan covering setups, trend confirmation, entries, risk/reward, news awareness, and rules for avoiding impulsive trades.</p></article>
+        <article class="card"><div class="icon">03</div><h3>Improve Risk Management</h3><p>Practice protecting capital with controlled risk, proper stop-loss use, and a clear understanding that capital protection comes first.</p></article>
+        <article class="card"><div class="icon">04</div><h3>Develop Trading Psychology</h3><p>Work on patience, emotional control, discipline, and avoiding revenge trading or decisions driven by fear and greed.</p></article>
+        <article class="card"><div class="icon">05</div><h3>Maintain a Trading Journal</h3><p>Record trades, mistakes, observations, and lessons so that each trading session becomes an opportunity to learn.</p></article>
+        <article class="card"><div class="icon">06</div><h3>Review & Improve</h3><p>Regularly review performance and losing trades, identify recurring mistakes, and improve the process over time.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">02 — Long Term</div>
+        <h2>Long-Term Goals</h2>
+        <p>The long-term objective is not to claim perfection, but to gradually become a more knowledgeable, disciplined, and consistent trader.</p>
+      </div>
+      <div class="cards">
+        <article class="card"><div class="icon">A</div><h3>Become a Disciplined Trader</h3><p>Follow a defined process and trading rules instead of allowing emotions to control decisions.</p></article>
+        <article class="card"><div class="icon">B</div><h3>Build Consistency</h3><p>Focus on quality over quantity and develop repeatable habits through continuous practice and review.</p></article>
+        <article class="card"><div class="icon">C</div><h3>Improve Market Analysis</h3><p>Continue developing the ability to study market structure, price behavior, fundamentals, liquidity, and news context.</p></article>
+        <article class="card"><div class="icon">D</div><h3>Protect Capital</h3><p>Make risk management a permanent part of the trading process and prioritize survival over aggressive growth.</p></article>
+        <article class="card"><div class="icon">E</div><h3>Grow Through Experience</h3><p>Use real observations, mistakes, reviews, and accumulated practice to improve decision-making over time.</p></article>
+        <article class="card"><div class="icon">F</div><h3>Keep Learning</h3><p>Continue studying and adapting as knowledge, experience, and understanding of the financial markets develop.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">03 — Development Roadmap</div>
+        <h2>How I Want to Grow</h2>
+        <p>A simple progression for turning study into disciplined practice.</p>
+      </div>
+      <div class="roadmap">
+        <div class="step"><div class="num">STEP 01</div><h3>Learn</h3><p>Study concepts, market behavior, risk, psychology, and news awareness.</p></div>
+        <div class="step"><div class="num">STEP 02</div><h3>Practice</h3><p>Apply what I learn through chart study, observation, and structured practice.</p></div>
+        <div class="step"><div class="num">STEP 03</div><h3>Record</h3><p>Keep a journal of decisions, mistakes, results, and lessons.</p></div>
+        <div class="step"><div class="num">STEP 04</div><h3>Review</h3><p>Identify what needs improvement and refine the process with patience.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="vision">
+        <div class="eyebrow">04 — My Trading Vision</div>
+        <h2>Knowledge First. Discipline Always.</h2>
+        <p>
+          My vision is to build myself into a disciplined market participant through
+          knowledge, patience, risk management, and continuous improvement. I do not
+          want to measure progress only by profit. I also want to measure it by how
+          well I follow my plan, control risk, learn from mistakes, and stay consistent.
+        </p>
+        <div class="principles">
+          <div class="principle"><strong>✓</strong> Follow the trading plan</div>
+          <div class="principle"><strong>✓</strong> Avoid emotional decisions</div>
+          <div class="principle"><strong>✓</strong> Protect capital first</div>
+          <div class="principle"><strong>✓</strong> Quality over quantity</div>
+          <div class="principle"><strong>✓</strong> Review mistakes regularly</div>
+          <div class="principle"><strong>✓</strong> Stay patient and controlled</div>
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Forex Risk Disclaimer:</strong> This website documents a personal learning journey and is for educational and informational purposes only. It is not financial advice, investment advice, or a recommendation to buy or sell any financial instrument. Forex trading involves substantial risk, and past performance does not guarantee future results.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div class="footer-brand">Mahadin <span>Trader</span> — Learning. Discipline. Growth.</div>
+    <div>© <span id="year"></span> Mahadin Trader. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+  document.querySelectorAll(".links a").forEach(a => {
+    a.addEventListener("click", () => document.querySelector(".links").classList.remove("open"));
+  });
+</script>
+</body>
+</html>
